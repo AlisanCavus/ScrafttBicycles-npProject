@@ -1,7 +1,10 @@
+import Navbar from "./Navbar";
+
 function App() {
   return (
-    <div >
-      <h1 className="font-sans">Hand Crafted In Belgium</h1>
+    <div className="bg-slate-700 min-h-screen">
+      <Navbar/>
+      
     </div>
   );
 }
