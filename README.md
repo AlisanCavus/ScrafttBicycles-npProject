@@ -12,4 +12,4 @@ This project is gonna be a website for a local bussiness. This website is about 
 
 #### Mockup
 
-![SCraftt Mockup Pages ](./mock.png)
+![SCraftt Mockup Pages](./mock.png)
