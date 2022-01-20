@@ -1,7 +1,7 @@
 function App() {
   return (
-    <div className="flex font-sans ">
-      Hand Crafted In Belgium
+    <div >
+      <h1 className="font-sans">Hand Crafted In Belgium</h1>
     </div>
   );
 }

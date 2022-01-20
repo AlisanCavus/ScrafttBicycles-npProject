@@ -21,8 +21,9 @@ module.exports = {
       // => @media (min-width: 1536px) { ... }
     },
     fontFamily:{
-      sans:['Dongle', 'sans-serif'],
+      sans:['Montserrat', 'sans-serif'],
     },
+    
     
     extend: {
       colors:{
@@ -34,7 +35,6 @@ module.exports = {
         textMain: "#0d0c1d",
         abitgray: "#a69cac"
       },
-      
     },
   },
   plugins: [],
