@@ -27,12 +27,12 @@ module.exports = {
     
     extend: {
       colors:{
-        primary: "#FAF9F9",
-        secondary: "#BEE3DB",
-        bart: "#89B0AE",
-        darkbart: "#555B6E",
-        tonage: "#FFD6BA",
-        textMain: "#0d0c1d",
+        primary: "#FFE8D6",
+        secondary: "#DDBEA9",
+        bart: "#B7B7A4",
+        darkbart: "#A5A58D",
+        tonage: "#CB997E",
+        textMain: "#6B705C",
         abitgray: "#a69cac"
       },
     },
