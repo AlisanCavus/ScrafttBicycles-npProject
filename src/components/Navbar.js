@@ -1,33 +1,37 @@
 import React from "react";
 import Logo from "../Assets/Logo.svg";
 import { Menu } from "@headlessui/react";
-import { VscAccount } from "react-icons/vsc";
-import { FcMenu } from "react-icons/fc";
+import { AiOutlineLine } from "react-icons/ai";
+import { MdDirectionsBike } from "react-icons/md";
+import { BsCart4 } from "react-icons/bs";
 
 function Navbar() {
   return (
     <div className="h-20 w-full bg-transparent flex flex-row justify-between">
-      <div className=" h-15 place-content-center px-20">
-        <img src={Logo} alt="logo" className="w-15 max-h-20 " />
+      <div className=" h-15 place-content-center px-20 items-center align-middle flex">
+        <img src={Logo} alt="logo" className=" w-full h-3/4" />
       </div>
-      <div className="flex flex-column h-20 z-50 place-content-center px-20 my-auto ">
+      <div className="flex flex-column h-20 z-50 place-content-center px-32 my-auto ">
         <Menu as="div" className="flex flex-column relative">
-          <Menu.Button className="place-content-center flex my-auto ">
-            <FcMenu className="w-10 h-10 fill-white " />
+          <Menu.Button className="place-content-center flex my-auto hover group flex-row">
+            <AiOutlineLine className=" text-textMain mt-6  -right-[1rem]   group-hover:animate-bounce group-active:animate-bounce "></AiOutlineLine>
+            <AiOutlineLine className=" text-textMain mt-2 -right-[2rem] visible  group-hover:animate-bounce group-active:animate-bounce   "></AiOutlineLine>
+            <AiOutlineLine className=" text-textMain  -mt-2 -right-[3rem] visible  group-hover:animate-bounce group-active:animate-bounce  "></AiOutlineLine>
+            <MdDirectionsBike className="w-10 h-10 text-textMain " />
           </Menu.Button>
-          <Menu.Items className="absolute flex flex-col h-50 place-content-center z-50 top-20 -right-10 bg-transparent w-48 rounded border-l-fuchsia-300">
+          <Menu.Items className="absolute flex flex-col h-50 place-content-center z-50 top-20 -right-[4rem] bg-transparent w-48">
             <Menu.Item>
               {({ active }) => (
                 <a
                   className={`${
                     active
-                      ? " bg-slate-600 align-middle items-center flex p-1 place-content-center text-purple-50 rounded-xl  border-l-pink-300"
-                      : " bg-transparent align-middle items-center flex p-1 place-content-center text-indigo-50 rounded-xl  border-l-pink-300"
+                      ? " bg-bart align-middle items-center flex p-1 place-content-center text-primary  rounded-xl  "
+                      : " bg-transparent align-middle items-center flex p-1 place-content-center text-textMain  rounded-xl  "
                   }`}
                   s
-                  href="/account-settings"
+                  href="/Cart"
                 >
-                  <VscAccount className="h-8 w-8 m-0 p-1" /> Your Account
+                  <BsCart4 className="h-6 w-6 m-0 p-1" /> Your Cart
                 </a>
               )}
             </Menu.Item>
@@ -36,13 +40,28 @@ function Navbar() {
                 <a
                   className={`${
                     active
-                      ? " bg-slate-600 align-middle items-center flex p-1 place-content-center text-purple-50 rounded-xl  border-l-pink-300"
-                      : " bg-transparent align-middle items-center flex p-1 place-content-center text-indigo-50 rounded-xl  border-l-pink-300"
+                      ? " bg-bart align-middle items-center flex p-1 place-content-center text-primary  rounded-xl  "
+                      : " bg-transparent align-middle items-center flex p-1 place-content-center text-textMain  rounded-xl  "
                   }`}
                   s
-                  href="/account-settings"
+                  href="/Products"
                 >
-                  Documentation
+                  Products
+                </a>
+              )}
+            </Menu.Item>
+            <Menu.Item>
+              {({ active }) => (
+                <a
+                  className={`${
+                    active
+                      ? " bg-bart align-middle items-center flex p-1 place-content-center text-primary  rounded-xl  "
+                      : " bg-transparent align-middle items-center flex p-1 place-content-center text-textMain  rounded-xl  "
+                  }`}
+                  s
+                  href="/About Us"
+                >
+                  About Us
                 </a>
               )}
             </Menu.Item>
