@@ -18,7 +18,17 @@ This project is gonna be a website for a local bussiness. This website is about 
 #### Tech 
 
 React v.17.0.2,
+
 React-Router v.6.2.1,
+
 Tailwind v.3.0.15,
+
 Firebase v.9.6.3,
+
 Styled-Components v.5.3.3,
+
+React-Spring v.9.4.2,
+
+
+
+

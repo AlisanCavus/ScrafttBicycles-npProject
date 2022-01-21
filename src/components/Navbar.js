@@ -11,14 +11,14 @@ function Navbar() {
   const anim = useSpring({
     from: { opacity: 0, marginTop: -1000},
     to:{opacity: 1, marginTop: 20},
-    delay: 500
+    delay: 300
   })
 
 
   const anim1 = useSpring({
     from:{ opacity: 0, marginLeft: -500},
     to:{ opacity: 1, marginLeft: 0},
-    delay: 500
+    delay: 300
   })
 
 
