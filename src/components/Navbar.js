@@ -2,7 +2,7 @@ import React from 'react';
 import Logo from '../Assets/Logo.svg';
 import { Menu } from '@headlessui/react';
 import { AiOutlineLine } from 'react-icons/ai';
-import { MdDirectionsBike, MdLogin, MdLogout } from 'react-icons/md';
+import { MdDirectionsBike, MdLogin, MdLogout , MdOutlineInfo} from 'react-icons/md';
 import { BsCart4 } from 'react-icons/bs';
 import { animated, useSpring } from 'react-spring';
 import { RiHeart2Line, RiHeart2Fill, RiProductHuntLine } from 'react-icons/ri';
@@ -143,6 +143,20 @@ function Navbar() {
                     to="/Products"
                   >
                     <RiProductHuntLine className="h-6 w-6 m-0 p-1"/> Products
+                  </Link>
+                )}
+              </Menu.Item>
+              <Menu.Item>
+                {({ active }) => (
+                  <Link
+                    className={`${
+                      active
+                        ? ' bg-bart align-middle items-center flex p-1 place-content-center text-primary  rounded-xl  mobile:w-40'
+                        : ' bg-transparent align-middle items-center flex p-1 place-content-center text-textMain  rounded-xl  mobile:w-40'
+                    }`}
+                    to="/About"
+                  >
+                    <MdOutlineInfo className="h-6 w-6 m-0 p-1"/> About Us
                   </Link>
                 )}
               </Menu.Item>
