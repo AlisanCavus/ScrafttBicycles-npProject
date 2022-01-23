@@ -5,7 +5,7 @@ import { AiOutlineLine } from 'react-icons/ai';
 import { MdDirectionsBike, MdLogin, MdLogout } from 'react-icons/md';
 import { BsCart4 } from 'react-icons/bs';
 import { animated, useSpring } from 'react-spring';
-import { RiHeart2Line, RiHeart2Fill } from 'react-icons/ri';
+import { RiHeart2Line, RiHeart2Fill, RiProductHuntLine } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 import { IoCreate } from 'react-icons/io5';
 import { CgProfile } from 'react-icons/cg';
@@ -27,17 +27,17 @@ function Navbar() {
     <div className="h-20 w-full bg-transparent flex flex-row justify-between">
       <animated.div
         style={anim1}
-        className=" h-15 place-content-center px-20 items-center align-middle flex"
+        className=" h-15 place-content-center px-20 items-center align-middle flex mobile:px-1"
       >
-        {' '}
-        <Link to="/Home" className="flex">
+      
+        <Link to="/" className="flex">
           <img src={Logo} alt="logo" className=" w-32 h-[80px]" />
         </Link>
       </animated.div>
 
-      <div className="flex flex-column h-20 z-50 place-content-center px-32 my-auto ">
+      <div className="flex flex-column h-20 z-50 place-content-center px-20 my-auto mobile:px-2 ">
         <animated.div style={anim}>
-          <Menu as="div" className="flex flex-column relative">
+          <Menu as="div" className="flex flex-column relative mobile:content-center mobile:mx-auto">
             <Menu.Button className="place-content-center flex my-auto hover group flex-row">
               <AiOutlineLine className=" text-textMain mt-6  -right-[1rem]   group-hover:animate-bounce group-active:animate-bounce "></AiOutlineLine>
               <AiOutlineLine className=" text-textMain mt-2 -right-[2rem] visible  group-hover:animate-bounce group-active:animate-bounce   "></AiOutlineLine>
@@ -45,14 +45,15 @@ function Navbar() {
               <MdDirectionsBike className="w-10 h-10 text-textMain " />
             </Menu.Button>
 
-            <Menu.Items className="absolute flex flex-col h-50 place-content-center z-50 top-20 -right-[4rem] bg-transparent w-48">
+            <Menu.Items className="absolute flex flex-col h-50 place-content-center z-50 top-20 -right-[4rem] bg-transparent w-48 mobile:w-full mobile:right-[80%]
+            ">
               <Menu.Item>
                 {({ active }) => (
                   <Link
                     className={`${
                       active
-                        ? ' bg-bart align-middle items-center flex p-1 place-content-center text-primary  rounded-xl  '
-                        : ' bg-transparent align-middle items-center flex p-1 place-content-center text-textMain  rounded-xl  '
+                        ? ' bg-bart align-middle items-center flex p-1 place-content-center text-primary  rounded-xl mobile:w-40'
+                        : ' bg-transparent align-middle items-center flex p-1 place-content-center text-textMain  rounded-xl  mobile:w-40 '
                     }`}
                     to="/YourCart"
                   >
@@ -65,8 +66,8 @@ function Navbar() {
                   <Link
                     className={`${
                       active
-                        ? ' bg-bart align-middle items-center flex p-1 place-content-center text-primary  rounded-xl  '
-                        : ' bg-transparent align-middle items-center flex p-1 place-content-center text-textMain  rounded-xl  '
+                        ? ' bg-bart align-middle items-center flex p-1 place-content-center text-primary  rounded-xl  mobile:w-40'
+                        : ' bg-transparent align-middle items-center flex p-1 place-content-center text-textMain  rounded-xl mobile:w-40'
                     }`}
                     to="/Favorites"
                   >
@@ -79,8 +80,8 @@ function Navbar() {
                   <Link
                     className={`${
                       active
-                        ? ' bg-bart align-middle items-center flex p-1 place-content-center text-primary  rounded-xl  '
-                        : ' bg-transparent align-middle items-center flex p-1 place-content-center text-textMain  rounded-xl  '
+                        ? ' bg-bart align-middle items-center flex p-1 place-content-center text-primary  rounded-xl  mobile:w-40'
+                        : ' bg-transparent align-middle items-center flex p-1 place-content-center text-textMain  rounded-xl  mobile:w-40'
                     }`}
                     to="/Profile"
                   >
@@ -93,8 +94,8 @@ function Navbar() {
                   <Link
                     className={`${
                       active
-                        ? ' bg-bart align-middle items-center flex p-1 place-content-center text-primary  rounded-xl  '
-                        : ' bg-transparent align-middle items-center flex p-1 place-content-center text-textMain  rounded-xl  '
+                        ? ' bg-bart align-middle items-center flex p-1 place-content-center text-primary  rounded-xl  mobile:w-40'
+                        : ' bg-transparent align-middle items-center flex p-1 place-content-center text-textMain  rounded-xl  mobile:w-40'
                     }`}
                     to="/Login"
                   >
@@ -107,8 +108,8 @@ function Navbar() {
                   <Link
                     className={`${
                       active
-                        ? ' bg-bart align-middle items-center flex p-1 place-content-center text-primary  rounded-xl  '
-                        : ' bg-transparent align-middle items-center flex p-1 place-content-center text-textMain  rounded-xl  '
+                        ? ' bg-bart align-middle items-center flex p-1 place-content-center text-primary  rounded-xl  mobile:w-40'
+                        : ' bg-transparent align-middle items-center flex p-1 place-content-center text-textMain  rounded-xl  mobile:w-40'
                     }`}
                     to="/Login"
                   >
@@ -122,8 +123,8 @@ function Navbar() {
                   <Link
                     className={`${
                       active
-                        ? ' bg-bart align-middle items-center flex p-1 place-content-center text-primary  rounded-xl  '
-                        : ' bg-transparent align-middle items-center flex p-1 place-content-center text-textMain  rounded-xl  '
+                        ? ' bg-bart align-middle items-center flex p-1 place-content-center text-primary  rounded-xl  mobile:w-40'
+                        : ' bg-transparent align-middle items-center flex p-1 place-content-center text-textMain  rounded-xl  mobile:w-40'
                     }`}
                     to="/SignUp"
                   >
@@ -136,27 +137,12 @@ function Navbar() {
                   <Link
                     className={`${
                       active
-                        ? ' bg-bart align-middle items-center flex p-1 place-content-center text-primary  rounded-xl  '
-                        : ' bg-transparent align-middle items-center flex p-1 place-content-center text-textMain  rounded-xl  '
+                        ? ' bg-bart align-middle items-center flex p-1 place-content-center text-primary  rounded-xl  mobile:w-40'
+                        : ' bg-transparent align-middle items-center flex p-1 place-content-center text-textMain  rounded-xl  mobile:w-40'
                     }`}
                     to="/Products"
                   >
-                    Products
-                  </Link>
-                )}
-              </Menu.Item>
-
-              <Menu.Item>
-                {({ active }) => (
-                  <Link
-                    className={`${
-                      active
-                        ? ' bg-bart align-middle items-center flex p-1 place-content-center text-primary  rounded-xl  '
-                        : ' bg-transparent align-middle items-center flex p-1 place-content-center text-textMain  rounded-xl  '
-                    }`}
-                    to="/About Us"
-                  >
-                    About Us
+                    <RiProductHuntLine className="h-6 w-6 m-0 p-1"/> Products
                   </Link>
                 )}
               </Menu.Item>
