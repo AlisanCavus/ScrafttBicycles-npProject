@@ -14,7 +14,7 @@ function SignUp({ close, setClose, handleCloseModal }) {
     const navigate = useNavigate()
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState('')
-
+  
    
 
     async function handleSubmit(e) {
@@ -89,6 +89,8 @@ function SignUp({ close, setClose, handleCloseModal }) {
                 className=" w-96 h-12 my-4 px-5 rounded-2xl placeholder:text-center"
                 placeholder="Choose a password min. 8 characters."
                 required
+                name="password"
+                minLength="8"
                 ref={passwordRef}
               />
               
@@ -102,6 +104,7 @@ function SignUp({ close, setClose, handleCloseModal }) {
                 className=" w-96 h-12 rounded-2xl my-4 px-5 placeholder:text-center"
                 placeholder="Retype your password"
                 required
+                minLength="8"
                 name="cPassword"
                 ref={cPasswordRef}
               />
@@ -109,7 +112,7 @@ function SignUp({ close, setClose, handleCloseModal }) {
             </div>
             <span className="text-center text-red-600">{error}</span>
             <div 
-            aria-disabled={loading}
+            disabled={loading}
             className="my-16 px-5 h-12 flex flex-col align-middle mx-auto rounded-2xl bg-primary border-2 border-tonage justify-center cursor-pointer hover:animate-pulse text-textMain">
               <button type="submit"> Sign Up</button>
             </div>

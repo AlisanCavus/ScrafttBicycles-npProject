@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Outlet, Switch } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 import Favorites from './Pages/Favorites';
 import Home from './Pages/Home';
 import YourCart from './Pages/YourCart';
