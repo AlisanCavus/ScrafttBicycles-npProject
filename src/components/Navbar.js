@@ -57,7 +57,7 @@ function Navbar() {
               </Menu.Button>
 
               <Menu.Items
-                className="absolute flex flex-col h-50 place-content-center z-50 top-16 -right-[4rem] bg-primary w-48 mobile:w-full mobile:right-[80%] rounded-2xl border-4 border-red-500
+                className="absolute flex flex-col h-50 place-content-center z-50 top-16 -right-[4rem] bg-primary w-48 mobile:w-full mobile:right-[80%] rounded-2xl border-4 border-secondary
             "
               >
                 <Menu.Item>
