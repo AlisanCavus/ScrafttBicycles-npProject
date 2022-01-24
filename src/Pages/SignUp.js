@@ -1,9 +1,10 @@
-import React, {useRef, useState} from 'react';
+import React, {useRef, useState, useContext} from 'react';
 import Logo from '../Assets/Logo.svg';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../Contexts/AuthContext'
 import { useNavigate } from 'react-router-dom'
+
 
 function SignUp({ close, setClose, handleCloseModal }) {
 
@@ -14,6 +15,8 @@ function SignUp({ close, setClose, handleCloseModal }) {
     const navigate = useNavigate()
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState('')
+
+    const {setAuth} = useAuth()
   
    
 

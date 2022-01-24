@@ -14,9 +14,13 @@ import { RiHeart2Line, RiProductHuntLine } from 'react-icons/ri';
 import { Link, Outlet } from 'react-router-dom';
 import { IoCreate } from 'react-icons/io5';
 import { CgProfile } from 'react-icons/cg';
+import { useAuth } from '../Contexts/AuthContext'
 
 
 function Navbar() {
+
+
+  const { auth } = useAuth()
   
 
   const anim = useSpring({
@@ -60,7 +64,22 @@ function Navbar() {
                 className="absolute flex flex-col h-50 place-content-center z-50 top-16 -right-[4rem] bg-primary w-48 mobile:w-full mobile:right-[80%] rounded-2xl border-4 border-secondary
             "
               >
-                <Menu.Item>
+                {auth?.currentUser &&  (<Menu.Item>
+                  {({ active }) => (
+                    <Link
+                      className={`${
+                        active
+                          ? ' bg-bart align-middle items-center flex p-1 place-content-center text-primary  rounded-xl  mobile:w-40'
+                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-textMain  rounded-xl  mobile:w-40'
+                      }`}
+                      to="/Profile"
+                    >
+                      <CgProfile className="h-6 w-6 m-0 p-1" /> Your Profile
+                    </Link>
+                  )}
+                </Menu.Item>)}
+
+                {auth?.currentUser && (<Menu.Item>
                   {({ active }) => (
                     <Link
                       className={`${
@@ -73,7 +92,8 @@ function Navbar() {
                       <BsCart4 className="h-6 w-6 m-0 p-1" /> Your Cart
                     </Link>
                   )}
-                </Menu.Item>
+                </Menu.Item>)} 
+
                 <Menu.Item>
                   {({ active }) => (
                     <Link
@@ -88,35 +108,8 @@ function Navbar() {
                     </Link>
                   )}
                 </Menu.Item>
-                <Menu.Item>
-                  {({ active }) => (
-                    <Link
-                      className={`${
-                        active
-                          ? ' bg-bart align-middle items-center flex p-1 place-content-center text-primary  rounded-xl  mobile:w-40'
-                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-textMain  rounded-xl  mobile:w-40'
-                      }`}
-                      to="/Profile"
-                    >
-                      <CgProfile className="h-6 w-6 m-0 p-1" /> Your Profile
-                    </Link>
-                  )}
-                </Menu.Item>
-                <Menu.Item>
-                  {({ active }) => (
-                    <Link
-                      className={`${
-                        active
-                          ? ' bg-bart align-middle items-center flex p-1 place-content-center text-primary  rounded-xl  mobile:w-40'
-                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-textMain  rounded-xl  mobile:w-40'
-                      }`}
-                      to="/Login"
-                    >
-                      <MdLogout className="h-6 w-6 m-0 p-1" /> Logout
-                    </Link>
-                  )}
-                </Menu.Item>
-                <Menu.Item>
+
+                {!auth?.currentUser && (<Menu.Item>
                   {({ active }) => (
                     <Link
                       className={`${
@@ -129,9 +122,13 @@ function Navbar() {
                       <MdLogin className="h-6 w-6 m-0 p-1" /> Login
                     </Link>
                   )}
-                </Menu.Item>
-
-                <Menu.Item>
+                </Menu.Item> )}
+                 
+                
+              
+             
+                
+               {!auth?.currentUser && (<Menu.Item>
                   {({ active }) => (
                     <Link
                       className={`${
@@ -152,7 +149,9 @@ function Navbar() {
                       Sign Up
                     </Link>
                   )}
-                </Menu.Item>
+                </Menu.Item>)}
+
+                
 
                 <Menu.Item>
                   {({ active }) => (
@@ -182,6 +181,24 @@ function Navbar() {
                     </Link>
                   )}
                 </Menu.Item>
+
+
+                
+                {auth?.currentUser && (<Menu.Item>
+                  {({ active }) => (
+                    <Link
+                      className={`${
+                        active
+                          ? ' bg-bart align-middle items-center flex p-1 place-content-center text-primary  rounded-xl  mobile:w-40'
+                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-textMain  rounded-xl  mobile:w-40'
+                      }`}
+                      to="/Login"
+                    >
+                      <MdLogout className="h-6 w-6 m-0 p-1" /> Logout
+                    </Link>
+                  )}
+                </Menu.Item>)}
+                
               </Menu.Items>
             </Menu>
           </animated.div>
