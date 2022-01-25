@@ -55,7 +55,7 @@ function Navbar() {
   
   return (
     <div>
-      <div className="h-20 w-full bg-primary flex flex-row justify-between">
+      <div className="h-20 w-full z-10 relative bg-transparent flex flex-row justify-between">
         <animated.div
           style={anim1}
           className=" h-15 place-content-center px-20 items-center align-middle flex mobile:px-1"
@@ -72,14 +72,14 @@ function Navbar() {
               className="flex flex-column relative mobile:content-center mobile:mx-auto"
             >
               <Menu.Button className="place-content-center flex my-auto hover group flex-row">
-                <AiOutlineLine className=" text-textMain mt-6  -right-[1rem]   group-hover:animate-bounce group-active:animate-bounce "></AiOutlineLine>
-                <AiOutlineLine className=" text-textMain mt-2 -right-[2rem] visible  group-hover:animate-bounce group-active:animate-bounce   "></AiOutlineLine>
-                <AiOutlineLine className=" text-textMain  -mt-2 -right-[3rem] visible  group-hover:animate-bounce group-active:animate-bounce  "></AiOutlineLine>
-                <MdDirectionsBike className="w-10 h-10 text-textMain " />
+                <AiOutlineLine className=" text-gray-700 mt-6  -right-[1rem]   group-hover:animate-bounce group-active:animate-bounce "></AiOutlineLine>
+                <AiOutlineLine className=" text-gray-700 mt-2 -right-[2rem] visible  group-hover:animate-bounce group-active:animate-bounce   "></AiOutlineLine>
+                <AiOutlineLine className=" text-gray-700  -mt-2 -right-[3rem] visible  group-hover:animate-bounce group-active:animate-bounce  "></AiOutlineLine>
+                <MdDirectionsBike className="w-10 h-10 text-gray-700 " />
               </Menu.Button>
 
               <Menu.Items
-                className="absolute flex flex-col h-50 place-content-center z-50 top-16 -right-[4rem] bg-primary w-48 mobile:w-full mobile:right-[80%] rounded-2xl border-4 border-secondary
+                className="absolute flex flex-col  opacity-70 h-50 place-content-center z-50 top-16 -right-[4rem] bg-primary w-48 mobile:w-full mobile:right-[80%] rounded-2xl border-4 border-secondary
             "
               >
                 {currentUser &&  (<Menu.Item>
@@ -87,8 +87,8 @@ function Navbar() {
                     <Link
                       className={`${
                         active
-                          ? ' bg-bart align-middle items-center flex p-1 place-content-center text-primary  rounded-xl  mobile:w-40'
-                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-textMain  rounded-xl  mobile:w-40'
+                          ? ' bg-bart align-middle items-center flex p-1 place-content-center text-gray-800  rounded-xl  mobile:w-40'
+                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-700  rounded-xl  mobile:w-40'
                       }`}
                       to="/Profile"
                     >
@@ -102,8 +102,8 @@ function Navbar() {
                     <Link
                       className={`${
                         active
-                          ? ' bg-bart align-middle items-center flex p-1 place-content-center text-primary  rounded-xl mobile:w-40'
-                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-textMain  rounded-xl  mobile:w-40 '
+                          ? ' bg-bart align-middle items-center flex p-1 place-content-center text-gray-800  rounded-xl mobile:w-40'
+                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-700  rounded-xl  mobile:w-40 '
                       }`}
                       to="/YourCart"
                     >
@@ -117,8 +117,8 @@ function Navbar() {
                     <Link
                       className={`${
                         active
-                          ? ' bg-bart align-middle items-center flex p-1 place-content-center text-primary  rounded-xl  mobile:w-40'
-                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-textMain  rounded-xl mobile:w-40'
+                          ? ' bg-bart align-middle items-center flex p-1 place-content-center text-gray-800  rounded-xl  mobile:w-40'
+                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-700  rounded-xl mobile:w-40'
                       }`}
                       to="/Favorites"
                     >
@@ -132,8 +132,8 @@ function Navbar() {
                     <Link
                       className={`${
                         active
-                          ? ' bg-bart align-middle items-center flex p-1 place-content-center text-primary  rounded-xl  mobile:w-40'
-                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-textMain  rounded-xl  mobile:w-40'
+                          ? ' bg-bart align-middle items-center flex p-1 place-content-center text-gray-800  rounded-xl  mobile:w-40'
+                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-700  rounded-xl  mobile:w-40'
                       }`}
                       to="/Login"
                     >
@@ -151,8 +151,8 @@ function Navbar() {
                     <Link
                       className={`${
                         active
-                          ? ' bg-bart align-middle items-center flex p-1 place-content-center text-primary  rounded-xl  mobile:w-40'
-                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-textMain  rounded-xl  mobile:w-40'
+                          ? ' bg-bart align-middle items-center flex p-1 place-content-center text-gray-800  rounded-xl  mobile:w-40'
+                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-700  rounded-xl  mobile:w-40'
                       }`}
                       to={{
                         pathname: '/SignUp',
@@ -176,8 +176,8 @@ function Navbar() {
                     <Link
                       className={`${
                         active
-                          ? ' bg-bart align-middle items-center flex p-1 place-content-center text-primary  rounded-xl  mobile:w-40'
-                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-textMain  rounded-xl  mobile:w-40'
+                          ? ' bg-bart align-middle items-center flex p-1 place-content-center text-gray-800  rounded-xl  mobile:w-40'
+                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-700  rounded-xl  mobile:w-40'
                       }`}
                       to="/Products"
                     >
@@ -190,8 +190,8 @@ function Navbar() {
                     <Link
                       className={`${
                         active
-                          ? ' bg-bart align-middle items-center flex p-1 place-content-center text-primary  rounded-xl  mobile:w-40'
-                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-textMain  rounded-xl  mobile:w-40'
+                          ? ' bg-bart align-middle items-center flex p-1 place-content-center text-gray-800  rounded-xl  mobile:w-40'
+                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-700  rounded-xl  mobile:w-40'
                       }`}
                       to="/About"
                     >
@@ -208,8 +208,8 @@ function Navbar() {
                     onClick={handleLogout}
                       className={`${
                         active
-                          ? ' bg-bart align-middle items-center flex p-1 place-content-center text-primary  rounded-xl  mobile:w-40'
-                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-textMain  rounded-xl  mobile:w-40'
+                          ? ' bg-bart align-middle items-center flex p-1 place-content-center text-gray-800  rounded-xl  mobile:w-40'
+                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-700  rounded-xl  mobile:w-40'
                       }`}
                       to="/"
                     >

@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '../Contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import LoadingScreen from '../Components/LoadingScreen';
+import { IoKeyOutline } from 'react-icons/io5'
 
 function Login({ closeModal, handleCloseModal }) {
   const emailRef = useRef();
@@ -29,36 +30,28 @@ function Login({ closeModal, handleCloseModal }) {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    
     try {
       setError('');
       setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value)
         .then((response) => console.log(response.user.email))
         .catch((error) => console.log(error.message));
-        
-    } catch (err){
-      
-       setError(err.message);
+    } catch (err) {
+      setError(err.message);
     }
     setLoading(false);
   }
-
 
   useEffect(() => {
     if (loading) {
       // maybe trigger a loading screen
       return <LoadingScreen />;
     }
-    if (currentUser) navigate("/Profile");
+    if (currentUser) navigate('/Profile');
   }, [currentUser, navigate, loading]);
-  
-
-  
-
 
   return (
-    <div className=" container mx-auto w-full h-min my-auto bg-black rounded-xl">
+    <div className=" container mx-auto w-3/4 h-min my-auto bg-black rounded-xl">
       <div className="flex bg-secondary w-full flex-col align-middle justify-center rounded-xl">
         <div className=" -m-4">
           <button
@@ -84,7 +77,7 @@ function Login({ closeModal, handleCloseModal }) {
                 Enter your e-mail:
               </label>
               <input
-                className=" w-96 h-12 px-5 rounded-2xl placeholder:text-center my-4"
+                className=" w-96 h-10 px-5 rounded-2xl placeholder:text-center my-2"
                 type="email"
                 name="email"
                 placeholder="...ex@example.com"
@@ -98,7 +91,7 @@ function Login({ closeModal, handleCloseModal }) {
               </label>
               <input
                 type="password"
-                className=" w-96 h-12 my-4 px-5 rounded-2xl placeholder:text-center"
+                className=" w-96 h-10 my-2 px-5 rounded-2xl placeholder:text-center"
                 placeholder="Your password"
                 required
                 name="password"
@@ -106,39 +99,52 @@ function Login({ closeModal, handleCloseModal }) {
                 ref={passwordRef}
               />
             </div>
-            <div className="h-8 w-full mx-auto text-center">
-            {error && <span className="text-center text-red-600"> {error} </span>}
-            </div>
-            <div 
-            disabled={loading}
-            className="my-8 px-5 h-12 flex flex-col align-middle mx-auto rounded-2xl bg-primary border-2 border-tonage justify-center cursor-pointer hover:animate-pulse text-textMain">
-              <button disabled={loading} type="submit"> Login </button>
+
+            <div
+              disabled={loading}
+              className=" my-auto flex flex-col align-middle mx-auto rounded-2xl bg-primary border-2 border-primary justify-center cursor-pointer hover:animate-pulse text-gray-500"
+            >
+              <div className="p-2 flex flex-row">
+              <IoKeyOutline className="my-auto mx-1"/>
+              <button disabled={loading} type="submit">
+                
+                Login
+              </button>
+              </div>
             </div>
           </form>
-
-          
-
-          <div className="text-center">
-            <hr className="border-4 border-primary" />
-            <span className="mx-4">Forgot your password?</span>
-            <Link
-              to="/Signup"
-              className=" bg-primary border-2 border-tonage px-5 rounded-2xl mx-4 text-textMain hover:animate-pulse"
-            >
-              New Password
-            </Link>
-            <hr className="border-4 border-primary" />
+          <div className="h-8 w-full mx-auto text-center">
+            {error && (
+              <span className="text-center text-red-600"> {error} </span>
+            )}
           </div>
 
-          <div className="text-center mb-4">
-            <span className="mx-4">Do you need an account?</span>
-            <Link
-              to="/Signup"
-              className=" bg-primary border-2 border-tonage px-5 rounded-2xl mx-4 text-textMain hover:animate-pulse"
-            >
-              Sign Up
-            </Link>
-            <hr className="border-4 border-primary" />
+          <div className=" h-16 flex flex-row ">
+            <div className="w-1/2 my-auto">
+              <span className="mx-4">Forgot your password?</span>
+            </div>
+            <div className="w-1/2 my-auto text-center">
+              <Link
+                to="/Signup"
+                className=" bg-primary border-2 p-2 border-primary rounded-2xl text-gray-500 hover:animate-pulse"
+              >
+                New Password
+              </Link>
+            </div>
+          </div>
+              
+          <div className="  h-16 flex flex-row justify-between">
+            <div className="w-1/2 my-auto">
+              <span className="mx-4">Do you need an account?</span>
+            </div>
+            <div className="w-1/2 my-auto text-center">
+              <Link
+                to="/Signup"
+                className=" bg-primary p-2  border-2 border-primary rounded-2xl text-gray-500 hover:animate-pulse"
+              >
+                Sign Up
+              </Link>
+            </div>
           </div>
         </div>
       </div>

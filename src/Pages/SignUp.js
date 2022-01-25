@@ -1,4 +1,4 @@
-import React, {useRef, useState, useContext} from 'react';
+import React, {useRef, useState} from 'react';
 import Logo from '../Assets/Logo.svg';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
@@ -17,7 +17,7 @@ function SignUp({ close, setClose, handleCloseModal }) {
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState('')
 
-    const {setAuth} = useAuth()
+   
   
    
     const terms = (e) => {
