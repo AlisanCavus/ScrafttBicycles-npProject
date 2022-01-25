@@ -189,7 +189,6 @@ function Navbar() {
                 <Menu.Item>
                   {({ active }) => (
                     <Link
-                    onClick={handleLogout}
                       className={`${
                         active
                           ? ' bg-bart align-middle items-center flex p-1 place-content-center text-primary  rounded-xl  mobile:w-40'
@@ -207,6 +206,7 @@ function Navbar() {
                 {currentUser && (<Menu.Item>
                   {({ active }) => (
                     <Link
+                    onClick={handleLogout}
                       className={`${
                         active
                           ? ' bg-bart align-middle items-center flex p-1 place-content-center text-primary  rounded-xl  mobile:w-40'
