@@ -11,10 +11,9 @@ import {
 import { BsCart4 } from 'react-icons/bs';
 import { animated, useSpring } from 'react-spring';
 import { RiHeart2Line, RiProductHuntLine } from 'react-icons/ri';
-import { Link, Outlet } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import { IoCreate } from 'react-icons/io5';
 import { CgProfile } from 'react-icons/cg';
-import { auth } from '../firebase'
 import { useAuth } from '../Contexts/AuthContext'
 
 

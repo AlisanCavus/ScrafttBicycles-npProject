@@ -9,7 +9,7 @@ import Layout from './Pages/Layout';
 import Logout from './Pages/Logout';
 import NotFound from './Pages/NotFound';
 import SignUpModalWrapper from './Modals/SignUpModalWrapper';
-import AuthContextProvider, { useAuth } from './Contexts/AuthContext';
+import AuthContextProvider from './Contexts/AuthContext';
 import RequireAuth from './Pages/RequireAuth';
 import LoginModalWrapper from './Modals/LoginModalWrapper';
 
