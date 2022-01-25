@@ -1,10 +1,10 @@
-import React, {useRef, useState} from 'react';
+import React, {useRef, useState, useEffect} from 'react';
 import Logo from '../Assets/Logo.svg';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../Contexts/AuthContext'
 import { useNavigate } from 'react-router-dom'
-import { auth } from '../firebase';
+
 
 
 function Login({ closeModal, handleCloseModal}) {
@@ -16,18 +16,23 @@ function Login({ closeModal, handleCloseModal}) {
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState('')
 
-    const {currentUser} = useAuth()
+    const { currentUser } = useAuth()
 
-    console.log(currentUser)
-
+    const mounted = useRef(false)
+    
+    useEffect(() => {
+      mounted.current = true
+    
+      return () => {
+        mounted.current = false
+      };
+    }, []);
+    
 
     async function handleSubmit(e) {
       e.preventDefault()
 
-      if( currentUser.email === emailRef.current.value) {
-        setError("You already logged in")
-        navigate('/Profile')
-      }
+      
       
       try {
       setError('')
@@ -103,7 +108,7 @@ function Login({ closeModal, handleCloseModal}) {
               
             </div>
           
-            <span className="text-center text-red-600"></span>
+            <span className="text-center text-red-600">{error}</span>
             <div 
            
             className="my-16 px-5 h-12 flex flex-col align-middle mx-auto rounded-2xl bg-primary border-2 border-tonage justify-center cursor-pointer hover:animate-pulse text-textMain">

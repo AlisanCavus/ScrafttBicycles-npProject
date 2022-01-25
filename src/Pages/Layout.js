@@ -4,10 +4,12 @@ import Navbar from '../Components/Navbar';
 
 function Layout() {
   return (
-    <div>
+    <>
       <Navbar />
-      <Outlet />
-    </div>
+      <div>
+        <Outlet />
+      </div>
+    </>
   );
 }
 

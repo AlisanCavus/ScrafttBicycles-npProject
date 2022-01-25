@@ -9,7 +9,7 @@ import Layout from './Pages/Layout';
 import Logout from './Pages/Logout';
 import NotFound from './Pages/NotFound';
 import SignUpModalWrapper from './Modals/SignUpModalWrapper';
-import AuthContextProvider from './Contexts/AuthContext';
+import AuthContextProvider, { useAuth } from './Contexts/AuthContext';
 import RequireAuth from './Pages/RequireAuth';
 import LoginModalWrapper from './Modals/LoginModalWrapper';
 
@@ -20,17 +20,19 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
+            
+            
             <Route path="/Favorites" element={<Favorites />} />
-
             <Route path="/Products" element={<Products />} />
             <Route path="/About" element={<About />} />
 
             <Route element={<RequireAuth />}>
+              <Route index element={<Home />} />
               <Route path="/YourCart" element={<YourCart />} />
               <Route path="/Profile" element={<Profile />} />
               <Route path="/Logout" element={<Logout />} />
             </Route>
-
+        
             <Route path="/Login" element={<LoginModalWrapper />} />
             <Route path="/Signup" element={<SignUpModalWrapper />} />
 
@@ -42,5 +44,6 @@ function App() {
     </AuthContextProvider>
   );
 }
+
 
 export default App;

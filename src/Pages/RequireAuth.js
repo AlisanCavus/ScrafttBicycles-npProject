@@ -6,10 +6,10 @@ const RequireAuth = () => {
     const location = useLocation()
     const {currentUser} = useAuth()
 
-    console.log(currentUser.email)
+   
 
     return (
-        currentUser
+        currentUser.email
             ? <Outlet />
             : <Navigate to="/Login" state={{ from: location}} replace />
     );

@@ -15,11 +15,30 @@ import { Link, Outlet } from 'react-router-dom';
 import { IoCreate } from 'react-icons/io5';
 import { CgProfile } from 'react-icons/cg';
 import { auth } from '../firebase'
+import { useAuth } from '../Contexts/AuthContext'
+
+
 
 
 function Navbar() {
 
+  const { logout, currentUser } = useAuth() 
+ 
 
+  
+  
+   function handleLogout() {
+  
+
+        try {
+         
+         logout()
+          
+        } catch {
+          console.log('error')
+        }
+    }
+ 
  
 
   const anim = useSpring({
@@ -64,7 +83,7 @@ function Navbar() {
                 className="absolute flex flex-col h-50 place-content-center z-50 top-16 -right-[4rem] bg-primary w-48 mobile:w-full mobile:right-[80%] rounded-2xl border-4 border-secondary
             "
               >
-                {auth?.currentUser &&  (<Menu.Item>
+                {currentUser &&  (<Menu.Item>
                   {({ active }) => (
                     <Link
                       className={`${
@@ -79,7 +98,7 @@ function Navbar() {
                   )}
                 </Menu.Item>)}
 
-                {auth?.currentUser && (<Menu.Item>
+                {currentUser && (<Menu.Item>
                   {({ active }) => (
                     <Link
                       className={`${
@@ -109,7 +128,7 @@ function Navbar() {
                   )}
                 </Menu.Item>
 
-                {!auth?.currentUser && (<Menu.Item>
+                {!currentUser && (<Menu.Item>
                   {({ active }) => (
                     <Link
                       className={`${
@@ -128,7 +147,7 @@ function Navbar() {
               
              
                 
-               {!auth?.currentUser && (<Menu.Item>
+               {!currentUser && (<Menu.Item>
                   {({ active }) => (
                     <Link
                       className={`${
@@ -170,6 +189,7 @@ function Navbar() {
                 <Menu.Item>
                   {({ active }) => (
                     <Link
+                    onClick={handleLogout}
                       className={`${
                         active
                           ? ' bg-bart align-middle items-center flex p-1 place-content-center text-primary  rounded-xl  mobile:w-40'
@@ -184,7 +204,7 @@ function Navbar() {
 
 
                 
-                {auth?.currentUser && (<Menu.Item>
+                {currentUser && (<Menu.Item>
                   {({ active }) => (
                     <Link
                       className={`${
@@ -192,7 +212,7 @@ function Navbar() {
                           ? ' bg-bart align-middle items-center flex p-1 place-content-center text-primary  rounded-xl  mobile:w-40'
                           : ' bg-primary align-middle items-center flex p-1 place-content-center text-textMain  rounded-xl  mobile:w-40'
                       }`}
-                      to="/Login"
+                      to="/"
                     >
                       <MdLogout className="h-6 w-6 m-0 p-1" /> Logout
                     </Link>
@@ -204,7 +224,7 @@ function Navbar() {
           </animated.div>
         </div>
       </div>
-      <Outlet />
+      
     </div>
   );
 }
