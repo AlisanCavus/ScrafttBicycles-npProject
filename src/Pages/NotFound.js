@@ -1,7 +1,7 @@
 import React from 'react';
 
 function NotFound() {
-  return <div>
+  return <div className=" h-screen bg-primary">
       Opss something wrong
   </div>;
 }

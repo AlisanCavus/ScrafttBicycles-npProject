@@ -2,7 +2,7 @@ import React from 'react';
 
 
 function YourCart() {
-  return <div>
+  return <div className=" h-screen bg-primary">
     Your cart
   </div>;
 }

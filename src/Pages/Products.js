@@ -2,7 +2,7 @@ import React from 'react';
 
 
 function Products() {
-  return <div>
+  return <div className=" h-screen bg-primary">
     products
   </div>;
 }
