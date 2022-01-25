@@ -1,22 +1,60 @@
-import React, {useRef, useState, useContext} from 'react';
+import React, {useRef, useState} from 'react';
 import Logo from '../Assets/Logo.svg';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../Contexts/AuthContext'
 import { useNavigate } from 'react-router-dom'
+import { auth } from '../firebase';
 
 
 function Login({ closeModal, handleCloseModal}) {
+
+    const emailRef = useRef()
+    const passwordRef = useRef()
+    const { login } = useAuth()
+    const navigate = useNavigate()
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState('')
+
+    const {currentUser} = useAuth()
+
+    console.log(currentUser)
+
+
+    async function handleSubmit(e) {
+      e.preventDefault()
+
+      if( currentUser.email === emailRef.current.value) {
+        setError("You already logged in")
+        navigate('/Profile')
+      }
+      
+      try {
+      setError('')
+      setLoading(true)
+      await login(emailRef.current.value, passwordRef.current.value)
+      .then((response) => console.log(response.user.email))
+      .catch((error) => console.log(error.message))
+      navigate('/Profile')
+      
+      } catch {
+        setError('Failed to Login')
+      }
+      setLoading(false)
+    }
+  
+
+
+    
   return (
     <div className=" container mx-auto w-full h-min my-auto bg-black rounded-xl">
       <div className="flex bg-secondary w-full flex-col align-middle justify-center rounded-xl">
         <div className=" -m-4">
           <button
-            className="mr-auto float-right border-1 rounded border-primary cursor-pointer bg-inherit  hover:animate-pulse"
+            className="mr-auto float-right border-1 z-50 rounded border-primary cursor-pointer  hover:animate-spin"
             onClick={handleCloseModal}
           >
-            
-            <AiFillCloseCircle className=" w-12 h-12 text-primary border-2 border-tonage rounded-full" />
+            <AiFillCloseCircle className=" w-12 h-12 text-primary border-2 border-tonage rounded-full z-50" />
           </button>
         </div>
         <div className="justify-center text-center py-5">
@@ -31,7 +69,7 @@ function Login({ closeModal, handleCloseModal}) {
           </span>
         </div>
         <div className="flex justify-center flex-col mx-auto w-full">
-          <form  className="flex justify-center flex-col mx-auto w-full  ">
+          <form onSubmit={handleSubmit} className="flex justify-center flex-col mx-auto w-full  ">
             <div className="my-4 mx-auto flex flex-col ">
               <label htmlFor="email" className=" text-center ">
                 Enter your e-mail:
@@ -42,6 +80,7 @@ function Login({ closeModal, handleCloseModal}) {
                 name="email"
                 placeholder="...ex@example.com"
                 required
+                ref={emailRef}
                
               />
               
@@ -54,41 +93,36 @@ function Login({ closeModal, handleCloseModal}) {
               <input
                 type="password"
                 className=" w-96 h-12 my-4 px-5 rounded-2xl placeholder:text-center"
-                placeholder="Choose a password min. 8 characters."
+                placeholder="Your password"
                 required
                 name="password"
                 minLength="8"
+                ref={passwordRef}
                 
               />
               
             </div>
-            <div className="my-4 mx-auto flex flex-col ">
-              <label htmlFor="cPassword" className=" text-center">
-                Confirm your password:
-              </label>
-              <input
-                type="password"
-                className=" w-96 h-12 rounded-2xl my-4 px-5 placeholder:text-center"
-                placeholder="Retype your password"
-                required
-                minLength="8"
-                name="cPassword"
-                
-              />
-              
-            </div>
+          
             <span className="text-center text-red-600"></span>
             <div 
            
             className="my-16 px-5 h-12 flex flex-col align-middle mx-auto rounded-2xl bg-primary border-2 border-tonage justify-center cursor-pointer hover:animate-pulse text-textMain">
-              <button type="submit"> Sign Up</button>
+              <button type="submit"> Login </button>
             </div>
           </form>
 
-          <div className="text-center mb-4">
+          <div className="text-center">
             <hr className="border-4 border-primary"/>
-            <span className="mx-4">Do you already have an account?</span>
-            <Link to="/Login" className=" bg-primary border-2 border-tonage px-5 rounded-2xl mx-4 text-textMain hover:animate-pulse"> Login </Link>
+            <span className="mx-4">Forgot your password?</span>
+            <Link to="/Signup" className=" bg-primary border-2 border-tonage px-5 rounded-2xl mx-4 text-textMain hover:animate-pulse">New Password </Link>
+            <hr className="border-4 border-primary"/>
+          </div>
+
+
+          <div className="text-center mb-4">
+           
+            <span className="mx-4">Do you need an account?</span>
+            <Link to="/Signup" className=" bg-primary border-2 border-tonage px-5 rounded-2xl mx-4 text-textMain hover:animate-pulse">Sign Up </Link>
             <hr className="border-4 border-primary"/>
           </div>
 

@@ -14,14 +14,13 @@ import { RiHeart2Line, RiProductHuntLine } from 'react-icons/ri';
 import { Link, Outlet } from 'react-router-dom';
 import { IoCreate } from 'react-icons/io5';
 import { CgProfile } from 'react-icons/cg';
-import { useAuth } from '../Contexts/AuthContext'
+import { auth } from '../firebase'
 
 
 function Navbar() {
 
 
-  const { auth } = useAuth()
-  
+ 
 
   const anim = useSpring({
     from: { opacity: 0, marginTop: -500 },
@@ -35,6 +34,7 @@ function Navbar() {
     delay: 350,
   });
 
+  
   return (
     <div>
       <div className="h-20 w-full bg-primary flex flex-row justify-between">

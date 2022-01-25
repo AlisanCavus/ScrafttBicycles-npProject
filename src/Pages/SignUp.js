@@ -11,6 +11,7 @@ function SignUp({ close, setClose, handleCloseModal }) {
     const emailRef = useRef()
     const passwordRef = useRef()
     const cPasswordRef = useRef()
+    const [termsConds, setTermsConds] = useState(false)
     const { register } = useAuth()
     const navigate = useNavigate()
     const [loading, setLoading] = useState(false)
@@ -19,14 +20,18 @@ function SignUp({ close, setClose, handleCloseModal }) {
     const {setAuth} = useAuth()
   
    
+    const terms = (e) => {
+      setTermsConds(e.target.checked)
+     
+    }
 
     async function handleSubmit(e) {
       e.preventDefault()
 
       if (passwordRef.current.value !== cPasswordRef.current.value) {
         return setError('Passwords do not matched!')
-      } else if (passwordRef.current.value < 8  ){
-        return setError('Your Password should be at least 8 characters.')
+      }  else if (termsConds !== true ){
+        return setError('You need to accept our Terms and Conditions!')
       }
       try {
       setError('')
@@ -34,25 +39,27 @@ function SignUp({ close, setClose, handleCloseModal }) {
       await register(emailRef.current.value, passwordRef.current.value)
       .then((response) => console.log(response.user.email))
       .catch((error) => console.log(error.message))
-      navigate('/')
+      navigate('/Login')
       
       } catch {
         setError('Failed to create an account')
       }
       setLoading(false)
     }
+   
 
+   
 
   return (
     <div className=" container mx-auto w-full h-min my-auto bg-black rounded-xl">
       <div className="flex bg-secondary w-full flex-col align-middle justify-center rounded-xl">
         <div className=" -m-4">
           <button
-            className="mr-auto float-right border-1 rounded border-primary cursor-pointer bg-inherit  hover:animate-pulse"
+            className="mr-auto float-right border-1 z-50 rounded border-primary cursor-pointer bg-inherit  hover:animate-spin"
             onClick={handleCloseModal}
           >
             
-            <AiFillCloseCircle className=" w-12 h-12 text-primary border-2 border-tonage rounded-full" />
+            <AiFillCloseCircle className=" w-12 h-12 text-primary border-2 border-tonage rounded-full z-50" />
           </button>
         </div>
         <div className="justify-center text-center py-5">
@@ -113,7 +120,22 @@ function SignUp({ close, setClose, handleCloseModal }) {
               />
               
             </div>
-            <span className="text-center text-red-600">{error}</span>
+            <div className="my-4 mx-auto flex flex-row ">
+              
+              <input
+                onChange={terms}
+                checked={termsConds}
+                type="checkbox"
+                className=" rounded-2xl my-4 px-5 placeholder:text-center"
+                name="acceptTerms"
+               
+              />
+              <label htmlFor="acceptTerms" className="align-middle my-auto mx-1 hover">
+                <Link to="/Terms"> Agree with Our Terms & Conditions </Link>
+              </label>
+              
+            </div>
+            <span className="text-center text-red-600"> {error}</span>
             <div 
             disabled={loading}
             className="my-16 px-5 h-12 flex flex-col align-middle mx-auto rounded-2xl bg-primary border-2 border-tonage justify-center cursor-pointer hover:animate-pulse text-textMain">
