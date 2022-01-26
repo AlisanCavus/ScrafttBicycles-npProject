@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../Contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 import LoadingScreen from "../Components/LoadingScreen";
-import { MdLogin } from "react-icons/md";
+
 
 function Login({ closeModal, handleCloseModal }) {
   const emailRef = useRef();
