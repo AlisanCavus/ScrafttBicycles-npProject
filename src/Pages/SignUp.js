@@ -42,7 +42,7 @@ function SignUp({ close, setClose, handleCloseModal }) {
   }
 
   return (
-    <div className=" container mx-auto w-3/4 h-min my-auto bg-black rounded-xl mobile:w-11/12">
+    <div className=" container  w-3/4 h-min align-middle mx-auto bg-black rounded-xl mobile:w-11/12">
       <div className="flex bg-secondary w-full flex-col align-middle justify-center rounded-xl">
         <div className=" -m-4">
           <button
@@ -58,17 +58,17 @@ function SignUp({ close, setClose, handleCloseModal }) {
             <img src={Logo} alt="logo" className=" w-16 h-16 m-0 p-0 inline " />
           </span>
         </div>
-        <div className="flex justify-center flex-col mx-auto w-full">
+        <div className="flex justify-center flex-col mx-auto w-full mobile:w-11/12">
           <form
             onSubmit={handleSubmit}
-            className="flex justify-center flex-col mx-auto w-full  "
+            className="flex justify-center flex-col mx-auto w-full mobile:w-11/12 "
           >
-            <div className="my-2 mx-auto flex flex-col ">
-              <label htmlFor="email" className=" text-center ">
+            <div className="my-2 mx-auto flex flex-col mobile:w-11/12">
+              <label htmlFor="email" className=" text-center mobile:w-11/12 ">
                 Enter your e-mail:
               </label>
               <input
-                className=" w-96 h-10 px-5 rounded-2xl placeholder:text-center my-2"
+                className=" w-96 h-10 px-5 rounded-2xl placeholder:text-center my-2 mobile:w-11/12 mobile:mx-auto"
                 type="email"
                 name="email"
                 placeholder="...ex@example.com"
@@ -76,13 +76,13 @@ function SignUp({ close, setClose, handleCloseModal }) {
                 ref={emailRef}
               />
             </div>
-            <div className="my-2 mx-auto flex flex-col ">
-              <label htmlFor="password" className="text-center">
+            <div className="my-2 mx-auto flex flex-col mobile:w-11/12">
+              <label htmlFor="password" className="text-center mobile:w-11/12">
                 Enter a password:
               </label>
               <input
                 type="password"
-                className=" w-96 h-10 my-2 px-5 rounded-2xl placeholder:text-center"
+                className=" w-96 h-10 my-2 px-5 rounded-2xl placeholder:text-center mobile:w-11/12 mobile:mx-auto"
                 placeholder="Choose a password min. 8 characters."
                 required
                 name="password"
@@ -90,13 +90,13 @@ function SignUp({ close, setClose, handleCloseModal }) {
                 ref={passwordRef}
               />
             </div>
-            <div className="my-2 mx-auto flex flex-col ">
-              <label htmlFor="cPassword" className=" text-center">
+            <div className="my-2 mx-auto flex flex-col mobile:w-11/12 ">
+              <label htmlFor="cPassword" className=" text-center mobile:w-11/12">
                 Confirm your password:
               </label>
               <input
                 type="password"
-                className=" w-96 h-10 rounded-2xl my-2 px-5 placeholder:text-center"
+                className=" w-96 h-10 rounded-2xl my-2 px-5 placeholder:text-center mobile:w-11/12"
                 placeholder="Retype your password"
                 required
                 minLength="8"
@@ -104,12 +104,12 @@ function SignUp({ close, setClose, handleCloseModal }) {
                 ref={cPasswordRef}
               />
             </div>
-            <div className="my-2 mx-auto flex flex-row ">
+            <div className="my-2 mx-auto flex flex-row mobile:w-11/12 ">
               <input
                 onChange={terms}
                 checked={termsConds}
                 type="checkbox"
-                className=" rounded-2xl my-2 px-5 placeholder:text-center"
+                className=" rounded-2xl my-2 px-5 placeholder:text-center mobile:w-11/12"
                 name="acceptTerms"
               />
               <label
