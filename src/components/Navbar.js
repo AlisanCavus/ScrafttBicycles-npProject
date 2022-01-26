@@ -55,7 +55,7 @@ function Navbar() {
   
   return (
     <div>
-      <div className="h-20 w-full z-10 relative bg-transparent flex flex-row justify-between">
+      <div className="h-20 w-full z-10 relative bg-transparent  flex flex-row justify-between">
         <animated.div
           style={anim1}
           className=" h-15 place-content-center px-20 items-center align-middle flex mobile:px-1"

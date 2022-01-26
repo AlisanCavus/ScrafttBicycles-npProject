@@ -1,16 +1,19 @@
 import React from 'react';
 import { Parallax, ParallaxLayer } from 'react-spring'
-import HomeJumbotron from '../Components/HomeComponents/HomeJumbotron';
+import HomeText from '../Components/HomeComponents/HomeText';
+
 
 function Home() {
 
   
   return (
-    <div className=" min-h-screen bg-primary z-0 top-0 absolute">
-  
-     <HomeJumbotron />
-     
+    <div className='bg-bcycle bg-cover min-h-screen min-w-full opacity-50 -mt-[5rem]'>
+      <HomeText/>
     </div>
+    
+  
+    
+ 
   );
 }
 

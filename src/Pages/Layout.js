@@ -7,7 +7,6 @@ function Layout() {
   return (
     <>
       <Navbar />
-      <Home />
       <div>
         <Outlet />
       </div>
