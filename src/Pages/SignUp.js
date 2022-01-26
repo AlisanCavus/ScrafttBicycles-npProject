@@ -51,7 +51,7 @@ function SignUp({ close, setClose, handleCloseModal }) {
    
 
   return (
-    <div className=" container mx-auto w-full h-min my-auto bg-black rounded-xl">
+    <div className=" container mx-auto w-3/4 h-min my-auto bg-black rounded-xl">
       <div className="flex bg-secondary w-full flex-col align-middle justify-center rounded-xl">
         <div className=" -m-4">
           <button
@@ -75,12 +75,12 @@ function SignUp({ close, setClose, handleCloseModal }) {
         </div>
         <div className="flex justify-center flex-col mx-auto w-full">
           <form onSubmit={handleSubmit} className="flex justify-center flex-col mx-auto w-full  ">
-            <div className="my-4 mx-auto flex flex-col ">
+            <div className="my-2 mx-auto flex flex-col ">
               <label htmlFor="email" className=" text-center ">
                 Enter your e-mail:
               </label>
               <input
-                className=" w-96 h-12 px-5 rounded-2xl placeholder:text-center my-4"
+                className=" w-96 h-10 px-5 rounded-2xl placeholder:text-center my-2"
                 type="email"
                 name="email"
                 placeholder="...ex@example.com"
@@ -89,14 +89,14 @@ function SignUp({ close, setClose, handleCloseModal }) {
               />
               
             </div>
-            <div className="my-4 mx-auto flex flex-col ">
+            <div className="my-2 mx-auto flex flex-col ">
               <label htmlFor="password" className="text-center">
                 
                 Enter a password:
               </label>
               <input
                 type="password"
-                className=" w-96 h-12 my-4 px-5 rounded-2xl placeholder:text-center"
+                className=" w-96 h-10 my-2 px-5 rounded-2xl placeholder:text-center"
                 placeholder="Choose a password min. 8 characters."
                 required
                 name="password"
@@ -105,13 +105,13 @@ function SignUp({ close, setClose, handleCloseModal }) {
               />
               
             </div>
-            <div className="my-4 mx-auto flex flex-col ">
+            <div className="my-2 mx-auto flex flex-col ">
               <label htmlFor="cPassword" className=" text-center">
                 Confirm your password:
               </label>
               <input
                 type="password"
-                className=" w-96 h-12 rounded-2xl my-4 px-5 placeholder:text-center"
+                className=" w-96 h-10 rounded-2xl my-2 px-5 placeholder:text-center"
                 placeholder="Retype your password"
                 required
                 minLength="8"
@@ -120,34 +120,46 @@ function SignUp({ close, setClose, handleCloseModal }) {
               />
               
             </div>
-            <div className="my-4 mx-auto flex flex-row ">
+            <div className="my-2 mx-auto flex flex-row ">
               
               <input
                 onChange={terms}
                 checked={termsConds}
                 type="checkbox"
-                className=" rounded-2xl my-4 px-5 placeholder:text-center"
+                className=" rounded-2xl my-2 px-5 placeholder:text-center"
                 name="acceptTerms"
                
               />
               <label htmlFor="acceptTerms" className="align-middle my-auto mx-1 hover">
-                <Link to="/Terms"> Agree with Our Terms & Conditions </Link>
+                <Link to="/Terms" className=' text-slate-500'> Agree with Our Terms & Conditions </Link>
               </label>
               
             </div>
-            <span className="text-center text-red-600"> {error}</span>
+            
             <div 
             disabled={loading}
-            className="my-16 px-5 h-12 flex flex-col align-middle mx-auto rounded-2xl bg-primary border-2 border-tonage justify-center cursor-pointer hover:animate-pulse text-textMain">
-              <button type="submit"> Sign Up</button>
+            className="  flex flex-col align-middle mx-auto rounded-2xl bg-primary border-2 border-primary justify-center cursor-pointer hover:animate-pulse text-gray-700">
+              <button disabled={loading} type="submit"> Sign Up</button>
             </div>
           </form>
-
-          <div className="text-center mb-4">
-            <hr className="border-4 border-primary"/>
-            <span className="mx-4">Do you already have an account?</span>
-            <Link to="/Login" className=" bg-primary border-2 border-tonage px-5 rounded-2xl mx-4 text-textMain hover:animate-pulse"> Login </Link>
-            <hr className="border-4 border-primary"/>
+          <div className="h-8 w-full mx-auto text-center">
+            {error && (
+              <span className="text-center text-red-600"> {error} </span>
+            )}
+          </div>
+          <hr className='border-2 border-primary fill-primary' /> 
+          <div className="  h-16 flex flex-row justify-between">
+            <div className="w-1/2 my-auto">
+              <span className="mx-4">Do you already have an account?</span>
+            </div>
+            <div className="w-1/2 my-auto text-center">
+              <Link
+                to="/Login"
+                className=" bg-primary p-2  border-2 border-primary rounded-2xl text-gray-700 hover:animate-pulse"
+              >
+                Login
+              </Link>
+            </div>
           </div>
 
         </div>

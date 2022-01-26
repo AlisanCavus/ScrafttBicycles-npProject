@@ -8,8 +8,8 @@ import { useNavigate } from 'react-router-dom';
 
 function LoginModalWrapper() {
     const animSingUp = useSpring({
-      from: { opacity: 0, transform: 'translate3d(100%, 20%, 0px)' },
-      to: { opacity: 1, transform: 'translate3d(50%, 20%, 10px)' },
+      from: { opacity: 0, transform: 'translate3d(100%, 10%, 0px)' },
+      to: { opacity: 1, transform: 'translate3d(50%, 10%, 0px)' },
       delay: 500,
     });
   

@@ -72,7 +72,7 @@ function Login({ closeModal, handleCloseModal }) {
             onSubmit={handleSubmit}
             className="flex justify-center flex-col mx-auto w-full  "
           >
-            <div className="my-4 mx-auto flex flex-col ">
+            <div className="my-2 mx-auto flex flex-col ">
               <label htmlFor="email" className=" text-center ">
                 Enter your e-mail:
               </label>
@@ -85,7 +85,7 @@ function Login({ closeModal, handleCloseModal }) {
                 ref={emailRef}
               />
             </div>
-            <div className="my-4 mx-auto flex flex-col ">
+            <div className="my-2 mx-auto flex flex-col ">
               <label htmlFor="password" className="text-center">
                 Enter a password:
               </label>
@@ -102,7 +102,7 @@ function Login({ closeModal, handleCloseModal }) {
 
             <div
               disabled={loading}
-              className=" my-auto flex flex-col align-middle mx-auto rounded-2xl bg-primary border-2 border-primary justify-center cursor-pointer hover:animate-pulse text-gray-500"
+              className="  flex flex-col align-middle mx-auto rounded-2xl bg-primary border-2 border-primary justify-center cursor-pointer hover:animate-pulse text-gray-700"
             >
               <div className="p-2 flex flex-row">
               <IoKeyOutline className="my-auto mx-1"/>
@@ -118,7 +118,7 @@ function Login({ closeModal, handleCloseModal }) {
               <span className="text-center text-red-600"> {error} </span>
             )}
           </div>
-
+              <hr className='border-2 border-primary fill-primary' />
           <div className=" h-16 flex flex-row ">
             <div className="w-1/2 my-auto">
               <span className="mx-4">Forgot your password?</span>
@@ -126,13 +126,13 @@ function Login({ closeModal, handleCloseModal }) {
             <div className="w-1/2 my-auto text-center">
               <Link
                 to="/Signup"
-                className=" bg-primary border-2 p-2 border-primary rounded-2xl text-gray-500 hover:animate-pulse"
+                className=" bg-primary border-2 p-2 border-primary rounded-2xl text-gray-700 hover:animate-pulse"
               >
                 New Password
               </Link>
             </div>
           </div>
-              
+          <hr className='border-2 border-primary fill-primary' />   
           <div className="  h-16 flex flex-row justify-between">
             <div className="w-1/2 my-auto">
               <span className="mx-4">Do you need an account?</span>
@@ -140,7 +140,7 @@ function Login({ closeModal, handleCloseModal }) {
             <div className="w-1/2 my-auto text-center">
               <Link
                 to="/Signup"
-                className=" bg-primary p-2  border-2 border-primary rounded-2xl text-gray-500 hover:animate-pulse"
+                className=" bg-primary p-2  border-2 border-primary rounded-2xl text-gray-700 hover:animate-pulse"
               >
                 Sign Up
               </Link>

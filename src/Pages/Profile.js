@@ -1,9 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
+import { useAuth } from '../Contexts/AuthContext';
 
 
 function Profile() {
+
+const { currentUser } = useAuth()
+
+
+
   return <div className=" h-screen bg-primary">
-   Profile
+     <div className=' z-50 absolute'> {currentUser?.email} </div>
   </div>;
 }
 
