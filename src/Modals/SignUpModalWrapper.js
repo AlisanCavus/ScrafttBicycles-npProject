@@ -25,9 +25,9 @@ function SignUpModalWrapper() {
       <div
       onClick={handleCloseModal}
         className=" top-0 left-0 bg-opacity-50 bg-black
-     fixed z-[1] w-full h-full overflow-auto flex align-middle justify-center"
+     fixed z-[1] w-full h-full overflow-auto flex align-middle justify-center mobile:w-screen"
       ></div>
-      <animated.div className="mx-auto translate-x-1/2 -translate-y-1/2  w-1/2 h-3/4 z-[999] absolute " style={animSingUp}>
+      <animated.div className="mx-auto translate-x-1/2 -translate-y-1/2  w-1/2 h-3/4 z-[999] absolute mobile:w-screen " style={animSingUp}>
         <Signup
           close={close}
           setClose={setClose}
