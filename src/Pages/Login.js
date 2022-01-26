@@ -1,11 +1,11 @@
-import React, { useRef, useState, useEffect } from 'react';
-import Logo from '../Assets/Logo.svg';
-import { AiFillCloseCircle } from 'react-icons/ai';
-import { Link } from 'react-router-dom';
-import { useAuth } from '../Contexts/AuthContext';
-import { useNavigate } from 'react-router-dom';
-import LoadingScreen from '../Components/LoadingScreen';
-import { IoKeyOutline } from 'react-icons/io5'
+import React, { useRef, useState, useEffect } from "react";
+import Logo from "../Assets/Logo.svg";
+import { AiFillCloseCircle } from "react-icons/ai";
+import { Link } from "react-router-dom";
+import { useAuth } from "../Contexts/AuthContext";
+import { useNavigate } from "react-router-dom";
+import LoadingScreen from "../Components/LoadingScreen";
+import { MdLogin } from "react-icons/md";
 
 function Login({ closeModal, handleCloseModal }) {
   const emailRef = useRef();
@@ -13,7 +13,7 @@ function Login({ closeModal, handleCloseModal }) {
   const { login } = useAuth();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   const { currentUser } = useAuth();
 
@@ -31,7 +31,7 @@ function Login({ closeModal, handleCloseModal }) {
     e.preventDefault();
 
     try {
-      setError('');
+      setError("");
       setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value)
         .then((response) => console.log(response.user.email))
@@ -47,7 +47,7 @@ function Login({ closeModal, handleCloseModal }) {
       // maybe trigger a loading screen
       return <LoadingScreen />;
     }
-    if (currentUser) navigate('/Profile');
+    if (currentUser) navigate("/Profile");
   }, [currentUser, navigate, loading]);
 
   return (
@@ -105,11 +105,10 @@ function Login({ closeModal, handleCloseModal }) {
               className="  flex flex-col align-middle mx-auto rounded-2xl bg-primary border-2 border-primary justify-center cursor-pointer hover:animate-pulse text-gray-700"
             >
               <div className="p-2 flex flex-row">
-              <IoKeyOutline className="my-auto mx-1"/>
-              <button disabled={loading} type="submit">
-                
-                Login
-              </button>
+                <MdLogin className="my-auto mx-1" />
+                <button disabled={loading} type="submit">
+                  Login
+                </button>
               </div>
             </div>
           </form>
@@ -118,7 +117,7 @@ function Login({ closeModal, handleCloseModal }) {
               <span className="text-center text-red-600"> {error} </span>
             )}
           </div>
-              <hr className='border-2 border-primary fill-primary' />
+          <hr className="border-2 border-primary fill-primary" />
           <div className=" h-16 flex flex-row ">
             <div className="w-1/2 my-auto">
               <span className="mx-4">Forgot your password?</span>
@@ -132,7 +131,7 @@ function Login({ closeModal, handleCloseModal }) {
               </Link>
             </div>
           </div>
-          <hr className='border-2 border-primary fill-primary' />   
+          <hr className="border-2 border-primary fill-primary" />
           <div className="  h-16 flex flex-row justify-between">
             <div className="w-1/2 my-auto">
               <span className="mx-4">Do you need an account?</span>
