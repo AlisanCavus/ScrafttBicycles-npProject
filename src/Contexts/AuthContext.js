@@ -24,6 +24,7 @@ export default function AuthContextProvider({children}) {
 
     function login (email,password) {
         return signInWithEmailAndPassword(auth, email, password)
+       
     }
 
     function logout() {

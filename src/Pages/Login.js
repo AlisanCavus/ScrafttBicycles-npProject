@@ -35,9 +35,9 @@ function Login({ closeModal, handleCloseModal }) {
       setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value)
         .then((response) => console.log(response.user.email))
-        .catch((error) => console.log(error.message));
+        .catch((error) => setError(error.message));
     } catch (err) {
-      setError(err.message);
+      console.log(err)
     }
     setLoading(false);
   }
@@ -61,10 +61,15 @@ function Login({ closeModal, handleCloseModal }) {
             <AiFillCloseCircle className=" w-12 h-12 text-primary border-2 border-tonage rounded-full z-50" />
           </button>
         </div>
-        <div className="justify-center text-center py-5">
+        <div className="justify-center text-center">
           <span>
-            Welcome to the
-            <img src={Logo} alt="logo" className=" w-16 h-16 m-0 p-0 inline " />
+            <img src={Logo} alt="logo" className=" w-24 h-24 m-0 p-0 inline" />
+            
+          </span>
+        </div>
+        <div className="justify-center text-center mb-4">
+          <span className=" text-lg text-slate-600">
+            Login to Your Account
           </span>
         </div>
         <div className="flex justify-center flex-col mx-auto w-full">
@@ -73,11 +78,11 @@ function Login({ closeModal, handleCloseModal }) {
             className="flex justify-center flex-col mx-auto w-full  "
           >
             <div className="my-2 mx-auto flex flex-col ">
-              <label htmlFor="email" className=" text-center ">
+              <label htmlFor="email" className="  ">
                 Enter your e-mail:
               </label>
               <input
-                className=" w-96 h-10 px-5 rounded-2xl placeholder:text-center my-2"
+                className=" w-96 h-10 px-5 rounded-xl placeholder:text-center my-2 focus:shadow-md shadow-md focus:shadow-slate-600 focus:scale-105 focus:outline-none"
                 type="email"
                 name="email"
                 placeholder="...ex@example.com"
@@ -86,12 +91,12 @@ function Login({ closeModal, handleCloseModal }) {
               />
             </div>
             <div className="my-2 mx-auto flex flex-col ">
-              <label htmlFor="password" className="text-center">
-                Enter a password:
+              <label htmlFor="password" className="">
+                Enter your password:
               </label>
               <input
                 type="password"
-                className=" w-96 h-10 my-2 px-5 rounded-2xl placeholder:text-center"
+                className=" w-96 h-10 my-2 px-5 rounded-xl placeholder:text-center shadow-md focus:shadow-lg focus:scale-105 focus:shadow-slate-600 focus:outline-none"
                 placeholder="Your password"
                 required
                 name="password"
@@ -100,51 +105,42 @@ function Login({ closeModal, handleCloseModal }) {
               />
             </div>
 
+            {error && (
+              <span className="text-center text-red-600 my-2"> {error} </span>
+            )}
+
             <div
               disabled={loading}
-              className="  flex flex-col align-middle mx-auto rounded-2xl bg-primary border-2 border-primary justify-center cursor-pointer hover:animate-pulse text-gray-700"
-            >
-              <div className="p-2 flex flex-row">
-                <MdLogin className="my-auto mx-1" />
-                <button disabled={loading} type="submit">
+              className="  flex flex-col w-96 mx-auto my-9 align-middle rounded-xl shadow-md  bg-primary h-10 border-primary justify-center cursor-pointer hover:animate-pulse text-gray-700 ">
+              <div className=" h-9 flex flex-row text-center justify-center">
+                <button disabled={loading} type="submit" className="text-center align-middle">
                   Login
                 </button>
               </div>
             </div>
           </form>
-          <div className="h-8 w-full mx-auto text-center">
-            {error && (
-              <span className="text-center text-red-600"> {error} </span>
-            )}
-          </div>
-          <hr className="border-2 border-primary fill-primary" />
-          <div className=" h-16 flex flex-row ">
-            <div className="w-1/2 my-auto">
-              <span className="mx-4">Forgot your password?</span>
-            </div>
-            <div className="w-1/2 my-auto text-center">
+        
+          <div className=" w-96  flex flex-row justify-between text-sm mx-auto">
+            <div className="w-full my-auto">
               <Link
                 to="/Signup"
-                className=" bg-primary border-2 p-2 border-primary rounded-2xl text-gray-700 hover:animate-pulse"
-              >
-                New Password
+                className="  text-gray-700  hover:animate-pulse">
+                Forgot your password? 
               </Link>
             </div>
           </div>
-          <hr className="border-2 border-primary fill-primary" />
-          <div className="  h-16 flex flex-row justify-between">
-            <div className="w-1/2 my-auto">
-              <span className="mx-4">Do you need an account?</span>
-            </div>
-            <div className="w-1/2 my-auto text-center">
-              <Link
+          
+          <div className="w-96 mb-2 flex flex-row mx-auto text-sm ">
+            <div className="w-full my-auto">
+              <span className=""> Do you need an account? &nbsp; <Link
                 to="/Signup"
-                className=" bg-primary p-2  border-2 border-primary rounded-2xl text-gray-700 hover:animate-pulse"
-              >
-                Sign Up
-              </Link>
+                className="  text-gray-700 underline-offset-4 no-underline hover:underline hover:animate-pulse">
+                 Signup
+              </Link></span>
             </div>
           </div>
+         
+          
         </div>
       </div>
     </div>

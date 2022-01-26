@@ -52,11 +52,13 @@ function SignUp({ close, setClose, handleCloseModal }) {
             <AiFillCloseCircle className=" w-12 h-12 text-primary border-2 border-tonage rounded-full z-50" />
           </button>
         </div>
-        <div className="justify-center text-center py-5">
+        <div className="justify-center text-center">
           <span>
-            Welcome to the
-            <img src={Logo} alt="logo" className=" w-16 h-16 m-0 p-0 inline " />
+            <img src={Logo} alt="logo" className=" w-24 h-24 m-0 p-0 inline " />
           </span>
+        </div>
+        <div className="justify-center text-center mb-4">
+          <span className=" text-slate-700 text-xl ">Signup for your dream bike!</span>
         </div>
         <div className="flex justify-center flex-col mx-auto w-full mobile:w-11/12">
           <form
@@ -64,11 +66,11 @@ function SignUp({ close, setClose, handleCloseModal }) {
             className="flex justify-center flex-col mx-auto w-full mobile:w-11/12 "
           >
             <div className="my-2 mx-auto flex flex-col mobile:w-11/12">
-              <label htmlFor="email" className=" text-center mobile:w-11/12 ">
+              <label htmlFor="email" className=" mobile:w-11/12 ">
                 Enter your e-mail:
               </label>
               <input
-                className=" w-96 h-10 px-5 rounded-2xl placeholder:text-center my-2 mobile:w-11/12 mobile:mx-auto"
+                className=" w-96 h-10 px-5 rounded-xl placeholder:text-center my-2 mobile:w-11/12 mobile:mx-auto focus:shadow-md shadow-md focus:shadow-slate-600 focus:scale-105 focus:outline-none"
                 type="email"
                 name="email"
                 placeholder="...ex@example.com"
@@ -77,12 +79,12 @@ function SignUp({ close, setClose, handleCloseModal }) {
               />
             </div>
             <div className="my-2 mx-auto flex flex-col mobile:w-11/12">
-              <label htmlFor="password" className="text-center mobile:w-11/12">
+              <label htmlFor="password" className=" mobile:w-11/12">
                 Enter a password:
               </label>
               <input
                 type="password"
-                className=" w-96 h-10 my-2 px-5 rounded-2xl placeholder:text-center mobile:w-11/12 mobile:mx-auto"
+                className=" w-96 h-10 my-2 px-5 rounded-xl placeholder:text-center mobile:w-11/12 mobile:mx-auto focus:shadow-md shadow-md focus:shadow-slate-600 focus:scale-105 focus:outline-none"
                 placeholder="Choose a password min. 8 characters."
                 required
                 name="password"
@@ -91,12 +93,12 @@ function SignUp({ close, setClose, handleCloseModal }) {
               />
             </div>
             <div className="my-2 mx-auto flex flex-col mobile:w-11/12 ">
-              <label htmlFor="cPassword" className=" text-center mobile:w-11/12">
+              <label htmlFor="cPassword" className=" mobile:w-11/12">
                 Confirm your password:
               </label>
               <input
                 type="password"
-                className=" w-96 h-10 rounded-2xl my-2 px-5 placeholder:text-center mobile:w-11/12"
+                className=" w-96 h-10 rounded-xl my-2 px-5 placeholder:text-center mobile:w-11/12 focus:shadow-md shadow-md focus:shadow-slate-600 focus:scale-105 focus:outline-none"
                 placeholder="Retype your password"
                 required
                 minLength="8"
@@ -104,33 +106,37 @@ function SignUp({ close, setClose, handleCloseModal }) {
                 ref={cPasswordRef}
               />
             </div>
-            <div className="my-2 mx-auto flex flex-row mobile:w-11/12 ">
+            <div className="my-3 mx-auto flex flex-row mobile:w-11/12 ">
               <input
                 onChange={terms}
                 checked={termsConds}
                 type="checkbox"
-                className=" rounded-2xl my-2 px-5 placeholder:text-center mobile:w-11/12"
+                className=" rounded-xl my-2 px-5 placeholder:text-center mobile:w-11/12 focus:shadow-md shadow-md focus:shadow-slate-600 focus:scale-105 focus:outline-none"
                 name="acceptTerms"
               />
               <label
                 htmlFor="acceptTerms"
-                className="align-middle my-auto mx-1 hover"
-              >
-                <Link to="/Terms" className=" text-slate-500">
-                  {" "}
-                  Agree with Our Terms & Conditions{" "}
-                </Link>
+                className="align-middle my-auto mx-1  hover:underline" >
+                <a
+                  href="https://thatsthefinger.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className=" text-slate-500 visited:text-slate-600 focus:text-slate-600"
+                >
+                  
+                  Agree with Our Terms & Conditions
+                </a>
               </label>
             </div>
 
             <div
               disabled={loading}
-              className="  flex flex-col align-middle mx-auto rounded-2xl bg-primary border-2 border-primary justify-center cursor-pointer hover:animate-pulse text-gray-700"
+              className="  flex flex-col align-middle mx-auto rounded-xl w-96 bg-primary  border-primary justify-center cursor-pointer hover:animate-pulse text-gray-700 my-2.5"
             >
-              <div className="p-2 flex flex-row">
-                <IoCreate className="my-auto mx-1" />
+              <div className="h-10  flex flex-row text-center align-middle justify-center">
+
                 <button disabled={loading} type="submit">
-                  {" "}
+                  
                   Sign Up
                 </button>
               </div>
@@ -141,18 +147,19 @@ function SignUp({ close, setClose, handleCloseModal }) {
               <span className="text-center text-red-600"> {error} </span>
             )}
           </div>
-          <hr className="border-2 border-primary fill-primary" />
-          <div className="  h-16 flex flex-row justify-between">
-            <div className="w-1/2 my-auto">
-              <span className="mx-4">Do you already have an account?</span>
-            </div>
-            <div className="w-1/2 my-auto text-center">
+         
+          <div className=" w-96 mb-2 flex flex-row mx-auto text-sm">
+            <div className="w-full my-auto">
+              <span className="">Do you already have an account? &nbsp; </span>
+              
               <Link
                 to="/Login"
-                className=" bg-primary p-2  border-2 border-primary rounded-2xl text-gray-700 hover:animate-pulse"
+                className=" text-gray-700 underline-offset-4 no-underline hover:underline hover:animate-pulse"
               >
                 Login
               </Link>
+            
+            
             </div>
           </div>
         </div>

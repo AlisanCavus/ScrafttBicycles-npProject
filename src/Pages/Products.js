@@ -3,7 +3,7 @@ import React from 'react';
 
 function Products() {
   return <div className=" h-screen bg-primary">
-    products
+    <div className='absolute'>Products</div>
   </div>;
 }
 
