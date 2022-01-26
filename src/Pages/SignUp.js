@@ -1,10 +1,10 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect} from "react";
 import Logo from "../Assets/Logo.svg";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { useAuth } from "../Contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
-import { IoCreate } from "react-icons/io5";
+
 
 function SignUp({ close, setClose, handleCloseModal }) {
   const emailRef = useRef();
@@ -15,6 +15,16 @@ function SignUp({ close, setClose, handleCloseModal }) {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+
+  const mounted = useRef(false);
+
+  useEffect(() => {
+    mounted.current = true;
+
+    return () => {
+      mounted.current = false;
+    };
+  }, []);
 
   const terms = (e) => {
     setTermsConds(e.target.checked);
