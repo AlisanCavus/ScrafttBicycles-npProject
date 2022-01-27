@@ -69,7 +69,7 @@ function Navbar() {
           <animated.div style={anim}>
             <Menu
               as="div"
-              className="flex flex-column relative mobile:content-center mobile:mx-auto"
+              className="flex flex-column relative mobile:content-center mobile:mx-auto mobile:p-0"
             >
               <Menu.Button className="place-content-center flex my-auto hover group flex-row -scale-x-100 ">
                 <AiOutlineLine className=" text-gray-700 mt-6  -right-[1rem]   group-hover:animate-bounce group-active:animate-bounce "></AiOutlineLine>
