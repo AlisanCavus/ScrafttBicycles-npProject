@@ -27,7 +27,7 @@ function FirstJumb() {
     };
   }, []);
 
-  console.log(scroll);
+  
 
   const styles = {
     transform: `translateX(${scroll.y}px)`,

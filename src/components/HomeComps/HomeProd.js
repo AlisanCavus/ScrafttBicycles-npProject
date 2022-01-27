@@ -19,18 +19,22 @@ function HomeProd() {
     };
   }, []);
 
-  
-
-  console.log(scroll);
+  console.log(scroll.y);
 
   const styles = {
     transform: `translateX(${scroll.y / 1.15}px)`,
-    opacity: `0.${55000000000000 * scroll.y}`
+    opacity: `0.${999999000 * scroll.y}`,
+  };
+
+  const stt = {
+    transform: `translateX(${scroll.y}px)`,
+    height: '100vh',
+    
   };
   return (
     <div>
       <div className=" bg-primary max-h-screen w-full rounded-xl relative mobile:border-0 mobile:width:3/4">
-        <div className="flex flex-auto">
+        <div className="flex flex-auto mobile:flex-col ">
           <div style={styles}>
             <div className="h-80 w-full flex flex-row justify-center mobile:w-11/12 ">
               <div className="flex flex-col justify-center h-80 w-full mobile:w-11/12 absolute top-1/4">
@@ -52,13 +56,14 @@ function HomeProd() {
               </div>
             </div>
           </div>
-
-          <div className="w-10/12 m-0 -top-40">
-            <img
-              src="https://images.pexels.com/photos/5446308/pexels-photo-5446308.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-              className="max-h-screen top-0"
-              alt="Homeprodbike"
-            />
+          <div style={stt}>
+            <div className="w-full m-0  max-h-screen -translate-x-[150%]">
+              <img
+                src="https://images.pexels.com/photos/5446308/pexels-photo-5446308.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                className="max-h-screen "
+                alt="Homeprodbike"
+              />
+            </div>
           </div>
         </div>
       </div>
