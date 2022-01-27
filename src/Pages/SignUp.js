@@ -53,13 +53,13 @@ function SignUp({ close, setClose, handleCloseModal }) {
 
   return (
     <div className=" container  w-3/4 h-min align-middle mx-auto bg-black rounded-xl mobile:w-11/12">
-      <div className="flex bg-secondary w-full flex-col align-middle justify-center rounded-xl">
+      <div className="flex bg-primary w-full flex-col align-middle justify-center rounded-xl">
         <div className=" -m-4">
           <button
-            className="mr-auto float-right border-1 z-50 rounded border-primary cursor-pointer bg-inherit  hover:animate-spin"
+            className="mr-auto float-right border-1 z-50 rounded border-slate-700 cursor-pointer  bg-inherit  hover:animate-spin"
             onClick={handleCloseModal}
           >
-            <AiFillCloseCircle className=" w-12 h-12 text-primary border-2 border-tonage rounded-full z-50" />
+            <AiFillCloseCircle className=" w-12 h-12 text-slate-700 border-2 border-slate-700 rounded-full z-50" />
           </button>
         </div>
         <div className="justify-center text-center">
@@ -141,7 +141,7 @@ function SignUp({ close, setClose, handleCloseModal }) {
 
             <div
               disabled={loading}
-              className="  flex flex-col align-middle mx-auto rounded-xl w-96 bg-primary  border-primary justify-center cursor-pointer hover:animate-pulse text-gray-700 my-2.5"
+              className="  flex flex-col align-middle mx-auto rounded-xl w-96 bg-secondary  border-secondary shadow-md justify-center cursor-pointer hover:animate-pulse text-gray-700 my-2.5"
             >
               <div className="h-10  flex flex-row text-center align-middle justify-center">
 

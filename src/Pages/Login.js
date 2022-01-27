@@ -52,13 +52,13 @@ function Login({ closeModal, handleCloseModal }) {
 
   return (
     <div className=" container mx-auto w-3/4 h-min my-auto bg-black rounded-xl">
-      <div className="flex bg-secondary w-full flex-col align-middle justify-center rounded-xl">
+      <div className="flex bg-primary w-full flex-col align-middle justify-center rounded-xl">
         <div className=" -m-4">
           <button
-            className="mr-auto float-right border-1 z-50 rounded border-primary cursor-pointer  hover:animate-spin"
+            className="mr-auto float-right border-1 z-50 rounded border-slate-700 cursor-pointer  hover:animate-spin"
             onClick={handleCloseModal}
           >
-            <AiFillCloseCircle className=" w-12 h-12 text-primary border-2 border-tonage rounded-full z-50" />
+            <AiFillCloseCircle className=" w-12 h-12 text-slate-700 border-2 border-slate-700 rounded-full z-50" />
           </button>
         </div>
         <div className="justify-center text-center">
@@ -111,7 +111,7 @@ function Login({ closeModal, handleCloseModal }) {
 
             <div
               disabled={loading}
-              className="  flex flex-col w-96 mx-auto my-9 align-middle rounded-xl shadow-md  bg-primary h-10 border-primary justify-center cursor-pointer hover:animate-pulse text-gray-700 ">
+              className="  flex flex-col w-96 mx-auto my-9 align-middle rounded-xl shadow-md  bg-secondary h-10 border-secondary justify-center cursor-pointer hover:animate-pulse text-gray-700 ">
               <div className=" h-9 flex flex-row text-center justify-center">
                 <button disabled={loading} type="submit" className="text-center align-middle">
                   Login
