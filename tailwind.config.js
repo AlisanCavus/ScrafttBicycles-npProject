@@ -39,9 +39,11 @@ module.exports = {
         abitgray: "#a69cac"
       },
       backgroundImage:{
-        'bcycle' : "url('https://images.pexels.com/photos/686230/pexels-photo-686230.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260')",
+        'bicycle' : "url('https://images.pexels.com/photos/686230/pexels-photo-686230.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260') ",
       }
     },
   },
   plugins: [],
 }
+
+

@@ -55,7 +55,7 @@ function Navbar() {
   
   return (
     <div>
-      <div className="h-20 w-full z-10 relative bg-transparent  flex flex-row justify-between">
+      <div className="h-20 w-full z-10 fixed  top-0 bg-transparent flex flex-row justify-between ">
         <animated.div
           style={anim1}
           className=" h-15 place-content-center px-20 items-center align-middle flex mobile:px-1"
@@ -71,7 +71,7 @@ function Navbar() {
               as="div"
               className="flex flex-column relative mobile:content-center mobile:mx-auto"
             >
-              <Menu.Button className="place-content-center flex my-auto hover group flex-row">
+              <Menu.Button className="place-content-center flex my-auto hover group flex-row -scale-x-100 ">
                 <AiOutlineLine className=" text-gray-700 mt-6  -right-[1rem]   group-hover:animate-bounce group-active:animate-bounce "></AiOutlineLine>
                 <AiOutlineLine className=" text-gray-700 mt-2 -right-[2rem] visible  group-hover:animate-bounce group-active:animate-bounce   "></AiOutlineLine>
                 <AiOutlineLine className=" text-gray-700  -mt-2 -right-[3rem] visible  group-hover:animate-bounce group-active:animate-bounce  "></AiOutlineLine>
@@ -87,12 +87,12 @@ function Navbar() {
                     <Link
                       className={`${
                         active
-                          ? ' bg-bart align-middle items-center flex p-1 place-content-center text-gray-800  rounded-xl  mobile:w-40'
-                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-700  rounded-xl  mobile:w-40'
+                          ? ' bg-bart align-middle items-center flex p-1 place-content-center text-gray-800 font-sans rounded-xl  mobile:w-40'
+                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-700 font-sans rounded-xl  mobile:w-40'
                       }`}
                       to="/Profile"
                     >
-                      <CgProfile className="h-6 w-6 m-0 p-1" /> Your Profile
+                      <CgProfile className="h-6 w-6 m-0 p-1 font-sans" /> Your Profile
                     </Link>
                   )}
                 </Menu.Item>)}
@@ -102,12 +102,12 @@ function Navbar() {
                     <Link
                       className={`${
                         active
-                          ? ' bg-bart align-middle items-center flex p-1 place-content-center text-gray-800  rounded-xl mobile:w-40'
-                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-700  rounded-xl  mobile:w-40 '
+                          ? ' bg-bart align-middle items-center flex p-1 place-content-center text-gray-800 font-sans rounded-xl mobile:w-40'
+                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-700 font-sans rounded-xl  mobile:w-40 '
                       }`}
                       to="/YourCart"
                     >
-                      <BsCart4 className="h-6 w-6 m-0 p-1" /> Your Cart
+                      <BsCart4 className="h-6 w-6 m-0 p-1 font-sans" /> Your Cart
                     </Link>
                   )}
                 </Menu.Item>)} 
@@ -117,12 +117,12 @@ function Navbar() {
                     <Link
                       className={`${
                         active
-                          ? ' bg-bart align-middle items-center flex p-1 place-content-center text-gray-800  rounded-xl  mobile:w-40'
-                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-700  rounded-xl mobile:w-40'
+                          ? ' bg-bart align-middle items-center flex p-1 place-content-center text-gray-800 font-sans rounded-xl  mobile:w-40'
+                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-700 font-sans rounded-xl mobile:w-40'
                       }`}
                       to="/Favorites"
                     >
-                      <RiHeart2Line className="h-6 w-6 m-0 p-1" /> Favorites
+                      <RiHeart2Line className="h-6 w-6 m-0 p-1 font-sans" /> Favorites
                     </Link>
                   )}
                 </Menu.Item>
@@ -132,12 +132,12 @@ function Navbar() {
                     <Link
                       className={`${
                         active
-                          ? ' bg-bart align-middle items-center flex p-1 place-content-center text-gray-800  rounded-xl  mobile:w-40'
-                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-700  rounded-xl  mobile:w-40'
+                          ? ' bg-bart align-middle items-center flex p-1 place-content-center text-gray-800 font-sans rounded-xl  mobile:w-40'
+                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-700 font-sans rounded-xl  mobile:w-40'
                       }`}
                       to="/Login"
                     >
-                      <MdLogin className="h-6 w-6 m-0 p-1" /> Login
+                      <MdLogin className="h-6 w-6 m-0 p-1 font-sans" /> Login
                     </Link>
                   )}
                 </Menu.Item> )}
@@ -151,8 +151,8 @@ function Navbar() {
                     <Link
                       className={`${
                         active
-                          ? ' bg-bart align-middle items-center flex p-1 place-content-center text-gray-800  rounded-xl  mobile:w-40'
-                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-700  rounded-xl  mobile:w-40'
+                          ? ' bg-bart align-middle items-center flex p-1 place-content-center text-gray-800 font-sans rounded-xl  mobile:w-40'
+                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-700 font-sans rounded-xl  mobile:w-40'
                       }`}
                       to={{
                         pathname: '/SignUp',
@@ -161,7 +161,7 @@ function Navbar() {
 
                     >
                       <IoCreate
-                        className="h-6 w-6 m-0 p-1"
+                        className="h-6 w-6 m-0 p-1 font-sans"
                       
                       />{' '}
                       Sign Up
@@ -176,12 +176,12 @@ function Navbar() {
                     <Link
                       className={`${
                         active
-                          ? ' bg-bart align-middle items-center flex p-1 place-content-center text-gray-800  rounded-xl  mobile:w-40'
-                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-700  rounded-xl  mobile:w-40'
+                          ? ' bg-bart align-middle items-center flex p-1 place-content-center text-gray-800 font-sans rounded-xl  mobile:w-40'
+                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-700 font-sans rounded-xl  mobile:w-40'
                       }`}
                       to="/Products"
                     >
-                      <RiProductHuntLine className="h-6 w-6 m-0 p-1" /> Products
+                      <RiProductHuntLine className="h-6 w-6 m-0 p-1 font-sans" /> Products
                     </Link>
                   )}
                 </Menu.Item>
@@ -190,12 +190,12 @@ function Navbar() {
                     <Link
                       className={`${
                         active
-                          ? ' bg-bart align-middle items-center flex p-1 place-content-center text-gray-800  rounded-xl  mobile:w-40'
-                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-700  rounded-xl  mobile:w-40'
+                          ? ' bg-bart align-middle items-center flex p-1 place-content-center text-gray-800 font-sans rounded-xl  mobile:w-40'
+                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-700 font-sans rounded-xl  mobile:w-40'
                       }`}
                       to="/About"
                     >
-                      <MdOutlineInfo className="h-6 w-6 m-0 p-1" /> About Us
+                      <MdOutlineInfo className="h-6 w-6 m-0 p-1 font-sans" /> About Us
                     </Link>
                   )}
                 </Menu.Item>
@@ -208,12 +208,12 @@ function Navbar() {
                     onClick={handleLogout}
                       className={`${
                         active
-                          ? ' bg-bart align-middle items-center flex p-1 place-content-center text-gray-800  rounded-xl  mobile:w-40'
-                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-700  rounded-xl  mobile:w-40'
+                          ? ' bg-bart align-middle items-center flex p-1 place-content-center text-gray-800 font-sans rounded-xl  mobile:w-40'
+                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-700 font-sans rounded-xl  mobile:w-40'
                       }`}
                       to="/"
                     >
-                      <MdLogout className="h-6 w-6 m-0 p-1" /> Logout
+                      <MdLogout className="h-6 w-6 m-0 p-1 font-sans" /> Logout
                     </Link>
                   )}
                 </Menu.Item>)}
