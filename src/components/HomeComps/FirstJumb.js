@@ -30,7 +30,7 @@ function FirstJumb() {
   console.log(scroll);
 
   const styles = {
-    transform: `translateX(${scroll.y/2}mm)`,
+    transform: `translateX(${scroll.y}px)`,
   };
 
   return (
@@ -38,7 +38,7 @@ function FirstJumb() {
       <animated.div style={anim}>
         <div style={styles}>
           <div className="w-1/2 h-1/2 m-auto left-4 top-1/2 ">
-            <span className="w-full h-1/2 m-auto left-4 text-white text-6xl font-sans">
+            <span className="w-full h-1/2 m-auto left-4 text-primary text-6xl font-semibold font-sans">
              
               Welcome to the
             </span>
