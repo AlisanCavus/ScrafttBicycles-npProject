@@ -46,7 +46,7 @@ function FirstJumb() {
           <img
             src={LogoH}
             alt="jumbotronslogo"
-            className="w-1/5 h-1/4 m-auto -translate-x-60"
+            className="w-1/5 h-1/4 m-auto -translate-x-60 mobile:-translate-x-10"
           />
         </div>
       </animated.div>

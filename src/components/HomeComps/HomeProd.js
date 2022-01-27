@@ -19,52 +19,47 @@ function HomeProd() {
     };
   }, []);
 
+  
+
   console.log(scroll);
 
-  let opc = 100 / scroll.y
-  let visib = "visible"
-
-
-  if (opc < 0.102) {
-    opc = 0
-    visib = "none"
-  } else if (opc > 0){
-      visib = "flex"
-  }
-
   const styles = {
-    transform: `translateY(${scroll.y/4}px)`,
-    opacity: opc,
-    display: visib
+    transform: `translateX(${scroll.y / 1.15}px)`,
+    opacity: `0.${55000000000000 * scroll.y}`
   };
   return (
     <div>
-      <div className="mx-auto bg-primary min-h-screen w-full rounded-xl relative mobile:border-0 mobile:width:3/4">
-        <div className="flex  justify-center text-center align-middle w-full mobile:w-4/5 mobile:mx-auto">
+      <div className=" bg-primary max-h-screen w-full rounded-xl relative mobile:border-0 mobile:width:3/4">
+        <div className="flex flex-auto">
           <div style={styles}>
-            <div className="h-40 w-full flex flex-row justify-center mobile:w-11/12">
-              <div className="flex flex-row justify-center h-40 w-3/4 mobile:w-11/12">
-                <div className="items-center h-40 align-middle flex bg-black bg-opacity-50 mobile:w-4/12">
-                  <span className=" items-center text-5xl font-semibold text-gray-700 text-sans mobile:invisible">
-                    &nbsp;100%
+            <div className="h-80 w-full flex flex-row justify-center mobile:w-11/12 ">
+              <div className="flex flex-col justify-center h-80 w-full mobile:w-11/12 absolute top-1/4">
+                <div className="w-2/12 h-80 my-16 mt-10 bg-transparent rounded-xl shadow-lg shadow-slate-700  -translate-x-[150%] ">
+                  <span className="text-center font-semibold italic font-sans text-5xl h-20">
+                    HANDCRAFTED
                   </span>
                 </div>
-                <div className="items-center h-40  align-middle flex bg-yellow-400 bg-opacity-50 mobile:w-4/12">
-                  <span className=" text-5xl font-semibold text-gray-700 align-middle text-sans mobile:invisible">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BEL
+                <div className="w-2/12 h-80 my-16 mt-10 bg-transparent rounded-xl shadow-lg shadow-slate-700   -translate-x-[160%]  ">
+                  <span className="text-center font-semibold font-sans italic text-5xl h-20">
+                    FOR
                   </span>
                 </div>
-                <div className="items-center h-40  align-middle flex bg-red-600 bg-opacity-50 mobile:w-4/12">
-                  <span className=" text-5xl font-semibold text-gray-700 text-center align-middle text-sans mobile:invisible">
-                    GIAN
+                <div className="w-2/12 h-80 my-16 mt-10 bg-transparent rounded-xl shadow-lg shadow-slate-700    -translate-x-[170%]  ">
+                  <span className="text-center font-semibold font-sans italic text-5xl h-20">
+                    YOU.
                   </span>
                 </div>
               </div>
             </div>
           </div>
-          <div></div>
-          <div></div>
-          <div></div>
+
+          <div className="w-10/12 m-0 -top-40">
+            <img
+              src="https://images.pexels.com/photos/5446308/pexels-photo-5446308.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+              className="max-h-screen top-0"
+              alt="Homeprodbike"
+            />
+          </div>
         </div>
       </div>
     </div>
