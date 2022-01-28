@@ -46,8 +46,7 @@ let scr = scroll.y / 1.4;
       <div className=" bg-primary max-h-screen w-full relative mobile:border-0 mobile:width:3/4">
         <div className="flex flex-row mobile:flex-col ">
           <div style={styles}>
-            <div className="h-80 w-full flex flex-row justify-center items-center self-center origin-center mobile:w-11/12 ">
-              <div className="flex flex-col justify-center h-96 w-full mobile:w-11/12 absolute top-1/3">
+          <div className="flex flex-col justify-center h-96 w-full mobile:w-11/12 absolute top-1/3">
                 <div className="w-2/12 h-80 my-16 mt-10 bg-transparent   ">
                   <span className="text-center font-semibold absolute italic font-sans text-slate-600 text-5xl h-20">
                     HANDCRAFTED
@@ -64,7 +63,6 @@ let scr = scroll.y / 1.4;
                   </span>
                 </div>
               </div>
-            </div>
           </div>
 
           <div style={stt}>

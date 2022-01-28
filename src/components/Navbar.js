@@ -15,6 +15,7 @@ import { Link} from 'react-router-dom';
 import { IoCreate } from 'react-icons/io5';
 import { CgProfile } from 'react-icons/cg';
 import { useAuth } from '../Contexts/AuthContext'
+import { animateScroll as scroll} from 'react-scroll'
 
 
 
@@ -61,7 +62,7 @@ function Navbar() {
           className=" h-15 place-content-center px-20 items-center align-middle flex mobile:px-1"
         >
           <Link to="/" className="flex">
-            <img src={Logo} alt="logo" className=" w-32 h-[80px]" />
+            <img src={Logo} alt="logo" className=" w-32 h-[80px]" onClick={() => scroll.scrollToTop()} />
           </Link>
         </animated.div>
 
