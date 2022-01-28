@@ -28,7 +28,7 @@ function Prod1() {
     let scrrll = Math.round(vidscr)
 
     
-    console.log(scrrll)
+    // console.log(scrrll)
 
     if (scrrll > 44 ) {
         scrrll = 45

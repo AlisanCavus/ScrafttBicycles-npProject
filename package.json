@@ -18,6 +18,8 @@
     "react-scripts": "5.0.0",
     "react-scroll": "^1.8.4",
     "react-spring": "^9.4.2",
+    "react-use-scroll-snap": "^0.0.3",
+    "scroll-snap": "^4.0.2",
     "styled-components": "^5.3.3",
     "web-vitals": "^2.1.3"
   },
