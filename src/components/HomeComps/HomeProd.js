@@ -23,14 +23,19 @@ function HomeProd() {
   let ss = Math.log(opa);
   let truncked = Math.trunc(ss);
 
-  console.log(truncked);
+  // console.log(truncked);
+let scr = scroll.y / 1.4;
+
+  if ( scr >= 515 ){
+    scr = 515.1
+  }
 
   const styles = {
-    transform: `translateX(${scroll.y / 1.4}px)`,
+    transform: `translateX(${scr}px)`,
   };
 
   const stt = {
-    transform: `translateX(${scroll.y}px)`,
+    transform: `translateX(${scr * 1.4}px)`,
   };
 
   const oppp = {
@@ -72,7 +77,7 @@ function HomeProd() {
             </div>
           </div>
 
-          <div className="w-80 h-80 flex my-auto ml-[27%] ">
+          <div className="w-80 h-80 flex mt-[25%] ml-[30%] ">
             <div className="flex justify-items-end  ">
               <div className=" align-middle flex justify-items-center items-center ">
                 <div style={oppp}>

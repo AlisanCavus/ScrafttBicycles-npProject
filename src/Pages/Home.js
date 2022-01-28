@@ -10,12 +10,15 @@ function Home() {
 
   
   return (
-    <div className=" min-h-screen bg-primary overflow-x-hidden ">
+    <div className=" min-h-screen bg-primary overflow-hidden ">
         <div className="bg-bicycle bg-cover min-h-screen opacity-60">
             <FirstJumb />
         </div>
-        <div className=" max-h-screen mx-auto  bg-primary  z-30 mobile:w-full overflow-hidden">
+        <div className=" min-h-screen mx-auto  bg-primary  z-30 mobile:w-full overflow-hidden">
           <HomeProd />
+        </div>
+        <div className="min-h-screen bg-primary overflow-hidden">
+
         </div>
     </div>
     
