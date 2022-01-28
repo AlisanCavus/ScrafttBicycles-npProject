@@ -6,7 +6,7 @@ import './index.css'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App className=" scroll-smooth" />
   </React.StrictMode>,
   document.getElementById('root')
 );

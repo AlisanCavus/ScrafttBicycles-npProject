@@ -37,7 +37,7 @@ function Home() {
   // }, () => console.log('element snapped'))
   
   return (
-    <div className=" min-h-screen bg-primary overflow-x-hidden" ref={scrollRef} >
+    <div className=" min-h-screen bg-primary overflow-x-hidden" ref={scrollRef}  >
       <div className="bg-bicycle bg-cover min-h-screen opacity-60 ">
         <FirstJumb />
       </div>
