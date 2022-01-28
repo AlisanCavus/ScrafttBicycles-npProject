@@ -52,7 +52,7 @@ function SignUp({ close, setClose, handleCloseModal }) {
   }
 
   return (
-    <div className=" container  w-3/4 h-min align-middle mx-auto bg-black rounded-xl mobile:w-11/12">
+    <div className=" container  w-3/4 h-min align-middle mx-auto bg-black rounded-xl mobile:w-11/12 ">
       <div className="flex bg-primary w-full flex-col align-middle justify-center rounded-xl">
         <div className=" -m-4">
           <button
@@ -80,10 +80,10 @@ function SignUp({ close, setClose, handleCloseModal }) {
                 Enter your e-mail:
               </label>
               <input
-                className=" w-96 h-10 px-5 rounded-xl placeholder:text-center my-2 mobile:w-11/12 mobile:mx-auto focus:shadow-md shadow-md focus:shadow-slate-600 focus:scale-105 focus:outline-none"
+                className=" w-96 h-10 px-5 rounded-xl  my-2 mobile:w-11/12 mobile:mx-auto focus:shadow-md shadow-md focus:shadow-slate-600 focus:scale-105 focus:outline-none"
                 type="email"
                 name="email"
-                placeholder="...ex@example.com"
+                placeholder="john@example.com"
                 required
                 ref={emailRef}
               />
@@ -94,8 +94,8 @@ function SignUp({ close, setClose, handleCloseModal }) {
               </label>
               <input
                 type="password"
-                className=" w-96 h-10 my-2 px-5 rounded-xl placeholder:text-center mobile:w-11/12 mobile:mx-auto focus:shadow-md shadow-md focus:shadow-slate-600 focus:scale-105 focus:outline-none"
-                placeholder="Choose a password min. 8 characters."
+                className=" w-96 h-10 my-2 px-5 rounded-xl  mobile:w-11/12 mobile:mx-auto focus:shadow-md shadow-md focus:shadow-slate-600 focus:scale-105 focus:outline-none"
+                placeholder=" Yo! 8 characters as 8 Miles"
                 required
                 name="password"
                 minLength="8"
@@ -108,8 +108,8 @@ function SignUp({ close, setClose, handleCloseModal }) {
               </label>
               <input
                 type="password"
-                className=" w-96 h-10 rounded-xl my-2 px-5 placeholder:text-center mobile:w-11/12 focus:shadow-md shadow-md focus:shadow-slate-600 focus:scale-105 focus:outline-none"
-                placeholder="Retype your password"
+                className=" w-96 h-10 rounded-xl my-2 px-5  mobile:w-11/12 focus:shadow-md shadow-md focus:shadow-slate-600 focus:scale-105 focus:outline-none"
+                placeholder="repeat it like Eminem "
                 required
                 minLength="8"
                 name="cPassword"
@@ -121,7 +121,7 @@ function SignUp({ close, setClose, handleCloseModal }) {
                 onChange={terms}
                 checked={termsConds}
                 type="checkbox"
-                className=" rounded-xl my-2 px-5 placeholder:text-center mobile:w-11/12 focus:shadow-md shadow-md focus:shadow-slate-600 focus:scale-105 focus:outline-none"
+                className=" rounded-xl my-2 px-5  mobile:w-11/12 focus:shadow-md shadow-md focus:shadow-slate-600 focus:scale-105 focus:outline-none"
                 name="acceptTerms"
               />
               <label

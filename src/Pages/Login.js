@@ -82,7 +82,7 @@ function Login({ closeModal, handleCloseModal }) {
                 Enter your e-mail:
               </label>
               <input
-                className=" w-96 h-10 px-5 rounded-xl placeholder:text-center my-2 focus:shadow-md shadow-md focus:shadow-slate-600 focus:scale-105 focus:outline-none"
+                className=" w-96 h-10 px-5 rounded-xl  my-2 focus:shadow-md shadow-md focus:shadow-slate-600 focus:scale-105 focus:outline-none"
                 type="email"
                 name="email"
                 placeholder="...ex@example.com"
@@ -96,7 +96,7 @@ function Login({ closeModal, handleCloseModal }) {
               </label>
               <input
                 type="password"
-                className=" w-96 h-10 my-2 px-5 rounded-xl placeholder:text-center shadow-md focus:shadow-lg focus:scale-105 focus:shadow-slate-600 focus:outline-none"
+                className=" w-96 h-10 my-2 px-5 rounded-xl  shadow-md focus:shadow-lg focus:scale-105 focus:shadow-slate-600 focus:outline-none"
                 placeholder="Your password"
                 required
                 name="password"
