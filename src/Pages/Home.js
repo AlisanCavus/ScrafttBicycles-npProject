@@ -9,7 +9,7 @@ function Home() {
 
 
   const scrollRef = useRef(null);
-    useScrollSnap({ ref: scrollRef, duration: 50});
+    useScrollSnap({ ref: scrollRef, duration: 150});
   // const container = useRef()
 
 

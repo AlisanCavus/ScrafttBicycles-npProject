@@ -23,7 +23,7 @@ function Prod1() {
   
 
   const vidstyle = {
-   transform: `translateX(${scroll.y / 220}vw)`
+   transform: `translateX(${scroll.y / 150}vw)`
   };
 
   
