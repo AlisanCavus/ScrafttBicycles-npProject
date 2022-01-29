@@ -1,5 +1,6 @@
 import React, { useState, useLayoutEffect } from 'react';
 
+
 function HomeProd() {
   const [scroll, setScroll] = useState({
     y: window.pageYOffset,
@@ -19,80 +20,100 @@ function HomeProd() {
     };
   }, []);
 
-  let opa = 1 / (1 / scroll.y);
-  let ss = Math.log(opa);
-  let truncked = Math.trunc(ss);
+  let scr =  (scroll.y / 1000 )
 
-  // console.log(truncked);
-let scr = scroll.y / 1.4;
+  let scr1 =  (scroll.y / 1000 )
 
-  if ( scr >= 515 ){
-    scr = 515.1
+  if (scr >= 1) {
+    scr = 1
   }
 
-  const styles = {
-    transform: `translateX(${scr}px)`,
-  };
+  // console.log(scr)
 
-  const stt = {
-    transform: `translateX(${scr * 1.4}px)`,
-  };
 
-  const oppp = {
-    opacity: `0.${truncked + 1}`,
-  };
+  const sty = {
+    transform: `scale(${scr1 * 0.7}) perspective(${scr1 * 1000}px)`,
+    opacity: `${scr}`,
+    display: 'flex',
+    flexDirection: 'column',
+    width: '33.33333%',
+    marginTop: '-2000',
+    
+
+  }
+
   return (
-    <div>
-      <div className=" bg-primary max-h-screen w-full relative mobile:border-0 mobile:width:3/4">
-        <div className="flex flex-row mobile:flex-col ">
-          <div style={styles}>
-          <div className="flex flex-col justify-center h-96 w-full mobile:w-11/12 absolute top-1/3">
-                <div className="w-2/12 h-80 my-16 mt-10 bg-transparent   ">
-                  <span className="text-center font-semibold absolute italic font-sans text-slate-600 text-5xl h-20">
-                    HANDCRAFTED
-                  </span>
-                </div>
-                <div className="w-2/12 h-80 my-16 mt-10 bg-transparent   ">
-                  <span className="text-center absolute font-semibold text-slate-600 font-sans italic text-5xl h-20">
-                    FOR
-                  </span>
-                </div>
-                <div className="w-2/12 h-80 my-16 mt-10 bg-transparent     ">
-                  <span className="text-center font-semibold absolute font-sans italic text-slate-600 text-5xl h-20">
-                    YOU.
-                  </span>
-                </div>
-              </div>
-          </div>
+    // <div className=" bg-primary max-h-screen w-full relative mobile:border-0 mobile:width:3/4">
+    //   <div className="flex flex-row mobile:flex-col ">
 
-          <div style={stt}>
-            <div className="min-w-full m-0  max-h-screen -translate-x-[150%]">
-              <img
-                src="https://images.pexels.com/photos/5446308/pexels-photo-5446308.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-                className="max-h-screen "
-                alt="Homeprodbike"
-              />
-            </div>
-          </div>
+    //       <div className="flex flex-col justify-center h-96 w-1/3 mobile:w-11/12 absolute top-1/3">
+           
+    //       </div>
 
-          <div className="w-80 h-80 flex mt-[25%] ml-[30%] ">
-            <div className="flex justify-items-end  ">
-              <div className=" align-middle flex justify-items-center items-center ">
-                <div style={oppp}>
-                  <p className="indent-20 font-medium">
-                    We made it. Just for you. Our bicycles are all hand crafted.
-                    We know you want to be unique even when you are commuting.{' '}
-                    <span className="text-slate-700 font-bold">Scraftt</span>{' '}
-                    gives you all in one. Do it in style. Check our desings
-                    inside. We are 100% sure you can find one. One more little
-                    secret for you: We are proudly Belgian so, our bikes are
-                    100% <strong> 🇧🇪 </strong> too.
-                  </p>
-                </div>
-              </div>
+    //     <div className="w-80 h-80 flex mt-[25%] ml-[30%] ">
+    //       <div className="flex justify-items-end  ">
+            // <div className=" align-middle flex justify-items-center items-center ">
+            //   <div>
+            //     <p className="indent-20 font-medium">
+            //       We made it. Just for you. Our bicycles are all hand crafted.
+            //       We know you want to be unique even when you are commuting.{' '}
+            //       <span className="text-slate-700 font-bold">Scraftt</span>{' '}
+            //       gives you all in one. Do it in style. Check our desings
+            //       inside. We are 100% sure you can find one. One more little
+            //       secret for you: We are proudly Belgian so, our bikes are
+            //       100% <strong> 🇧🇪 </strong> too.
+            //     </p>
+            //   </div>
+            // </div>
+    //       </div>
+    //     </div>
+    //   </div>
+    // </div>
+
+    <div className="flex min-h-screen">
+
+
+      <div className="w-1/3 flex object-fill bg-tamir">
+     
+      </div>
+
+      
+      <div style={sty}>
+          
+          <div className="w-full h-1/3  bg-transparent flex justify-center my-auto  items-center">
+              <span className="text-center font-semibold absolute italic font-sans text-slate-600 text-7xl h-20">
+                HANDCRAFTED
+              </span>
             </div>
-          </div>
-        </div>
+            <div className="w-full h-1/3  bg-transparent flex justify-center my-auto  items-center">
+              <span className="text-center absolute font-semibold text-slate-600 font-sans italic text-7xl h-20">
+                FOR
+              </span>
+            </div>
+            <div className="w-full h-1/3  bg-transparent  flex  justify-center my-auto  items-center">
+              <span className="text-center font-semibold absolute font-sans italic text-slate-600 text-7xl h-20">
+                YOU.
+              </span>
+            </div>
+       
+      </div>
+
+
+
+      <div className="w-1/3 align-middle flex justify-items-center items-center  ">
+      
+              <div className= "w-2/4 ">
+                <p className="indent-20 font-medium">
+                  We made it. Just for you. Our bicycles are all hand crafted.
+                  We know you want to be unique even when you are commuting.{' '}
+                  <span className="text-slate-700 font-bold">Scraftt</span>{' '}
+                  gives you all in one. Do it in style. Check our desings
+                  inside. We are 100% sure you can find one. One more little
+                  secret for you: We are proudly Belgian so, our bikes are
+                  100% <strong> 🇧🇪 </strong> too.
+                </p>
+              </div>
+            
       </div>
     </div>
   );
