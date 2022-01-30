@@ -102,7 +102,7 @@ function HomeProd() {
       </div>
 
       <div className="w-1/3 align-middle flex justify-items-center items-center relative mobile:hidden ">
-        <div className="w-2/4 absolute mobile:w-full">
+        <div className="w-full absolute mobile:w-full">
           <p style={righ} className="mobile:indent-8 mobile:text-xl mobile:w-1/2 break-words tracking-widest ml-16 mobile:mx-auto">
             We made it. Just for you. Our bicycles are all hand crafted. We know
             you want to be unique even when you are commuting.{' '}
