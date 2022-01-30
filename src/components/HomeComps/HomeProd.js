@@ -103,10 +103,10 @@ function HomeProd() {
 
       <div className="w-1/3 align-middle flex justify-items-center items-center relative mobile:hidden ">
         <div className="w-2/4 absolute mobile:w-full">
-          <p style={righ} className="mobile:indent-5 mobile:text-xl mobile:w-1/2 tracking-widest mobile:mx-auto">
+          <p style={righ} className="mobile:indent-8 mobile:text-xl mobile:w-1/2 break-words tracking-widest ml-16 mobile:mx-auto">
             We made it. Just for you. Our bicycles are all hand crafted. We know
             you want to be unique even when you are commuting.{' '}
-            <span className="text-slate-700 font-bold">Scraftt</span> gives you
+            <span className="animate-pulse text-main font-extrabold text-xl">Scraftt</span> gives you
             all in one. Do it in style. Check our desings inside. We are 100%
             sure you can find one. One more little secret for you: We are
             proudly Belgian so, our bikes are 100% <strong> 🇧🇪 </strong> too.
