@@ -51,7 +51,7 @@ function Login({ closeModal, handleCloseModal }) {
   }, [currentUser, navigate, loading]);
 
   return (
-    <div className=" container mx-auto w-3/4 h-min my-auto bg-black rounded-xl">
+    <div className=" container mx-auto w-2/4 h-min my-auto bg-black rounded-xl">
       <div className="flex bg-primary w-full flex-col align-middle justify-center rounded-xl">
         <div className=" -m-4">
           <button

@@ -1,13 +1,15 @@
 import React, { useState, useLayoutEffect } from 'react';
 import './HomeProd.css'
+import { IoIosArrowUp } from 'react-icons/io';
+import { animateScroll as scroll} from 'react-scroll'
 
 function HomeProd() {
-  const [scroll, setScroll] = useState({
+  const [scrolll, setScrolll] = useState({
     y: window.pageYOffset,
   });
 
   const handle = () => {
-    setScroll({
+    setScrolll({
       y: window.pageYOffset,
     });
   };
@@ -20,9 +22,9 @@ function HomeProd() {
     };
   }, []);
 
-  let scr = scroll.y / 1000;
+  let scr = scrolll.y / 1000;
 
-  let scr1 = scroll.y / 1000;
+  let scr1 = scrolll.y / 1000;
 
   if (scr >= 1) {
     scr = 1;
@@ -31,7 +33,7 @@ function HomeProd() {
   console.log(scr);
 
   const sty = {
-    transform: `scale(${scr1 * 0.7}) perspective(${scr1 * 1000}px)`,
+    transform: `scale(${scr1 * 0.9}) perspective(${scr1 * 1000}px)`,
     opacity: `${scr}`,
     display: 'flex',
     flexDirection: 'column',
@@ -42,7 +44,7 @@ function HomeProd() {
   };
 
   const righ = {
-    transform: ` scale(${scr1 * 1.1})`,
+    transform: ` scale(${scr1 * 1.5})`,
     textIndent: '5rem',
     fontWeight: 500,
   };
@@ -101,7 +103,7 @@ function HomeProd() {
 
       <div className="w-1/3 align-middle flex justify-items-center items-center relative mobile:hidden ">
         <div className="w-2/4 absolute mobile:w-full">
-          <p style={righ} className="mobile:indent-5 mobile:text-xl mobile:w-1/2 mobile:mx-auto">
+          <p style={righ} className="mobile:indent-5 mobile:text-xl mobile:w-1/2 tracking-widest mobile:mx-auto">
             We made it. Just for you. Our bicycles are all hand crafted. We know
             you want to be unique even when you are commuting.{' '}
             <span className="text-slate-700 font-bold">Scraftt</span> gives you
@@ -110,7 +112,12 @@ function HomeProd() {
             proudly Belgian so, our bikes are 100% <strong> 🇧🇪 </strong> too.
           </p>
         </div>
+        
       </div>
+
+      <button onClick={() => scroll.scrollToTop()} className="bg-inherit flex flex-col text-center z-50 items-end align-end justify-end mt-auto mb-5 mx-5 opacity-30 h-10  w-10 ">
+          <IoIosArrowUp className="border-black  hover:animate-spin w-full h-full" />
+        </button>
     </div>
   );
 }

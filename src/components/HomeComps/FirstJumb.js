@@ -9,28 +9,28 @@ function FirstJumb() {
     delay: 300,
   });
 
-  const [scroll, setScroll] = useState({
+  const [scrolll, setScrolll] = useState({
     y: window.pageYOffset,
   });
 
   const handle = () => {
-    setScroll({
+    setScrolll({
       y: window.pageYOffset,
     });
   };
 
   useLayoutEffect(() => {
-    window.addEventListener('scroll', handle);
+    window.addEventListener('scrolll', handle);
 
     return () => {
-      window.removeEventListener('scroll', handle);
+      window.removeEventListener('scrolll', handle);
     };
   }, []);
 
   
 
   const styles = {
-    transform: `translateX(${scroll.y}px)`,
+    transform: `translateX(${scrolll.y}px)`,
   };
 
   return (

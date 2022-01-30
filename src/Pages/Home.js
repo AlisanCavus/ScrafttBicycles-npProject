@@ -5,6 +5,7 @@ import Prod1 from "../Components/HomeComps/Prod1";
 import useScrollSnap from 'react-use-scroll-snap';
 
 
+
 function Home() {
 
 
@@ -47,6 +48,7 @@ function Home() {
       <div className="min-h-screen bg-primary overflow-hidden ">
         <Prod1 />
       </div>
+    
     </div>
   );
 }

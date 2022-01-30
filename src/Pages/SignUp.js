@@ -52,7 +52,7 @@ function SignUp({ close, setClose, handleCloseModal }) {
   }
 
   return (
-    <div className=" container  w-3/4 h-min align-middle mx-auto bg-black rounded-xl mobile:w-11/12 ">
+    <div className=" container  w-2/4 h-min align-middle mx-auto bg-black rounded-xl mobile:w-11/12 ">
       <div className="flex bg-primary w-full flex-col align-middle justify-center rounded-xl">
         <div className=" -m-4">
           <button
