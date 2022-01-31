@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+
 function ProductsCard(props) {
   const {
     id,
@@ -14,6 +15,8 @@ function ProductsCard(props) {
     price,
   } = props;
 
+
+
   return (
     <li
       key={id}
@@ -23,13 +26,16 @@ function ProductsCard(props) {
      
         <div className=" carousel h-screen w-6/12 mx-auto" >
           <div className="w-full h-screen carousel-item mx-auto">
-            <img src={img0} alt="" className="w-full object-cover h-screen mx-auto" />
+            <img id="car" src={img0} alt="" className="w-full object-cover h-screen mx-auto" />
+          
           </div>
           <div className="w-full h-screen carousel-item mx-auto">
             <img src={img1} alt="" className="w-full object-cover h-screen mx-auto" />
+          
           </div>
           <div className="w-full h-screen carousel-item mx-auto">
             <img src={img2} alt="" className="w-full object-cover h-screen mx-auto" />
+         
           </div>
         </div>
      

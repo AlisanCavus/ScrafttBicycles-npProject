@@ -1,7 +1,8 @@
-import React, { useState, useLayoutEffect } from 'react';
+import React, { useState, useLayoutEffect, useRef} from 'react';
 import { collref } from '../firebase';
 import { getDocs } from 'firebase/firestore';
 import ProductsCard from '../Components/ProductsCard';
+import useScrollSnap from 'react-use-scroll-snap';
 
 function Products() {
   const [bikes, setBikes] = useState([]);
@@ -22,13 +23,16 @@ function Products() {
     return () => {
       setLoading(true);
     };
-  }, []);
+  }, [loading, bikes]);
 
-  console.log(bikes)
+  
+
+  const scrollRef = useRef(null);
+    useScrollSnap({ ref: scrollRef, duration: 150});
 
   return (
-    <div className=" min-h-screen bg-primary">
-      <ul>
+    <div className=" min-h-screen bg-primary " >
+      <ul ref={scrollRef}>
         {bikes.map((id) => 
           <ProductsCard
           key={id.id}
