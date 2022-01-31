@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { IoIosArrowUp } from 'react-icons/io';
 import { animateScroll as scroll } from 'react-scroll';
+import Slider from "react-slick";
+
+
 
 function ProductsCard(props) {
   const {
@@ -17,6 +20,20 @@ function ProductsCard(props) {
     price,
   } = props;
 
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    fade: true,
+    accessibility: true,
+    autoplay: true,
+    autoplaySpeed: 5000,
+
+  };
+
   if (index % 2 === 0) {
     return (
       <>
@@ -25,30 +42,33 @@ function ProductsCard(props) {
           className="min-h-screen w-full
           flex flex-row mobile:flex-col"
         >
-          <div className=" carousel h-screen w-6/12 mx-auto mobile:w-full">
-            <div className="w-full h-screen carousel-item mx-auto">
+          
+          <Slider className=" carousel h-screen w-6/12 mx-auto mobile:w-full" {...settings}>
+          
+            <div className="w-full h-screen carousel-item mx-auto ">
               <img
                 id="car"
                 src={img0}
-                alt=""
+                alt=" bike images"
                 className="w-full object-cover h-screen mx-auto"
               />
             </div>
             <div className="w-full h-screen carousel-item mx-auto">
               <img
                 src={img1}
-                alt=""
+                alt="bike images 11"
                 className="w-full object-cover h-screen mx-auto"
               />
             </div>
             <div className="w-full h-screen carousel-item mx-auto">
               <img
                 src={img2}
-                alt=""
+                alt="bike images 223"
                 className="w-full object-cover h-screen mx-auto"
               />
             </div>
-          </div>
+          </Slider>
+          
 
           <div className="w-6/12 flex flex-col justify-around mobile:w-full ">
             <div className=" flex font-semibold w-1/4 h-3/12 justify-center mx-auto text-center">
@@ -75,7 +95,7 @@ function ProductsCard(props) {
               </div>
             </div>
 
-            <div className="h-1/12 text-slate-600 w-10/12 mx-auto text-center">
+            <div className="h-1/12 text-slate-600 w-10/12 mx-auto text-center flex justify-end">
               <button
                 onClick={() => scroll.scrollToTop()}
                 className="bg-inherit flex flex-col text-center z-50 items-end align-end hover:animate-bounce  justify-end mt-auto mb-5 mx-5 opacity-30 h-10 fill-slate-500 w-10 "
@@ -133,30 +153,30 @@ function ProductsCard(props) {
             </div>
           </div>
 
-          <div className=" carousel h-screen w-6/12 mx-auto mobile:w-full">
+          <Slider className=" carousel h-screen w-6/12 mx-auto mobile:w-full"  {...settings}>
             <div className="w-full h-screen carousel-item mx-auto">
               <img
                 id="car"
                 src={img0}
-                alt=""
+                alt=" bike images s s "
                 className="w-full object-cover h-screen mx-auto"
               />
             </div>
             <div className="w-full h-screen carousel-item mx-auto">
               <img
                 src={img1}
-                alt=""
+                alt=" bike imagskcks"
                 className="w-full object-cover h-screen mx-auto"
               />
             </div>
             <div className="w-full h-screen carousel-item mx-auto">
               <img
                 src={img2}
-                alt=""
+                alt=" bikelara gel"
                 className="w-full object-cover h-screen mx-auto"
               />
             </div>
-          </div>
+          </Slider>
         </li>
       </>
     );
