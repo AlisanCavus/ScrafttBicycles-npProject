@@ -33,7 +33,7 @@ function Prod1() {
         <h4 className="h-full  text-6xl font-sans font-medium text-slate-600 flex my-auto items-center align-middle self-center place-self-center text-center">
           YOUR STYLE.
         </h4>
-        <h4 className="h-full flex my-auto items-center text-slate-600 font-semibold text-6xl align-middle self-center">
+        <h4 className="h-full flex my-auto -mt-40 items-center text-slate-600 font-semibold text-6xl align-middle self-center">
           YOUR CHOISE.
         </h4>
         <p className="mobile:indent-8 tracking-widest w-1/2 text-xl h-full self-center mobile:text-xl mobile:w-1/2 mobile:mx-auto text-slate-700">

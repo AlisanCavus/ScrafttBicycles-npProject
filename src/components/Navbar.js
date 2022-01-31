@@ -80,7 +80,7 @@ function Navbar() {
               </Menu.Button>
 
               <Menu.Items
-                className="absolute flex flex-col  opacity-50 h-50 place-content-center z-50 top-16 -right-[3rem] bg-primary w-48 mobile:right-0 rounded-2xl border-4 border-slate-600 mobile:w-min mobile:mr-auto 
+                className="absolute flex flex-col  opacity-50 h-50 place-content-center z-50 top-16 -right-[3rem] bg-primary w-48 mobile:right-0 rounded-2xl mobile:w-min mobile:mr-auto 
             "
               >
                 {currentUser &&  (<Menu.Item>
