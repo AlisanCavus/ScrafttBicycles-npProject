@@ -33,8 +33,9 @@ function Products() {
   return (
     <div className=" min-h-screen bg-primary " >
       <ul ref={scrollRef}>
-        {bikes.map((id) => 
+        {bikes.map((id, index) => 
           <ProductsCard
+          index={index}
           key={id.id}
           amount={id.amount}
           id={id.id}
