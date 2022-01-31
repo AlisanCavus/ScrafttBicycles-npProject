@@ -52,14 +52,14 @@ function SignUp({ close, setClose, handleCloseModal }) {
   }
 
   return (
-    <div className=" container  w-3/4 h-min align-middle mx-auto bg-black rounded-xl mobile:w-11/12 ">
+    <div className=" container  w-3/4 h-min align-middle mx-auto bg-primary   rounded-xl mobile:w-11/12 ">
       <div className="flex bg-primary w-full flex-col align-middle justify-center rounded-xl">
         <div className=" -m-4">
           <button
-            className="mr-auto float-right border-1 z-50 rounded border-slate-700 cursor-pointer  bg-inherit  hover:animate-spin"
+            className="mr-auto float-right border-1 z-50 rounded border-slate-500 cursor-pointer  bg-inherit  hover:animate-spin"
             onClick={handleCloseModal}
           >
-            <AiFillCloseCircle className=" w-12 h-12 text-slate-700 border-2 border-slate-700 rounded-full z-50" />
+            <AiFillCloseCircle className=" w-12 h-12 text-slate-500 border-2 border-slate-500 rounded-full z-50" />
           </button>
         </div>
         <div className="justify-center text-center">
@@ -76,7 +76,7 @@ function SignUp({ close, setClose, handleCloseModal }) {
             className="flex justify-center flex-col mx-auto w-full mobile:w-11/12 "
           >
             <div className="my-2 mx-auto flex flex-col mobile:w-11/12">
-              <label htmlFor="email" className=" mobile:w-11/12 ">
+              <label htmlFor="email" className=" mobile:w-11/12 text-slate-500">
                 Enter your e-mail:
               </label>
               <input
@@ -89,7 +89,7 @@ function SignUp({ close, setClose, handleCloseModal }) {
               />
             </div>
             <div className="my-2 mx-auto flex flex-col mobile:w-11/12">
-              <label htmlFor="password" className=" mobile:w-11/12">
+              <label htmlFor="password" className=" mobile:w-11/12 text-slate-500">
                 Enter a password:
               </label>
               <input
@@ -103,7 +103,7 @@ function SignUp({ close, setClose, handleCloseModal }) {
               />
             </div>
             <div className="my-2 mx-auto flex flex-col mobile:w-11/12 ">
-              <label htmlFor="cPassword" className=" mobile:w-11/12">
+              <label htmlFor="cPassword" className=" mobile:w-11/12 text-slate-500">
                 Confirm your password:
               </label>
               <input
@@ -160,7 +160,7 @@ function SignUp({ close, setClose, handleCloseModal }) {
          
           <div className=" w-96 mb-2 flex flex-row mx-auto text-sm">
             <div className="w-full my-auto">
-              <span className="">Do you already have an account? &nbsp; </span>
+              <span className=" text-slate-500">Do you already have an account? &nbsp; </span>
               
               <Link
                 to="/Login"

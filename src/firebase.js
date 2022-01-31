@@ -37,16 +37,16 @@ const firebaseConfig = {
  const  collref = collection(db, 'bicycles')
 
  //get collection data
-getDocs(collref)
-  .then((snapshot) => {
-    let bicycles = []
-    snapshot.docs.forEach((doc) => {
-      bicycles.push({...doc.data() , id: doc.id})
-    })
-    console.log(bicycles)
-  })
-  .catch( err => {
-    console.log(err.message)
-  })
+// getDocs(collref)
+//   .then((snapshot) => {
+//     let bicycles = []
+//     snapshot.docs.forEach((doc) => {
+//       bicycles.push({...doc.data() , id: doc.id})
+//     })
+//     console.log(bicycles)
+//   })
+//   .catch( err => {
+//     console.log(err.message)
+//   })
 
 export {db, collref, usersRef}

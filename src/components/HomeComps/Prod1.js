@@ -35,18 +35,18 @@ function Prod1() {
         <h4 className="h-full flex my-auto items-center text-slate-600 font-semibold text-6xl align-middle self-center">
           YOUR CHOISE.
         </h4>
-        <p className="mobile:indent-8 tracking-widest w-1/2 text-xl h-full self-center mobile:text-xl mobile:w-1/2 mobile:mx-auto">
+        <p className="mobile:indent-8 tracking-widest w-1/2 text-xl h-full self-center mobile:text-xl mobile:w-1/2 mobile:mx-auto text-slate-700">
           Product of our excitement to offer you a stylish ride. With our new 
           <span className="animate-pulse text-main font-extrabold text-xl">
           &nbsp;Scraftt mmll1&nbsp;
           </span>
           you will feel free to do anything you want on streets.
         </p>
-        <button onClick={() => scroll.scrollToTop()} className="bg-inherit flex text-center z-50 items-center align-middle justify-center my-5 mx-5 opacity-30 h-10  w-10 ">
-          <IoIosArrowUp className="border-black  hover:animate-spin w-full h-full" />
+        <button onClick={() => scroll.scrollToTop()} className="bg-inherit flex text-center z-50 items-center align-middle hover:animate-bounce fill-slate-500 justify-center my-5 mx-5 opacity-30 h-10  w-10 ">
+          <IoIosArrowUp className="border-black w-full h-full fill-slate-500" />
         </button>
       </div>
-      <div className=" h-screen min-h-full flex justify-start mx-auto w-1/2 bg-black mobile:w-full mobile ">
+      <div className=" h-screen min-h-full flex justify-start mx-auto w-1/2 bg-black  mobile:w-full mobile ">
         <video
           style={vidstyle}
           autoPlay={true}

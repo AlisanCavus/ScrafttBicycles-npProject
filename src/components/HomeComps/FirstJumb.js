@@ -20,10 +20,10 @@ function FirstJumb() {
   };
 
   useLayoutEffect(() => {
-    window.addEventListener('scrolll', handle);
+    window.addEventListener('scroll', handle);
 
     return () => {
-      window.removeEventListener('scrolll', handle);
+      window.removeEventListener('scroll', handle);
     };
   }, []);
 

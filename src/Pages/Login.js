@@ -55,10 +55,10 @@ function Login({ closeModal, handleCloseModal }) {
       <div className="flex bg-primary w-full flex-col align-middle justify-center rounded-xl">
         <div className=" -m-4">
           <button
-            className="mr-auto float-right border-1 z-50 rounded border-slate-700 cursor-pointer  hover:animate-spin"
+            className="mr-auto float-right border-1 z-50 rounded border-slate-500 cursor-pointer  hover:animate-spin"
             onClick={handleCloseModal}
           >
-            <AiFillCloseCircle className=" w-12 h-12 text-slate-700 border-2 border-slate-700 rounded-full z-50" />
+            <AiFillCloseCircle className=" w-12 h-12 text-slate-500 border-2 border-slate-500 rounded-full z-50" />
           </button>
         </div>
         <div className="justify-center text-center">
@@ -78,7 +78,7 @@ function Login({ closeModal, handleCloseModal }) {
             className="flex justify-center flex-col mx-auto w-full  "
           >
             <div className="my-2 mx-auto flex flex-col ">
-              <label htmlFor="email" className="  ">
+              <label htmlFor="email" className=" text-slate-500 ">
                 Enter your e-mail:
               </label>
               <input
@@ -91,7 +91,7 @@ function Login({ closeModal, handleCloseModal }) {
               />
             </div>
             <div className="my-2 mx-auto flex flex-col ">
-              <label htmlFor="password" className="">
+              <label htmlFor="password" className=" text-slate-500">
                 Enter your password:
               </label>
               <input
@@ -124,7 +124,7 @@ function Login({ closeModal, handleCloseModal }) {
             <div className="w-full my-auto">
               <Link
                 to="/Signup"
-                className="  text-gray-700  hover:animate-pulse">
+                className="  text-gray-700 underline-offset-4 no-underline hover:underline hover:animate-pulse">
                 Forgot your password? 
               </Link>
             </div>
@@ -132,10 +132,10 @@ function Login({ closeModal, handleCloseModal }) {
           
           <div className="w-96 mb-2 flex flex-row mx-auto text-sm ">
             <div className="w-full my-auto">
-              <span className=""> Do you need an account? &nbsp; <Link
+              <span className=" text-slate-500"> Do you need an account? &nbsp; <Link
                 to="/Signup"
                 className="  text-gray-700 underline-offset-4 no-underline hover:underline hover:animate-pulse">
-                 Signup
+                 Signup!
               </Link></span>
             </div>
           </div>

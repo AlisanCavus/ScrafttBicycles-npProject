@@ -8,6 +8,7 @@
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
+    "daisyui": "^1.25.4",
     "firebase": "^9.6.5",
     "install": "^0.13.0",
     "npm": "^8.3.1",

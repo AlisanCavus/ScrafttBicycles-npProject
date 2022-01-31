@@ -46,7 +46,7 @@ function HomeProd() {
   const righ = {
     transform: ` scale(${scr1 * 1.5})`,
     textIndent: '5rem',
-    fontWeight: 500,
+    fontWeight: 400,
   };
 
   return (
@@ -103,7 +103,7 @@ function HomeProd() {
 
       <div className="w-1/3 align-middle flex justify-items-center items-center relative mobile:hidden ">
         <div className="w-full absolute mobile:w-full">
-          <p style={righ} className="mobile:indent-8 mobile:text-xl mobile:w-1/2 break-words tracking-widest ml-16 mobile:mx-auto">
+          <p style={righ} className="mobile:indent-8 mobile:text-xl mobile:w-1/2 break-words tracking-widest mx-auto mobile:mx-auto text-slate-700">
             We made it. Just for you. Our bicycles are all hand crafted. We know
             you want to be unique even when you are commuting.{' '}
             <span className="animate-pulse text-main font-extrabold text-xl">Scraftt</span> gives you
@@ -115,8 +115,8 @@ function HomeProd() {
         
       </div>
 
-      <button onClick={() => scroll.scrollToTop()} className="bg-inherit flex flex-col text-center z-50 items-end align-end justify-end mt-auto mb-5 mx-5 opacity-30 h-10  w-10 ">
-          <IoIosArrowUp className="border-black  hover:animate-spin w-full h-full" />
+      <button onClick={() => scroll.scrollToTop()} className="bg-inherit flex flex-col text-center z-50 items-end align-end hover:animate-bounce  justify-end mt-auto mb-5 mx-5 opacity-30 h-10 fill-slate-500 w-10 ">
+          <IoIosArrowUp className="border-black  w-full h-full fill-slate-500" />
         </button>
     </div>
   );
