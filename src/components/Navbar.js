@@ -62,7 +62,7 @@ function Navbar() {
           className=" h-15 place-content-center px-20 items-center align-middle flex mobile:px-1"
         >
           <Link to="/" className="flex">
-            <img src={Logo} alt="logo" className=" w-32 h-[80px]" onClick={() => scroll.scrollToTop()} />
+            <img src={Logo} alt="logo" className=" w-32 h-[80px]"  />
           </Link>
         </animated.div>
 
@@ -80,7 +80,7 @@ function Navbar() {
               </Menu.Button>
 
               <Menu.Items
-                className="absolute flex flex-col  opacity-70 h-50 place-content-center z-50 top-16 -right-[4rem] bg-primary w-48 mobile:right-0 rounded-2xl border-4 border-secondary mobile:w-min mobile:mr-auto 
+                className="absolute flex flex-col  opacity-70 h-50 place-content-center z-50 top-16 -right-[3rem] bg-primary w-48 mobile:right-0 rounded-2xl border-4 border-slate-600 mobile:w-min mobile:mr-auto 
             "
               >
                 {currentUser &&  (<Menu.Item>
@@ -88,7 +88,7 @@ function Navbar() {
                     <Link
                       className={`${
                         active
-                          ? ' bg-bart align-middle items-center flex p-1 place-content-center text-gray-800 font-sans rounded-xl  mobile:w-40'
+                          ? ' bg-slate-400 align-middle items-center flex p-1 place-content-center text-gray-800 font-sans rounded-xl  mobile:w-40'
                           : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-700 font-sans rounded-xl  mobile:w-40'
                       }`}
                       to="/Profile"
@@ -103,7 +103,7 @@ function Navbar() {
                     <Link
                       className={`${
                         active
-                          ? ' bg-bart align-middle items-center flex p-1 place-content-center text-gray-800 font-sans rounded-xl mobile:w-40'
+                          ? ' bg-slate-400 align-middle items-center flex p-1 place-content-center text-gray-800 font-sans rounded-xl mobile:w-40'
                           : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-700 font-sans rounded-xl  mobile:w-40 '
                       }`}
                       to="/YourCart"
@@ -118,7 +118,7 @@ function Navbar() {
                     <Link
                       className={`${
                         active
-                          ? ' bg-bart align-middle items-center flex p-1 place-content-center text-gray-800 font-sans rounded-xl  mobile:w-40'
+                          ? ' bg-slate-400 align-middle items-center flex p-1 place-content-center text-gray-800 font-sans rounded-xl  mobile:w-40'
                           : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-700 font-sans rounded-xl mobile:w-40'
                       }`}
                       to="/Favorites"
@@ -133,7 +133,7 @@ function Navbar() {
                     <Link
                       className={`${
                         active
-                          ? ' bg-bart align-middle items-center flex p-1 place-content-center text-gray-800 font-sans rounded-xl  mobile:w-40'
+                          ? ' bg-slate-400 align-middle items-center flex p-1 place-content-center text-gray-800 font-sans rounded-xl  mobile:w-40'
                           : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-700 font-sans rounded-xl  mobile:w-40'
                       }`}
                       to="/Login"
@@ -152,7 +152,7 @@ function Navbar() {
                     <Link
                       className={`${
                         active
-                          ? ' bg-bart align-middle items-center flex p-1 place-content-center text-gray-800 font-sans rounded-xl  mobile:w-40'
+                          ? ' bg-slate-400 align-middle items-center flex p-1 place-content-center text-gray-800 font-sans rounded-xl  mobile:w-40'
                           : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-700 font-sans rounded-xl  mobile:w-40'
                       }`}
                       to={{
@@ -177,7 +177,7 @@ function Navbar() {
                     <Link
                       className={`${
                         active
-                          ? ' bg-bart align-middle items-center flex p-1 place-content-center text-gray-800 font-sans rounded-xl  mobile:w-40'
+                          ? ' bg-slate-400 align-middle items-center flex p-1 place-content-center text-gray-800 font-sans rounded-xl  mobile:w-40'
                           : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-700 font-sans rounded-xl  mobile:w-40'
                       }`}
                       to="/Products"
@@ -191,7 +191,7 @@ function Navbar() {
                     <Link
                       className={`${
                         active
-                          ? ' bg-bart align-middle items-center flex p-1 place-content-center text-gray-800 font-sans rounded-xl  mobile:w-40'
+                          ? ' bg-slate-400 align-middle items-center flex p-1 place-content-center text-gray-800 font-sans rounded-xl  mobile:w-40'
                           : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-700 font-sans rounded-xl  mobile:w-40'
                       }`}
                       to="/About"
@@ -209,7 +209,7 @@ function Navbar() {
                     onClick={handleLogout}
                       className={`${
                         active
-                          ? ' bg-bart align-middle items-center flex p-1 place-content-center text-gray-800 font-sans rounded-xl  mobile:w-40'
+                          ? ' bg-slate-400 align-middle items-center flex p-1 place-content-center text-gray-800 font-sans rounded-xl  mobile:w-40'
                           : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-700 font-sans rounded-xl  mobile:w-40'
                       }`}
                       to="/"

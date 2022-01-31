@@ -33,7 +33,7 @@ function HomeProd() {
   console.log(scr);
 
   const sty = {
-    transform: `scale(${scr1 * 0.9}) perspective(${scr1 * 1000}px)`,
+    transform: `scale(${scr1 * 0.8}) perspective(${scr1 * 1000}px)`,
     opacity: `${scr}`,
     display: 'flex',
     flexDirection: 'column',
@@ -44,7 +44,7 @@ function HomeProd() {
   };
 
   const righ = {
-    transform: ` scale(${scr1 * 1.5})`,
+    transform: ` scale(${scr1 * 1.3})`,
     textIndent: '5rem',
     fontWeight: 400,
   };
@@ -78,7 +78,7 @@ function HomeProd() {
     // </div>
 
     <div className="flex min-h-screen mobile:grid"  >
-      <div className="w-1/3 flex object-fill bg-tamir mobile:w-full "></div>
+      <div className="w-1/3 flex object-fill bg-tamir bg-cover mobile:w-full "></div>
 
       
       <div style={sty} className="mobile:w-1/2 mobile:mx-auto mobile:items-center" >
@@ -103,7 +103,7 @@ function HomeProd() {
 
       <div className="w-1/3 align-middle flex justify-items-center items-center relative mobile:hidden ">
         <div className="w-full absolute mobile:w-full">
-          <p style={righ} className="mobile:indent-8 mobile:text-xl mobile:w-1/2 break-words tracking-widest mx-auto mobile:mx-auto text-slate-700">
+          <p style={righ} className="mobile:indent-8 mobile:text-xl mobile:w-1/2 break-words w-2/4 tracking-widest mx-auto mobile:mx-auto text-slate-700">
             We made it. Just for you. Our bicycles are all hand crafted. We know
             you want to be unique even when you are commuting.{' '}
             <span className="animate-pulse text-main font-extrabold text-xl">Scraftt</span> gives you

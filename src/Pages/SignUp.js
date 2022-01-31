@@ -131,7 +131,7 @@ function SignUp({ close, setClose, handleCloseModal }) {
                   href="https://thatsthefinger.com/"
                   target="_blank"
                   rel="noreferrer"
-                  className=" text-slate-500 visited:text-slate-600 focus:text-slate-600"
+                  className="checkbox text-slate-500 visited:text-slate-600 focus:text-slate-600"
                 >
                   
                   Agree with Our Terms & Conditions

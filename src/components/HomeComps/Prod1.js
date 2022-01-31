@@ -2,6 +2,7 @@ import React, { useState, useLayoutEffect } from 'react';
 import Vid from '../../Assets/vid.mp4';
 import { IoIosArrowUp } from 'react-icons/io';
 import { animateScroll as scroll} from 'react-scroll'
+import { Link } from 'react-router-dom';
 
 function Prod1() {
   const [scrolll, setScrolll] = useState({
@@ -38,10 +39,11 @@ function Prod1() {
         <p className="mobile:indent-8 tracking-widest w-1/2 text-xl h-full self-center mobile:text-xl mobile:w-1/2 mobile:mx-auto text-slate-700">
           Product of our excitement to offer you a stylish ride. With our new 
           <span className="animate-pulse text-main font-extrabold text-xl">
-          &nbsp;Scraftt mmll1&nbsp;
+          &nbsp;Scraftt Deus-Ex&nbsp;
           </span>
           you will feel free to do anything you want on streets.
         </p>
+        <Link to="/Products" className="text-primary  rounded-lg w-60 mx-auto p-2 bg-slate-700 hover:animate-pulse">Discover For More</Link>
         <button onClick={() => scroll.scrollToTop()} className="bg-inherit flex text-center z-50 items-center align-middle hover:animate-bounce fill-slate-500 justify-center my-5 mx-5 opacity-30 h-10  w-10 ">
           <IoIosArrowUp className="border-black w-full h-full fill-slate-500" />
         </button>
