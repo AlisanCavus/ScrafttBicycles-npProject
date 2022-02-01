@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef} from 'react';
 import { collref } from '../firebase';
 import { getDocs } from 'firebase/firestore';
-import Productscard from '../Components/Productscard';
+import ProductsCard from '../Components/ProductsCard';
 import LoadingScreen from '../Components/LoadingScreen';
 import  useScrollSnap  from 'react-use-scroll-snap'
 
@@ -31,7 +31,7 @@ function Products() {
     return () => {
       setLoading(false)
     };
-  }, [bikes]);
+  }, [bikes, loading]);
 
   
 
@@ -44,7 +44,7 @@ function Products() {
     <div className=" min-h-screen bg-primary " ref={scrollRef} >
       {!loading ? (<ul >
         {bikes.map((id, index) => 
-          <Productscard
+          <ProductsCard
           index={index}
           key={id.id}
           amount={id.amount}
