@@ -51,9 +51,9 @@ function Login({ closeModal, handleCloseModal }) {
   }, [currentUser, navigate, loading]);
 
   return (
-    <div className=" container mx-auto w-3/4 h-min my-auto mobile:flex mobile:justify-center bg-black rounded-xl mobile:w-full ">
+    <div className=" container mx-auto w-3/4 h-min my-auto mobile:flex mobile:justify-center bg-black rounded mobile:w-full ">
       <div className="flex bg-primary w-full flex-col align-middle justify-center rounded mobile:w-screen   ">
-        <div className=" -m-4 mobile:mx-auto ">
+        <div className=" -m-4 mobile:mx-auto mobile:-m-6 ">
           <button
             className="mr-auto float-right border-1 z-50 rounded border-slate-500 cursor-pointer  hover:animate-spin"
             onClick={handleCloseModal}
@@ -82,7 +82,7 @@ function Login({ closeModal, handleCloseModal }) {
                 Enter your e-mail:
               </label>
               <input
-                className=" w-96 h-10 px-5 rounded-xl mobile:w-11/12 mobile:mx-auto text-slate-700 my-2 focus:shadow-md shadow-md focus:shadow-slate-600 focus:scale-105 focus:outline-none"
+                className=" w-96 h-10 px-5 rounded mobile:w-11/12 mobile:mx-auto text-slate-700 my-2 focus:shadow-md shadow-md focus:shadow-slate-600 focus:scale-105 focus:outline-none"
                 type="email"
                 name="email"
                 placeholder="...ex@example.com"
@@ -96,7 +96,7 @@ function Login({ closeModal, handleCloseModal }) {
               </label>
               <input
                 type="password"
-                className=" w-96 h-10 my-2 px-5 rounded-xl mobile:w-11/12 mobile:mx-auto text-slate-700  shadow-md focus:shadow-lg focus:scale-105 focus:shadow-slate-600 focus:outline-none"
+                className=" w-96 h-10 my-2 px-5 rounded mobile:w-11/12 mobile:mx-auto text-slate-700  shadow-md focus:shadow-lg focus:scale-105 focus:shadow-slate-600 focus:outline-none"
                 placeholder="Your password"
                 required
                 name="password"
@@ -111,7 +111,7 @@ function Login({ closeModal, handleCloseModal }) {
 
             <div
               disabled={loading}
-              className="  flex flex-col w-96 mx-auto my-9 align-middle rounded-xl shadow-md  bg-secondary h-10 border-secondary mobile:w-2/3 justify-center cursor-pointer hover:animate-pulse text-gray-700 ">
+              className="  flex flex-col w-96 mx-auto my-9 align-middle rounded shadow-md  bg-secondary h-10 border-secondary mobile:w-2/3 justify-center cursor-pointer hover:animate-pulse text-gray-700 ">
               <div className=" h-9 flex flex-row text-center justify-center">
                 <button disabled={loading} type="submit" className="text-center align-middle">
                   Login
@@ -120,7 +120,7 @@ function Login({ closeModal, handleCloseModal }) {
             </div>
           </form>
         
-          <div className=" w-96 flex flex-row justify-between mobile:w-2/3 text-sm mx-auto">
+          <div className=" w-96 flex flex-row justify-between mobile:w-full mobile:text-center text-sm mx-auto">
             <div className="w-full my-auto mobile:mx-auto">
               <Link
                 to="/Signup"
@@ -130,7 +130,7 @@ function Login({ closeModal, handleCloseModal }) {
             </div>
           </div>
           
-          <div className="w-96 mb-2 flex flex-row mx-auto mobile:w-2/3 text-sm ">
+          <div className="w-96 mb-2 flex flex-row mx-auto mobile:w-full mobile:text-center text-sm ">
             <div className="w-full my-auto">
               <span className=" text-slate-500"> Do you need an account? &nbsp; <Link
                 to="/Signup"
