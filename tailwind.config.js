@@ -40,7 +40,8 @@ module.exports = {
       },
       backgroundImage:{
         'bicycle' : "url('https://images.pexels.com/photos/686230/pexels-photo-686230.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260') ",
-        'tamir' : "url('https://images.pexels.com/photos/5446308/pexels-photo-5446308.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')"
+        'tamir' : "url('https://images.pexels.com/photos/5446308/pexels-photo-5446308.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')",
+        'garage' : "url('https://images.pexels.com/photos/6156531/pexels-photo-6156531.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')"
       }
     },
   },
