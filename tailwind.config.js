@@ -24,7 +24,7 @@ module.exports = {
       // => @media (min-width: 1536px) { ... }
     },
     fontFamily:{
-      sans:['Montserrat', 'sans-serif'],
+      sans:['Josefin Sans', 'sans-serif'],
     },
     
     
@@ -45,12 +45,12 @@ module.exports = {
       },
       keyframes: {
         wiggle: {
-          '0%, 100%': { transform: 'rotate(-3deg)' },
-          '50%': { transform: 'rotate(3deg)' },
+          '0%, 100%': { transform: 'rotate(-3deg) translateX(10px) '},
+          '50%': { transform: 'rotate(3deg)  translateX(-10px) ' },
         }
       },
       animation: {
-        wiggle: 'wiggle 1s ease-in-out infinite',
+        wiggle: 'wiggle 3s ease-in-out infinite',
       }
     },
   },

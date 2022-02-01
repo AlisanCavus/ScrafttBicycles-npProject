@@ -84,18 +84,18 @@ function HomeProd() {
       <div style={sty} className="mobile:w-1/2 mobile:mx-auto mobile:-translate-y-20 mobile:justify-center mobile:text-center mobile:items-center" >
       
         <div className="w-full h-1/3  bg-transparent flex justify-center my-auto  items-center mobile:justify-center mobile:mx-auto mobile:h-1/2 ">
-          <span className="text-center font-semibold absolute italic font-sans text-slate-600 text-7xl h-20 mobile:h-1/3 mobile:text-5xl mobile:text-black">
-            HANDCRAFTED
+          <span className="text-center font-semibold absolute font-sans text-slate-600 text-7xl h-20 mobile:h-1/3 mobile:text-5xl mobile:text-black">
+            Handcrafted
           </span>
         </div>
         <div className="w-full h-1/3  bg-transparent flex justify-center my-auto  items-center">
-          <span className="text-center absolute font-semibold text-slate-600 font-sans italic text-7xl h-20 mobile:text-5xl mobile:h-1/3 mobile:text-black">
-            FOR
+          <span className="text-center absolute font-semibold text-slate-600 font-sans text-7xl h-20 mobile:text-5xl mobile:h-1/3 mobile:text-black">
+            For
           </span>
         </div>
         <div className="w-full h-1/3  bg-transparent  flex  justify-center my-auto  items-center">
           <span className="text-center font-semibold mobile:h-1/3 absolute font-sans italic text-slate-600 text-7xl h-20 mobile:text-5xl mobile:text-black">
-            YOU.
+            You
           </span>
         </div>
     
