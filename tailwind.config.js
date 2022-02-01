@@ -45,12 +45,12 @@ module.exports = {
       },
       keyframes: {
         wiggle: {
-          '0%, 100%': { transform: 'rotate(-3deg) translateX(10px) '},
-          '50%': { transform: 'rotate(3deg)  translateX(-10px) ' },
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' },
         }
       },
       animation: {
-        wiggle: 'wiggle 3s ease-in-out infinite',
+        wiggle: 'wiggle 3s ease-in-out infinite ',
       }
     },
   },

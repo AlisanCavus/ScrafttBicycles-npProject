@@ -94,7 +94,7 @@ function HomeProd() {
           </span>
         </div>
         <div className="w-full h-1/3  bg-transparent  flex  justify-center my-auto  items-center">
-          <span className="text-center font-semibold mobile:h-1/3 absolute font-sans italic text-slate-600 text-7xl h-20 mobile:text-5xl mobile:text-black">
+          <span className="text-center font-semibold mobile:h-1/3 absolute font-sans  text-slate-600 text-7xl h-20 mobile:text-5xl mobile:text-black">
             You
           </span>
         </div>
@@ -105,11 +105,10 @@ function HomeProd() {
         <div className="w-full absolute mobile:w-full">
           <p style={righ} className="mobile:indent-8 mobile:text-xl mobile:w-1/2 break-words w-2/4 tracking-widest mx-auto mobile:mx-auto text-slate-700">
             We made it. Just for you. Our bicycles are all hand crafted. We know
-            you want to be unique even when you are commuting.{' '}
-            <span className="animate-pulse text-main font-extrabold text-xl">Scraftt</span> gives you
-            all in one. Do it in style. Check our desings inside. We are 100%
-            sure you can find one. One more little secret for you: We are
-            proudly Belgian so, our bikes are 100% <strong> 🇧🇪 </strong> too.
+            you want to be unique even when you are commuting.
+            <span className="animate-pulse text-main font-extrabold ">&nbsp;Scraftt</span> gives you
+            all in one. Do it in style. Check our desings. We are 100%
+            sure you can find the one that suits you the best . 
           </p>
         </div>
         
