@@ -2,13 +2,14 @@ import React, { useState, useLayoutEffect, useRef} from 'react';
 import { collref } from '../firebase';
 import { getDocs } from 'firebase/firestore';
 import ProductsCard from '../Components/ProductsCard';
-import useScrollSnap from 'react-use-scroll-snap';
+
 
 function Products() {
   const [bikes, setBikes] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useLayoutEffect(() => {
+    setLoading(true)
     getDocs(collref)
       .then((snapshot) => {
         let bicycles = [];
@@ -21,18 +22,18 @@ function Products() {
         console.log(err.message);
       });
     return () => {
-      setLoading(true);
+      setLoading(false)
     };
-  }, [loading, bikes]);
+  }, []);
 
   
 
-  const scrollRef = useRef(null);
-    useScrollSnap({ ref: scrollRef, duration: 150});
+  // const scrollRef = useRef(null);
+  //   useScrollSnap({ ref: scrollRef, duration: 150});
 
   return (
     <div className=" min-h-screen bg-primary " >
-      <ul ref={scrollRef}>
+      <ul >
         {bikes.map((id, index) => 
           <ProductsCard
           index={index}

@@ -30,7 +30,7 @@ function HomeProd() {
     scr = 1;
   }
 
-  console.log(scr);
+  // console.log(scr);
 
   const sty = {
     transform: `scale(${scr1 * 0.8}) perspective(${scr1 * 1000}px)`,
