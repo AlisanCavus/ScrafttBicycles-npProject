@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth } from 'firebase/auth'
-import { getFirestore, collection, getDocs, createUserProfileDocument, setDoc } from 'firebase/firestore'
+import { getFirestore, collection } from 'firebase/firestore'
 
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -36,7 +36,7 @@ const firebaseConfig = {
  //collection referance
  const  collref = collection(db, 'bicycles')
 
- //get collection data
+//  get collection data
 // getDocs(collref)
 //   .then((snapshot) => {
 //     let bicycles = []

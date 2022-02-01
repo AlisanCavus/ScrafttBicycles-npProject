@@ -88,8 +88,8 @@ function Navbar() {
                     <Link
                       className={`${
                         active
-                          ? ' bg-slate-400 align-middle items-center flex p-1 place-content-center text-gray-800 font-sans rounded-xl  mobile:w-40'
-                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-700 font-sans rounded-xl  mobile:w-40'
+                          ? ' bg-slate-400 align-middle items-center flex p-1 place-content-center text-white font-sans rounded-xl  mobile:w-40'
+                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-900 font-sans rounded-xl  mobile:w-40'
                       }`}
                       to="/Profile"
                     >
@@ -103,8 +103,8 @@ function Navbar() {
                     <Link
                       className={`${
                         active
-                          ? ' bg-slate-400 align-middle items-center flex p-1 place-content-center text-gray-800 font-sans rounded-xl mobile:w-40'
-                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-700 font-sans rounded-xl  mobile:w-40 '
+                          ? ' bg-slate-400 align-middle items-center flex p-1 place-content-center text-white font-sans rounded-xl mobile:w-40'
+                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-900 font-sans rounded-xl  mobile:w-40 '
                       }`}
                       to="/YourCart"
                     >
@@ -118,8 +118,8 @@ function Navbar() {
                     <Link
                       className={`${
                         active
-                          ? ' bg-slate-400 align-middle items-center flex p-1 place-content-center text-gray-800 font-sans rounded-xl  mobile:w-40'
-                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-700 font-sans rounded-xl mobile:w-40'
+                          ? ' bg-slate-400 align-middle items-center flex p-1 place-content-center text-white font-sans rounded-xl  mobile:w-40'
+                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-900 font-sans rounded-xl mobile:w-40'
                       }`}
                       to="/Favorites"
                     >
@@ -133,8 +133,8 @@ function Navbar() {
                     <Link
                       className={`${
                         active
-                          ? ' bg-slate-400 align-middle items-center flex p-1 place-content-center text-gray-800 font-sans rounded-xl  mobile:w-40'
-                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-700 font-sans rounded-xl  mobile:w-40'
+                          ? ' bg-slate-400 align-middle items-center flex p-1 place-content-center text-white font-sans rounded-xl  mobile:w-40'
+                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-900 font-sans rounded-xl  mobile:w-40'
                       }`}
                       to="/Login"
                     >
@@ -152,8 +152,8 @@ function Navbar() {
                     <Link
                       className={`${
                         active
-                          ? ' bg-slate-400 align-middle items-center flex p-1 place-content-center text-gray-800 font-sans rounded-xl  mobile:w-40'
-                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-700 font-sans rounded-xl  mobile:w-40'
+                          ? ' bg-slate-400 align-middle items-center flex p-1 place-content-center text-white font-sans rounded-xl  mobile:w-40'
+                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-900 font-sans rounded-xl  mobile:w-40'
                       }`}
                       to={{
                         pathname: '/SignUp',
@@ -177,8 +177,8 @@ function Navbar() {
                     <Link
                       className={`${
                         active
-                          ? ' bg-slate-400 align-middle items-center flex p-1 place-content-center text-gray-800 font-sans rounded-xl  mobile:w-40'
-                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-700 font-sans rounded-xl  mobile:w-40'
+                          ? ' bg-slate-400 align-middle items-center flex p-1 place-content-center text-white font-sans rounded-xl  mobile:w-40'
+                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-900 font-sans rounded-xl  mobile:w-40'
                       }`}
                       to="/Products"
                     >
@@ -191,8 +191,8 @@ function Navbar() {
                     <Link
                       className={`${
                         active
-                          ? ' bg-slate-400 align-middle items-center flex p-1 place-content-center text-gray-800 font-sans rounded-xl  mobile:w-40'
-                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-700 font-sans rounded-xl  mobile:w-40'
+                          ? ' bg-slate-400 align-middle items-center flex p-1 place-content-center text-white font-sans rounded-xl  mobile:w-40'
+                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-900 font-sans rounded-xl  mobile:w-40'
                       }`}
                       to="/About"
                     >
@@ -209,8 +209,8 @@ function Navbar() {
                     onClick={handleLogout}
                       className={`${
                         active
-                          ? ' bg-slate-400 align-middle items-center flex p-1 place-content-center text-gray-800 font-sans rounded-xl  mobile:w-40'
-                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-700 font-sans rounded-xl  mobile:w-40'
+                          ? ' bg-slate-400 align-middle items-center flex p-1 place-content-center text-white font-sans rounded-xl  mobile:w-40'
+                          : ' bg-primary align-middle items-center flex p-1 place-content-center text-gray-900 font-sans rounded-xl  mobile:w-40'
                       }`}
                       to="/"
                     >
