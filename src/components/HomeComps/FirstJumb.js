@@ -9,12 +9,12 @@ function FirstJumb() {
     delay: 300,
   });
 
-  const [scroll, setScroll] = useState({
+  const [scrolll, setScrolll] = useState({
     y: window.pageYOffset,
   });
 
   const handle = () => {
-    setScroll({
+    setScrolll({
       y: window.pageYOffset,
     });
   };
@@ -30,7 +30,7 @@ function FirstJumb() {
   
 
   const styles = {
-    transform: `translateX(${scroll.y}px)`,
+    transform: `translateX(${scrolll.y}px)`,
   };
 
   return (
@@ -38,7 +38,7 @@ function FirstJumb() {
       <animated.div style={anim}>
         <div style={styles}>
           <div className="w-1/2 h-1/2 m-auto left-4 top-1/2 ">
-            <span className="w-full h-1/2 m-auto -left-4 text-primary text-6xl font-semibold font-sans">
+            <span className="w-full h-1/2 m-auto -left-4 text-primary text-6xl font-semibold font-sans mobile:text-4xl">
              
               Welcome to the
             </span>

@@ -3,6 +3,7 @@ import { auth } from '../firebase'
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged} from 'firebase/auth'
 
 
+
 const AuthContext = createContext({
     currentUser: null,
     register: () => Promise,
@@ -17,8 +18,11 @@ export default function AuthContextProvider({children}) {
     const [ currentUser, setCurrentUser] = useState(null)
     const [ loading, setLoading] = useState(true)
 
-    function register (email,password) {
+    
+
+    async function register (email,password) {
         return createUserWithEmailAndPassword(auth, email, password)
+        // .then( await addDoc(doc(db, 'users' , {userId: currentUser.user.uid , email: currentUser.user.email}))) 
     }
 
 

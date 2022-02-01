@@ -2,7 +2,7 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     screens: {
-      'mobile': { "max" : "700px" },
+      'mobile': { "max" : "1024px" },
       // => @media (max-width: 700px) {...}
 
       'xs': '280px',
@@ -24,7 +24,7 @@ module.exports = {
       // => @media (min-width: 1536px) { ... }
     },
     fontFamily:{
-      sans:['Montserrat', 'sans-serif'],
+      sans:['Josefin Sans', 'sans-serif'],
     },
     
     
@@ -40,10 +40,23 @@ module.exports = {
       },
       backgroundImage:{
         'bicycle' : "url('https://images.pexels.com/photos/686230/pexels-photo-686230.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260') ",
+        'tamir' : "url('https://images.pexels.com/photos/5446308/pexels-photo-5446308.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')",
+        'garage' : "url('https://images.pexels.com/photos/6156531/pexels-photo-6156531.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')"
+      },
+      keyframes: {
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' },
+        }
+      },
+      animation: {
+        wiggle: 'wiggle 3s ease-in-out infinite ',
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('daisyui'),
+  ],
 }
 
 

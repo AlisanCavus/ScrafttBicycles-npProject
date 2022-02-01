@@ -52,14 +52,14 @@ function SignUp({ close, setClose, handleCloseModal }) {
   }
 
   return (
-    <div className=" container  w-3/4 h-min align-middle mx-auto bg-black rounded-xl mobile:w-11/12 ">
-      <div className="flex bg-primary w-full flex-col align-middle justify-center rounded-xl">
-        <div className=" -m-4">
+    <div className=" container  w-3/4 h-min align-middle mx-auto bg-primary mobile:flex mobile:w-full mobile:justify-center rounded ">
+      <div className="flex bg-primary w-full flex-col align-middle justify-center rounded mobile:w-screen">
+        <div className=" -m-4 mobile:-m-6 mobile:mx-auto">
           <button
-            className="mr-auto float-right border-1 z-50 rounded border-slate-700 cursor-pointer  bg-inherit  hover:animate-spin"
+            className="mr-auto float-right border-1 z-50 rounded border-slate-500 cursor-pointer  bg-inherit  hover:animate-spin"
             onClick={handleCloseModal}
           >
-            <AiFillCloseCircle className=" w-12 h-12 text-slate-700 border-2 border-slate-700 rounded-full z-50" />
+            <AiFillCloseCircle className=" w-12 h-12 text-slate-500 border-2 border-slate-500 rounded-full z-50" />
           </button>
         </div>
         <div className="justify-center text-center">
@@ -70,17 +70,17 @@ function SignUp({ close, setClose, handleCloseModal }) {
         <div className="justify-center text-center mb-4">
           <span className=" text-slate-700 text-xl ">Signup for your dream bike!</span>
         </div>
-        <div className="flex justify-center flex-col mx-auto w-full mobile:w-11/12">
+        <div className="flex justify-center flex-col mx-auto w-full mobile:w-full">
           <form
             onSubmit={handleSubmit}
-            className="flex justify-center flex-col mx-auto w-full mobile:w-11/12 "
+            className="flex justify-center flex-col mx-auto w-full  mobile:w-11/12 mobile:mx-auto "
           >
             <div className="my-2 mx-auto flex flex-col mobile:w-11/12">
-              <label htmlFor="email" className=" mobile:w-11/12 ">
+              <label htmlFor="email" className=" mobile:w-11/12 text-slate-500 mobile:mx-auto">
                 Enter your e-mail:
               </label>
               <input
-                className=" w-96 h-10 px-5 rounded-xl  my-2 mobile:w-11/12 mobile:mx-auto focus:shadow-md shadow-md focus:shadow-slate-600 focus:scale-105 focus:outline-none"
+                className=" w-96 h-10 px-5 rounded  my-2 mobile:w-11/12 mobile:mx-auto focus:shadow-md shadow-md focus:shadow-slate-600 focus:scale-105 focus:outline-none"
                 type="email"
                 name="email"
                 placeholder="john@example.com"
@@ -88,50 +88,50 @@ function SignUp({ close, setClose, handleCloseModal }) {
                 ref={emailRef}
               />
             </div>
-            <div className="my-2 mx-auto flex flex-col mobile:w-11/12">
-              <label htmlFor="password" className=" mobile:w-11/12">
+            <div className="my-2 mx-auto flex flex-col mobile:w-11/12 mobile:mx-auto">
+              <label htmlFor="password" className=" mobile:w-11/12 text-slate-500 mobile:mx-auto">
                 Enter a password:
               </label>
               <input
                 type="password"
-                className=" w-96 h-10 my-2 px-5 rounded-xl  mobile:w-11/12 mobile:mx-auto focus:shadow-md shadow-md focus:shadow-slate-600 focus:scale-105 focus:outline-none"
-                placeholder=" Yo! 8 characters as 8 Miles"
+                className=" w-96 h-10 my-2 px-5 rounded  mobile:w-11/12 mobile:mx-auto focus:shadow-md shadow-md focus:shadow-slate-600 focus:scale-105 focus:outline-none"
+                placeholder="Minimum 8 Characters"
                 required
                 name="password"
                 minLength="8"
                 ref={passwordRef}
               />
             </div>
-            <div className="my-2 mx-auto flex flex-col mobile:w-11/12 ">
-              <label htmlFor="cPassword" className=" mobile:w-11/12">
+            <div className="my-2 mx-auto flex flex-col mobile:w-11/12 mobile:mx-auto">
+              <label htmlFor="cPassword" className=" mobile:w-11/12 text-slate-500 mobile:mx-auto">
                 Confirm your password:
               </label>
               <input
                 type="password"
-                className=" w-96 h-10 rounded-xl my-2 px-5  mobile:w-11/12 focus:shadow-md shadow-md focus:shadow-slate-600 focus:scale-105 focus:outline-none"
-                placeholder="repeat it like Eminem "
+                className=" w-96 h-10 rounded my-2 px-5  mobile:w-11/12 mobile:mx-auto focus:shadow-md shadow-md focus:shadow-slate-600 focus:scale-105 focus:outline-none"
+                placeholder="Repeat your password"
                 required
                 minLength="8"
                 name="cPassword"
                 ref={cPasswordRef}
               />
             </div>
-            <div className="my-3 mx-auto flex flex-row mobile:w-11/12 ">
+            <div className="my-3 mx-auto flex flex-row mobile:w-11/12 mobile:mx-auto ">
               <input
                 onChange={terms}
                 checked={termsConds}
                 type="checkbox"
-                className=" rounded-xl my-2 px-5  mobile:w-11/12 focus:shadow-md shadow-md focus:shadow-slate-600 focus:scale-105 focus:outline-none"
+                className=" rounded my-2 px-5 mobile:my-auto mobile:w-3/12 mobile:mx-auto focus:shadow-md focus:shadow-slate-600 focus:scale-105 focus:outline-none"
                 name="acceptTerms"
               />
               <label
                 htmlFor="acceptTerms"
-                className="align-middle my-auto mx-1  hover:underline" >
+                className="align-middle my-auto mx-1 mobile:w-full mobile:text-center hover:underline underline-offset-4" >
                 <a
                   href="https://thatsthefinger.com/"
                   target="_blank"
                   rel="noreferrer"
-                  className=" text-slate-500 visited:text-slate-600 focus:text-slate-600"
+                  className="checkbox text-slate-500 visited:text-slate-600 mobile:w-full focus:text-slate-600  no-underline"
                 >
                   
                   Agree with Our Terms & Conditions
@@ -141,7 +141,7 @@ function SignUp({ close, setClose, handleCloseModal }) {
 
             <div
               disabled={loading}
-              className="  flex flex-col align-middle mx-auto rounded-xl w-96 bg-secondary  border-secondary shadow-md justify-center cursor-pointer hover:animate-pulse text-gray-700 my-2.5"
+              className="  flex flex-col align-middle mx-auto rounded w-96 bg-secondary  border-secondary shadow-md justify-center cursor-pointer hover:animate-pulse text-gray-700 my-2.5 mobile:w-2/3"
             >
               <div className="h-10  flex flex-row text-center align-middle justify-center">
 
@@ -158,9 +158,9 @@ function SignUp({ close, setClose, handleCloseModal }) {
             )}
           </div>
          
-          <div className=" w-96 mb-2 flex flex-row mx-auto text-sm">
+          <div className=" w-96 mb-2 flex flex-row mx-auto text-sm mobile:w-screen mobile:justify-center mobile:text-center">
             <div className="w-full my-auto">
-              <span className="">Do you already have an account? &nbsp; </span>
+              <span className=" text-slate-500">Do you already have an account? &nbsp; </span>
               
               <Link
                 to="/Login"

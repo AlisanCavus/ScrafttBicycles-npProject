@@ -5,11 +5,12 @@ import Prod1 from "../Components/HomeComps/Prod1";
 import useScrollSnap from 'react-use-scroll-snap';
 
 
+
 function Home() {
 
 
   const scrollRef = useRef(null);
-    useScrollSnap({ ref: scrollRef, duration: 100});
+    useScrollSnap({ ref: scrollRef, duration: 150});
   // const container = useRef()
 
 
@@ -47,6 +48,7 @@ function Home() {
       <div className="min-h-screen bg-primary overflow-hidden ">
         <Prod1 />
       </div>
+    
     </div>
   );
 }
