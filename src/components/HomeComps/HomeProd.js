@@ -77,24 +77,24 @@ function HomeProd() {
     //   </div>
     // </div>
 
-    <div className="flex min-h-screen mobile:grid"  >
-      <div className="w-1/3 flex object-fill bg-tamir bg-cover mobile:w-full "></div>
+    <div className="flex min-h-screen mobile:grid mobile:grid-rows-2"  >
+      <div className="w-1/3 flex object-fill bg-tamir bg-cover mobile:w-full mobile:h-full "></div>
 
       
-      <div style={sty} className="mobile:w-1/2 mobile:mx-auto mobile:items-center" >
+      <div style={sty} className="mobile:w-1/2 mobile:mx-auto mobile:-translate-y-20 mobile:justify-center mobile:text-center mobile:items-center" >
       
-        <div className="w-full h-1/3  bg-transparent flex justify-center my-auto  items-center ">
-          <span className="text-center font-semibold absolute italic font-sans text-slate-600 text-7xl h-20 mobile:text-5xl mobile:text-black">
+        <div className="w-full h-1/3  bg-transparent flex justify-center my-auto  items-center mobile:justify-center mobile:mx-auto mobile:h-1/2 ">
+          <span className="text-center font-semibold absolute italic font-sans text-slate-600 text-7xl h-20 mobile:h-1/3 mobile:text-5xl mobile:text-black">
             HANDCRAFTED
           </span>
         </div>
         <div className="w-full h-1/3  bg-transparent flex justify-center my-auto  items-center">
-          <span className="text-center absolute font-semibold text-slate-600 font-sans italic text-7xl h-20 mobile:text-5xl mobile:text-black">
+          <span className="text-center absolute font-semibold text-slate-600 font-sans italic text-7xl h-20 mobile:text-5xl mobile:h-1/3 mobile:text-black">
             FOR
           </span>
         </div>
         <div className="w-full h-1/3  bg-transparent  flex  justify-center my-auto  items-center">
-          <span className="text-center font-semibold absolute font-sans italic text-slate-600 text-7xl h-20 mobile:text-5xl mobile:text-black">
+          <span className="text-center font-semibold mobile:h-1/3 absolute font-sans italic text-slate-600 text-7xl h-20 mobile:text-5xl mobile:text-black">
             YOU.
           </span>
         </div>
@@ -115,7 +115,7 @@ function HomeProd() {
         
       </div>
 
-      <button onClick={() => scroll.scrollToTop()} className="bg-inherit flex flex-col text-center z-50 items-end align-end hover:animate-bounce  justify-end mt-auto mb-5 mx-5 opacity-30 h-10 fill-slate-500 w-10 ">
+      <button onClick={() => scroll.scrollToTop()} className="bg-inherit mobile:h-1/12 flex flex-col text-center z-50 items-end align-end hover:animate-bounce mobile:mx-auto   justify-end mt-auto mb-5 mx-5 opacity-30 h-10 fill-slate-500 w-10 ">
           <IoIosArrowUp className="border-black  w-full h-full fill-slate-500" />
         </button>
     </div>

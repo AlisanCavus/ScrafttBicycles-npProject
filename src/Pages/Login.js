@@ -51,9 +51,9 @@ function Login({ closeModal, handleCloseModal }) {
   }, [currentUser, navigate, loading]);
 
   return (
-    <div className=" container mx-auto w-3/4 h-min my-auto bg-black rounded-xl">
-      <div className="flex bg-primary w-full flex-col align-middle justify-center rounded-xl">
-        <div className=" -m-4">
+    <div className=" container mx-auto w-3/4 h-min my-auto mobile:flex mobile:justify-center bg-black rounded-xl mobile:w-full ">
+      <div className="flex bg-primary w-full flex-col align-middle justify-center rounded mobile:w-screen   ">
+        <div className=" -m-4 mobile:mx-auto ">
           <button
             className="mr-auto float-right border-1 z-50 rounded border-slate-500 cursor-pointer  hover:animate-spin"
             onClick={handleCloseModal}
@@ -72,17 +72,17 @@ function Login({ closeModal, handleCloseModal }) {
             Login to Your Account
           </span>
         </div>
-        <div className="flex justify-center flex-col mx-auto w-full">
+        <div className="flex justify-center flex-col mx-auto w-full mobile:w-screen">
           <form
             onSubmit={handleSubmit}
-            className="flex justify-center flex-col mx-auto w-full  "
+            className="flex justify-center flex-col mx-auto w-full mobile:w-11/12 mobile:mx-auto "
           >
-            <div className="my-2 mx-auto flex flex-col ">
-              <label htmlFor="email" className=" text-slate-600 ">
+            <div className="my-2 mx-auto flex flex-col mobile:w-11/12 mobile:mx-auto ">
+              <label htmlFor="email" className=" text-slate-600 mobile:w-11/12 mobile:mx-auto ">
                 Enter your e-mail:
               </label>
               <input
-                className=" w-96 h-10 px-5 rounded-xl text-slate-700 my-2 focus:shadow-md shadow-md focus:shadow-slate-600 focus:scale-105 focus:outline-none"
+                className=" w-96 h-10 px-5 rounded-xl mobile:w-11/12 mobile:mx-auto text-slate-700 my-2 focus:shadow-md shadow-md focus:shadow-slate-600 focus:scale-105 focus:outline-none"
                 type="email"
                 name="email"
                 placeholder="...ex@example.com"
@@ -90,13 +90,13 @@ function Login({ closeModal, handleCloseModal }) {
                 ref={emailRef}
               />
             </div>
-            <div className="my-2 mx-auto flex flex-col ">
-              <label htmlFor="password" className=" text-slate-600">
+            <div className="my-2 mx-auto flex flex-col mobile:w-11/12 mobile:mx-auto">
+              <label htmlFor="password" className=" text-slate-600 mobile:w-11/12 mobile:mx-auto">
                 Enter your password:
               </label>
               <input
                 type="password"
-                className=" w-96 h-10 my-2 px-5 rounded-xl text-slate-700  shadow-md focus:shadow-lg focus:scale-105 focus:shadow-slate-600 focus:outline-none"
+                className=" w-96 h-10 my-2 px-5 rounded-xl mobile:w-11/12 mobile:mx-auto text-slate-700  shadow-md focus:shadow-lg focus:scale-105 focus:shadow-slate-600 focus:outline-none"
                 placeholder="Your password"
                 required
                 name="password"
@@ -111,7 +111,7 @@ function Login({ closeModal, handleCloseModal }) {
 
             <div
               disabled={loading}
-              className="  flex flex-col w-96 mx-auto my-9 align-middle rounded-xl shadow-md  bg-secondary h-10 border-secondary justify-center cursor-pointer hover:animate-pulse text-gray-700 ">
+              className="  flex flex-col w-96 mx-auto my-9 align-middle rounded-xl shadow-md  bg-secondary h-10 border-secondary mobile:w-2/3 justify-center cursor-pointer hover:animate-pulse text-gray-700 ">
               <div className=" h-9 flex flex-row text-center justify-center">
                 <button disabled={loading} type="submit" className="text-center align-middle">
                   Login
@@ -120,17 +120,17 @@ function Login({ closeModal, handleCloseModal }) {
             </div>
           </form>
         
-          <div className=" w-96  flex flex-row justify-between text-sm mx-auto">
-            <div className="w-full my-auto">
+          <div className=" w-96 flex flex-row justify-between mobile:w-2/3 text-sm mx-auto">
+            <div className="w-full my-auto mobile:mx-auto">
               <Link
                 to="/Signup"
-                className="  text-gray-700 underline-offset-4 no-underline hover:underline hover:animate-pulse">
+                className="  text-gray-700 underline-offset-4 no-underline hover:underline hover:animate-pulse mobile:mx-auto" >
                 Forgot your password? 
               </Link>
             </div>
           </div>
           
-          <div className="w-96 mb-2 flex flex-row mx-auto text-sm ">
+          <div className="w-96 mb-2 flex flex-row mx-auto mobile:w-2/3 text-sm ">
             <div className="w-full my-auto">
               <span className=" text-slate-500"> Do you need an account? &nbsp; <Link
                 to="/Signup"
