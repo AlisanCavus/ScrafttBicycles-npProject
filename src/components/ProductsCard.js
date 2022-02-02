@@ -1,7 +1,7 @@
 import React from 'react';
 import { IoIosArrowUp } from 'react-icons/io';
 import { animateScroll as scroll } from 'react-scroll';
-import Slider from "react-slick";
+
 
 
 
@@ -20,20 +20,7 @@ function ProductsCard(props) {
     price,
   } = props;
 
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    fade: true,
-    accessibility: true,
-    autoplay: true,
-    autoplaySpeed: 5000,
-
-  };
-
+  
   if (index % 2 === 0) {
     return (
       <>
@@ -43,7 +30,7 @@ function ProductsCard(props) {
           flex flex-row mobile:flex-col"
         >
           
-          <Slider className=" carousel h-screen w-6/12 mx-auto mobile:w-full" {...settings}>
+          <div className=" carousel h-screen w-6/12 mx-auto mobile:w-full ">
           
             <div className="w-full h-screen carousel-item mx-auto ">
               <img
@@ -67,7 +54,7 @@ function ProductsCard(props) {
                 className="w-full object-cover h-screen mx-auto"
               />
             </div>
-          </Slider>
+          </div>
           
 
           <div className="w-6/12 flex flex-col justify-around mobile:w-full ">
@@ -153,7 +140,7 @@ function ProductsCard(props) {
             </div>
           </div>
 
-          <Slider className=" carousel h-screen w-6/12 mx-auto mobile:w-full"  {...settings}>
+          <div className=" carousel h-screen w-6/12 mx-auto mobile:w-full" >
             <div className="w-full h-screen carousel-item mx-auto">
               <img
                 id="car"
@@ -176,7 +163,7 @@ function ProductsCard(props) {
                 className="w-full object-cover h-screen mx-auto"
               />
             </div>
-          </Slider>
+          </div>
         </li>
       </>
     );
