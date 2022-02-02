@@ -1,6 +1,8 @@
 import React from 'react';
 import { IoIosArrowUp } from 'react-icons/io';
 import { animateScroll as scroll } from 'react-scroll';
+import Slider from "react-slick";
+import { AiOutlineRight, AiOutlineLeft } from 'react-icons/ai'
 
 
 
@@ -20,6 +22,41 @@ function ProductsCard(props) {
     price,
   } = props;
 
+  const NextArrow = ({onClick}) => {
+    return (
+      <div className='arrow next my-auto  top-1/2 right-[5%]  z-[9999] absolute  cursor-pointer' onClick={onClick}>
+          <AiOutlineRight className='w-10 h-10 fill-primary '/>
+      </div>
+    )
+  }
+  const PrevArrow = ({onClick}) => {
+    return (
+      <div className='arrow next my-auto top-1/2 left-[5%]  z-[9999] absolute cursor-pointer' onClick={onClick}>
+          <AiOutlineLeft className='w-10 h-10 fill-primary' />
+      </div>
+    )
+  }
+ 
+
+
+  var settings = {
+   
+   
+    infinite: true,
+    lazyload: true,
+    speed: 300,
+    slidesToShow: 1,
+    centerMode: true,
+    slidesToScroll: 1,
+    arrows: true,
+    centerPadding:0,
+   
+    className: 'slides',
+    dotsClass: 'hello',
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+  };
+
   
   if (index % 2 === 0) {
     return (
@@ -30,31 +67,31 @@ function ProductsCard(props) {
           flex flex-row mobile:flex-col"
         >
           
-          <div className=" carousel h-screen w-6/12 mx-auto mobile:w-full ">
+          <Slider {...settings} className=" carousel h-screen w-6/12 mx-auto mobile:w-full " >
           
-            <div className="w-full h-screen carousel-item mx-auto ">
+            <div className="w-full h-screen carousel-item mx-auto relative z-0 ">
               <img
                 id="car"
                 src={img0}
                 alt=" bike images"
-                className="w-full object-cover h-screen mx-auto"
+                className="w-full object-cover h-screen mx-auto relative"
               />
             </div>
-            <div className="w-full h-screen carousel-item mx-auto">
+            <div className="w-full h-screen carousel-item mx-auto relative z-0">
               <img
                 src={img1}
                 alt="bike images 11"
-                className="w-full object-cover h-screen mx-auto"
+                className="w-full  object-cover h-screen mx-auto relative"
               />
             </div>
-            <div className="w-full h-screen carousel-item mx-auto">
+            <div className="w-full h-screen carousel-item mx-auto relative z-0">
               <img
                 src={img2}
                 alt="bike images 223"
-                className="w-full object-cover h-screen mx-auto"
+                className="w-full  object-cover h-screen mx-auto relative"
               />
             </div>
-          </div>
+          </Slider>
           
 
           <div className="w-6/12 flex flex-col justify-around mobile:w-full ">
@@ -140,7 +177,7 @@ function ProductsCard(props) {
             </div>
           </div>
 
-          <div className=" carousel h-screen w-6/12 mx-auto mobile:w-full" >
+          <Slider {...settings} className=" carousel h-screen w-6/12 mx-auto mobile:w-full" >
             <div className="w-full h-screen carousel-item mx-auto">
               <img
                 id="car"
@@ -163,7 +200,7 @@ function ProductsCard(props) {
                 className="w-full object-cover h-screen mx-auto"
               />
             </div>
-          </div>
+          </Slider>
         </li>
       </>
     );

@@ -12,6 +12,8 @@ import SignUpModalWrapper from './Modals/SignUpModalWrapper';
 import AuthContextProvider from './Contexts/AuthContext';
 import RequireAuth from './Pages/RequireAuth';
 import LoginModalWrapper from './Modals/LoginModalWrapper';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function App() {
   return (

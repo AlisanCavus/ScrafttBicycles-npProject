@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* .slides .slick-prev,
+.slides .slick-next {
+
+    position: absolute;
+    z-index: 999;
+
+}
+
+.hello {
+    margin-top: 50%;
+    z-index: 999;
+
+} */
