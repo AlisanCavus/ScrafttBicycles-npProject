@@ -7,6 +7,7 @@ import { AiOutlineRight, AiOutlineLeft } from 'react-icons/ai'
 
 
 
+
 function ProductsCard(props) {
   const {
     index,
@@ -37,8 +38,7 @@ function ProductsCard(props) {
     )
   }
  
-
-
+  
   var settings = {
    
    
@@ -65,11 +65,12 @@ function ProductsCard(props) {
           key={id}
           className="min-h-screen w-full
           flex flex-row mobile:flex-col"
+          
         >
           
-          <Slider {...settings} className=" carousel h-screen w-6/12 mx-auto mobile:w-full " >
+          <Slider {...settings} className="  h-screen w-6/12 mx-auto mobile:w-full " >
           
-            <div className="w-full h-screen carousel-item mx-auto relative z-0 ">
+            <div className="w-full h-screen  mx-auto relative z-0 ">
               <img
                 id="car"
                 src={img0}
@@ -177,7 +178,7 @@ function ProductsCard(props) {
             </div>
           </div>
 
-          <Slider {...settings} className=" carousel h-screen w-6/12 mx-auto mobile:w-full" >
+          <Slider {...settings} className="  h-screen w-6/12 mx-auto mobile:w-full" >
             <div className="w-full h-screen carousel-item mx-auto">
               <img
                 id="car"

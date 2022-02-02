@@ -1,16 +1,29 @@
-import React, { useState, useEffect, } from 'react';
+import React, { useState, useEffect} from 'react';
 import { collref } from '../firebase';
 import { getDocs } from 'firebase/firestore';
 import ProductsCard from '../components/ProductsCard';
 import LoadingScreen from '../components/LoadingScreen';
-// import  useScrollSnap  from 'react-use-scroll-snap'
+import createScrollSnap ,{ easeInOutQuad } from 'scroll-snap'
+
+
 
 
 function Products() {
   const [bikes, setBikes] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  
+  const element = document.getElementById('container')
+
+const { bind, unbind } = createScrollSnap(element, {
+  snapDestinationX: '0%',
+  snapDestinationY: '90%',
+  timeout: 100,
+  duration: 300,
+  threshold: 0.2,
+  snapStop: false,
+  easing: easeInOutQuad,
+}, () => console.log('element snapped'))
+
   
 
   useEffect(() => {
@@ -46,17 +59,15 @@ function Products() {
    },[]);
 
   
-
-  // const scrollRef = useRef(null);
-  //   useScrollSnap({ ref: scrollRef, duration: 150});
+ 
 
   
 
   return (
-    <div className=" min-h-screen bg-primary "   >
-      {!loading ? (<ul >
+    <div className=" min-h-screen bg-primary overflow-hidden"  >
+      {!loading ? (<ul  className='snap-y ' id='container' >
         {bikes.map((id, index) => 
-          <ProductsCard 
+          <ProductsCard className='snap-center'
           index={index}
           key={id.id}
           amount={id.amount}
