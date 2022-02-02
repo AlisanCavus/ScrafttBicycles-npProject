@@ -30,7 +30,7 @@ function LoginModalWrapper() {
        fixed z-[1] w-full h-full overflow-hidden flex align-middle justify-center"
         ></div>
         
-        <animated.div className="mx-auto overflow-hidden   w-1/2 h-3/4 z-[999] absolute " style={animSingUp}>
+        <animated.div className="mx-auto  w-1/2 h-3/4 z-[999] absolute " style={animSingUp}>
           <Login
             close={close}
             setClose={setClose}
