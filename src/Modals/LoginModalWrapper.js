@@ -27,7 +27,7 @@ function LoginModalWrapper() {
         <div
         onClick={handleCloseModal}
           className=" top-0 left-0 bg-cover bg-bicycle opacity-60
-       fixed z-[1] w-screen h-screen overflow-auto flex align-middle justify-center"
+       fixed z-[1] w-screen h-screen overflow-hidden flex align-middle justify-center"
         ></div>
         
         <animated.div className="mx-auto   w-1/2 h-3/4 z-[999] absolute " style={animSingUp}>
