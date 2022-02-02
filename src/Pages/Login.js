@@ -4,7 +4,7 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { useAuth } from "../Contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
-import LoadingScreen from "../Components/LoadingScreen";
+import LoadingScreen from "../components/LoadingScreen";
 
 
 function Login({ closeModal, handleCloseModal }) {

@@ -1,7 +1,7 @@
 import React, { useRef} from "react";
-import FirstJumb from "../Components/HomeComps/FirstJumb";
-import HomeProd from "../Components/HomeComps/HomeProd";
-import Prod1 from "../Components/HomeComps/Prod1";
+import FirstJumb from "../components/HomeComps/FirstJumb";
+import HomeProd from "../components/HomeComps/HomeProd";
+import Prod1 from "../components/HomeComps/Prod1";
 import useScrollSnap from 'react-use-scroll-snap';
 
 

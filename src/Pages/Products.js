@@ -1,8 +1,8 @@
 import React, { useState, useEffect, } from 'react';
 import { collref } from '../firebase';
 import { getDocs } from 'firebase/firestore';
-import ProductsCard from '../Components/ProductsCard';
-import LoadingScreen from '../Components/LoadingScreen';
+import ProductsCard from '../components/ProductsCard';
+import LoadingScreen from '../components/LoadingScreen';
 // import  useScrollSnap  from 'react-use-scroll-snap'
 
 
