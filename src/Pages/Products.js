@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef} from 'react';
+import React, { useState, useEffect} from 'react';
 import { collref } from '../firebase';
 import { getDocs } from 'firebase/firestore';
 import ProductsCard from '../components/ProductsCard';
