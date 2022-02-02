@@ -78,10 +78,10 @@ function HomeProd() {
     // </div>
 
     <div className="flex min-h-screen mobile:grid mobile:grid-rows-2"  >
-      <div className="w-1/3 flex object-fill bg-tamir bg-cover mobile:w-full mobile:h-full "></div>
+      <div className="w-9/12 flex object-fill bg-tamir bg-cover mobile:w-full mobile:h-full "></div>
 
       
-      <div style={sty} className="mobile:w-1/2 mobile:mx-auto mobile:-translate-y-20 mobile:justify-center mobile:text-center mobile:items-center" >
+      <div style={sty} className="mobile:w-1/3 mobile:mx-auto mobile:-translate-y-20 mobile:justify-center mobile:text-center mobile:items-center" >
       
         <div className="w-full h-1/3  bg-transparent flex justify-center my-auto  items-center mobile:justify-center mobile:mx-auto mobile:h-1/2 ">
           <span className="text-center font-semibold absolute font-sans text-slate-600 text-7xl h-20 mobile:h-1/3 mobile:text-5xl mobile:text-black">
