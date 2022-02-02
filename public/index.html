@@ -65,6 +65,16 @@
       min-width: 100vw;
     }
 
+    .container1 {
+      align-items: center;
+      background-color: rgba(255, 232, 214);
+      display: flex;
+      min-height: 100vh;
+      justify-content: center;
+      min-width: 100vw;
+      overflow: hidden;
+    }
+
     @keyframes sk-scaleout {
 
       0%,
@@ -88,7 +98,7 @@
     <div id="spinner" class="container">
       <img class="loading" src="./spin.jpg" />
     </div>
-
+    <div id="modal" class="container1"></div>
   </div>
 
   <!--
@@ -101,7 +111,7 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-  <div id="modal" class="container"></div>
+  
 </body>
 
 </html>
