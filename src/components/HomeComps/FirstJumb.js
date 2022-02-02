@@ -38,7 +38,7 @@ function FirstJumb() {
       <animated.div style={anim}>
         <div style={styles}>
           <div className="w-1/2 h-1/2 m-auto left-4 top-1/2 ">
-            <span className="w-full h-1/2 m-auto -left-4 text-primary text-6xl font-semibold font-sans mobile:text-4xl">
+            <span className="w-full h-1/2 m-auto -left-4 text-shadow text-primary text-6xl font-semibold font-sans mobile:text-4xl">
              
               Welcome to the
             </span>
@@ -46,7 +46,7 @@ function FirstJumb() {
           <img
             src={LogoH}
             alt="jumbotronslogo"
-            className="w-1/5 h-1/4 m-auto -translate-x-60 mobile:-translate-x-10"
+            className="w-1/5 h-1/4 m-auto text-shadow -translate-x-60 mobile:-translate-x-10"
           />
         </div>
       </animated.div>

@@ -44,8 +44,8 @@ function Prod1() {
           &nbsp;Get ready for enjoyable adventures.
         </p>
         <Link to="/Products" className="text-primary  rounded w-60 mx-auto p-2 bg-slate-700 hover:animate-pulse">Discover For More</Link>
-        <button onClick={() => scroll.scrollToTop()} className="bg-inherit flex text-center z-50 items-center align-middle mobile:justify-center mobile:mx-auto hover:animate-bounce fill-slate-500 justify-center my-5 mx-5 opacity-30 h-10  w-10 ">
-          <IoIosArrowUp className="border-black w-full h-full fill-slate-500" />
+        <button onClick={() => scroll.scrollToTop()} className="bg-inherit mobile:h-1/12 flex flex-col text-center z-50 items-end align-end hover:animate-bounce mobile:mx-auto   justify-end mt-auto mb-5 mx-5 opacity-30 h-10 fill-slate-500 w-10 ">
+          <IoIosArrowUp className="border-black  w-full h-full fill-slate-500" />
         </button>
       </div>
       <div className=" h-screen min-h-full flex justify-start mx-auto w-1/2 bg-black  mobile:w-full mobile:h-1/2 ">
