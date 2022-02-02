@@ -1,8 +1,8 @@
 import React from 'react';
-import { IoIosArrowUp } from 'react-icons/io';
+import { IoIosArrowUp, IoIosArrowBack, IoIosArrowForward} from 'react-icons/io';
 import { animateScroll as scroll } from 'react-scroll';
 import Slider from "react-slick";
-import { AiOutlineRight, AiOutlineLeft } from 'react-icons/ai'
+
 
 
 
@@ -26,14 +26,14 @@ function ProductsCard(props) {
   const NextArrow = ({onClick}) => {
     return (
       <div className='arrow next my-auto  top-1/2 right-[5%]  z-[9999] absolute  cursor-pointer' onClick={onClick}>
-          <AiOutlineRight className='w-10 h-10 fill-primary '/>
+          <IoIosArrowForward className='w-10 h-10 fill-primary '/>
       </div>
     )
   }
   const PrevArrow = ({onClick}) => {
     return (
       <div className='arrow next my-auto top-1/2 left-[5%]  z-[9999] absolute cursor-pointer' onClick={onClick}>
-          <AiOutlineLeft className='w-10 h-10 fill-primary' />
+          <IoIosArrowBack className='w-10 h-10 fill-primary' />
       </div>
     )
   }

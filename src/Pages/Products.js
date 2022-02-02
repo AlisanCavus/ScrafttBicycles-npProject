@@ -1,9 +1,9 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect, useRef} from 'react';
 import { collref } from '../firebase';
 import { getDocs } from 'firebase/firestore';
 import ProductsCard from '../components/ProductsCard';
 import LoadingScreen from '../components/LoadingScreen';
-import createScrollSnap ,{ easeInOutQuad } from 'scroll-snap'
+
 
 
 
@@ -12,17 +12,10 @@ function Products() {
   const [bikes, setBikes] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const element = document.getElementById('container')
+ 
 
-const { bind, unbind } = createScrollSnap(element, {
-  snapDestinationX: '0%',
-  snapDestinationY: '90%',
-  timeout: 100,
-  duration: 300,
-  threshold: 0.2,
-  snapStop: false,
-  easing: easeInOutQuad,
-}, () => console.log('element snapped'))
+
+  
 
   
 
@@ -64,8 +57,8 @@ const { bind, unbind } = createScrollSnap(element, {
   
 
   return (
-    <div className=" min-h-screen bg-primary overflow-hidden"  >
-      {!loading ? (<ul  className='snap-y ' id='container' >
+    <div className=" min-h-screen bg-primary overflow-hidden" id='container' >
+      {!loading ? (<ul>
         {bikes.map((id, index) => 
           <ProductsCard className='snap-center'
           index={index}
