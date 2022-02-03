@@ -82,7 +82,7 @@ if (loading) {
 
   return (<div className=" h-screen bg-primary">
      <div className="flex">
-      {user.email}
+     {user.email}
 
      </div>
   </div>);

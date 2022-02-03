@@ -42,8 +42,11 @@ export default function AuthContextProvider({children}) {
         const unsubscribe = onAuthStateChanged(auth, user => {
             setCurrentUser(user)
             setLoading(false)
-            
+            if(user !== undefined) {
                 handleUser(user)
+            }
+            
+                
         
             
             
@@ -54,8 +57,8 @@ export default function AuthContextProvider({children}) {
         return () => {
            unsubscribe()
         }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+    
+    })
 
        const handleUser = async () => {
            
