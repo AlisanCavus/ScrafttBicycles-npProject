@@ -51,7 +51,7 @@ function About() {
 
           <ul className='flex flex-row w-full h-full mx-auto justify-evenly'>
             {team.map((item, index) => 
-              <TeamMembers index={index} id={item.id} name={item.name} titr={item.titr} img={item.img}/>
+              <TeamMembers key={item.id} index={index} id={item.id} name={item.name} titr={item.titr} img={item.img}/>
             )}
           </ul>
            

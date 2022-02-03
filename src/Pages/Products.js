@@ -30,7 +30,7 @@ function Products() {
           });
           setBikes(bicycles);
           setLoading(false)
-          console.log(bikes)
+        
         })
         .catch((err) => {
           console.log(err.message);

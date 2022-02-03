@@ -42,9 +42,9 @@ export default function AuthContextProvider({children}) {
         const unsubscribe = onAuthStateChanged(auth, user => {
             setCurrentUser(user)
             setLoading(false)
-            if (currentUser !== null) {
+            
                 handleUser(user)
-            }
+        
             
             
             
@@ -58,6 +58,7 @@ export default function AuthContextProvider({children}) {
     }, [])
 
        const handleUser = async () => {
+           
         await setDoc(doc(db, "users", `${currentUser?.uid}`), {
             email: `${currentUser?.email}`,
             adress: [{line1: ''}, {line2: ''}, {postalCode: null}, {city: ''}, {country: ""}],
