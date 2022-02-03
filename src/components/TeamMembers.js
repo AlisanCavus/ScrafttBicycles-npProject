@@ -1,7 +1,7 @@
 import React from "react";
 
 function TeamMembers(props) {
-  console.log(props);
+  
 
   const {index, id, name, titr, img } = props;
 
@@ -15,7 +15,7 @@ function TeamMembers(props) {
         <h1 classname="  font-medium"> {name}</h1>
       </div>
       <div className="flex justify-center text-md text-slate-600">
-        <h3 classname="  font-normal">{titr} </h3>
+        <h3 className="  font-normal">{titr} </h3>
       </div>
     </li>
   );} else {
