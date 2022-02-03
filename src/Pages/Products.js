@@ -3,6 +3,7 @@ import { collref } from '../firebase';
 import { getDocs } from 'firebase/firestore';
 import ProductsCard from '../components/ProductsCard';
 import LoadingScreen from '../components/LoadingScreen';
+import useLocalStorage from '../Hooks/LocalStorage';
 
 
 
@@ -11,6 +12,9 @@ import LoadingScreen from '../components/LoadingScreen';
 function Products() {
   const [bikes, setBikes] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [favBike, setFavBike ] = useState([])
+
+ 
 
  
 
@@ -51,7 +55,10 @@ function Products() {
    // eslint-disable-next-line react-hooks/exhaustive-deps
    },[]);
 
-  
+  const addFavoriteBike = (bikes) => {
+    const newFavoriteBikesList = [...favBike, bikes ]
+    setFavBike(newFavoriteBikesList)
+  }
  
 
   
@@ -73,6 +80,7 @@ function Products() {
           img2={id.img2}
           model={id.model}
           price={id.price}
+          handleFavoriteBike={addFavoriteBike}
           />
         )}
       </ul>) : ( <LoadingScreen />)}

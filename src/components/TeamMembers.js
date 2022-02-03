@@ -28,7 +28,7 @@ function TeamMembers(props) {
             <h1 className="  font-medium"> {name}</h1>
           </div>
           <div className="flex justify-center text-md text-slate-600">
-            <h3 className="  font-normal">{titr} </h3>
+            <h3 className="  font-normal">{titr}</h3>
           </div>
         </li>
       );

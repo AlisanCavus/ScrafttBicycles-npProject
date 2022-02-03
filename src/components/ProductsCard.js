@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { IoIosArrowUp, IoIosArrowBack, IoIosArrowForward} from 'react-icons/io';
+import { Link } from 'react-router-dom';
 import { animateScroll as scroll } from 'react-scroll';
 import Slider from "react-slick";
+
+import { useAuth } from '../Contexts/AuthContext'
+
 
 
 
@@ -9,6 +13,10 @@ import Slider from "react-slick";
 
 
 function ProductsCard(props) {
+
+  
+
+  const { currentUser } = useAuth()
   const {
     index,
     id,
@@ -21,7 +29,10 @@ function ProductsCard(props) {
     img2,
     model,
     price,
+    handleFavoriteBike
   } = props;
+
+  
 
   const NextArrow = ({onClick}) => {
     return (
@@ -37,6 +48,8 @@ function ProductsCard(props) {
       </div>
     )
   }
+
+  const [favorite, setFavorite] = useState([])
  
   
   var settings = {
@@ -96,28 +109,38 @@ function ProductsCard(props) {
           
 
           <div className="w-6/12 flex flex-col justify-around mobile:w-full ">
-            <div className=" flex font-semibold w-1/4 h-3/12 justify-center mx-auto text-center">
-              <div className=" text-slate-600 mx-auto mt-10 text-center text-3xl self-center font-semibold">
+            <div className=" flex font-semibold w-1/4 h-3/12 justify-center mx-auto text-center ">
+              <div className=" text-slate-600 mx-auto mt-10 text-center text-3xl self-center font-semibold mobile:text-lg">
                 {brand}&nbsp;
               </div>
-              <div className=" text-slate-600 mx-auto mt-10 text-center text-3xl self-center font-semibold">
+              <div className=" text-slate-600 mx-auto mt-10 text-center text-3xl self-center font-semibold mobile:text-lg">
                 &nbsp;{model}
               </div>
             </div>
 
-            <div className="h-2/12 text-slate-600 -mt-10 w-10/12 mx-auto text-center italic text-2xl font-semibold">  
+            <div className="h-2/12 text-slate-600 -mt-10 w-10/12 mx-auto text-center italic text-2xl font-semibold mobile:my-0 mobile:text-sm">  
               "{headtitle}"
             </div>
-            <div className="h-2/12 text-slate-600 w-10/12 mx-auto text-center ">
+            <div className="h-2/12 text-slate-600 w-10/12 mx-auto text-center mobile:text-xs">
               {descrip}
             </div>
             <div>
-              <div className="h-2/12 text-slate-600 w-10/12 mx-auto "> 
+              <div className="h-2/12 text-slate-600 w-10/12 my-2 mx-auto mobile:text-sm"> 
                 In stock : Yes ({amount})
               </div>
-              <div className="h-2/12 text-slate-600 w-10/12 mx-auto ">
+              <div className="h-2/12 text-slate-600 w-10/12 mx-auto my-2  mobile:text-sm">
                 Price: {price}€
               </div>
+              
+              <div onClik={handleFavoriteBike} className="h-3/12 text-slate-600 w-10/12 flex justify-center mx-auto  my-2  ">
+                <button  className="flex text-center justify-center rounded fill-slate-600 py-3 w-1/2  px-10 mobile:py-0 mobile:px-2 text-primary mobile:w-full bg-slate-700 align-middle"> Add to Favorites </button>
+              </div>
+              {currentUser ? (<div className="h-3/12 text-slate-600 w-10/12 flex justify-center mx-auto my-2">
+                <button className="flex text-center rounded fill-slate-600  w-1/2  px-10 py-3 mobile:py-0 mobile:px-2 text-primary justify-center mobile:w-full bg-slate-700 align-middle ">  Add to Cart  </button>
+              </div>) : (<div className="h-3/12 text-slate-600 w-10/12 flex justify-center mx-auto my-2">
+                <Link className="flex text-center rounded fill-slate-600  w-1/2  px-10 py-3 mobile:py-0 mobile:px-2 text-primary justify-center mobile:w-full bg-slate-700 align-middle " to="/Login">  Order Now </Link>
+              </div>)}
+              
             </div>
 
             <div className="h-1/12 text-slate-600 w-10/12 mx-auto text-center flex justify-end">
@@ -129,7 +152,9 @@ function ProductsCard(props) {
               </button>
             </div>
           </div>
+         
         </li>
+
       </>
     );
   } else {
@@ -142,30 +167,39 @@ function ProductsCard(props) {
         >
           <div className="w-6/12 flex flex-col justify-around mobile:w-full ">
             <div className=" flex font-semibold w-1/4 h-3/12 justify-center mx-auto text-center">
-              <div className=" text-slate-600 mx-auto mt-10 text-center text-3xl self-center font-semibold">
+              <div className=" text-slate-600 mx-auto mt-10 text-center text-3xl self-center font-semibold mobile:text-lg">
                 {brand}&nbsp;
               </div>
-              <div className=" text-slate-600 mx-auto mt-10 text-center text-3xl self-center font-semibold">
+              <div className=" text-slate-600 mx-auto mt-10 text-center text-3xl self-center font-semibold mobile:text-lg">
                 &nbsp;{model}
               </div>
             </div>
 
-            <div className="h-2/12 text-slate-600 -mt-10 w-10/12 mx-auto text-center italic text-2xl font-semibold">
+            <div className="h-2/12 text-slate-600 -mt-10 w-10/12 mx-auto text-center italic text-2xl font-semibold mobile:my-0 mobile:text-sm">
               
               "{headtitle}"
             </div>
-            <div className="h-2/12 text-slate-600 w-10/12 mx-auto text-center ">
+            <div className="h-2/12 text-slate-600 w-10/12 mx-auto text-center mobile:text-xs">
               {descrip}
             </div>
             <div>
-              <div className="h-2/12 text-slate-600 w-10/12 mx-auto ">
+              <div className="h-2/12 text-slate-600 w-10/12 mx-auto mobile:text-sm">
                 
                 In stock : Yes ({amount})
               </div>
-              <div className="h-2/12 text-slate-600 w-10/12 mx-auto ">
+              <div className="h-2/12 text-slate-600 w-10/12 mx-auto mobile:text-sm">
                 
                 Price: {price}€
               </div>
+              <div className="h-3/12 text-slate-600 w-10/12 flex justify-center mx-auto  my-2  ">
+                <button className="flex text-center justify-center rounded fill-slate-600 py-3 w-1/2  px-10 mobile:py-0 mobile:px-2 text-primary mobile:w-full bg-slate-700 align-middle"> Add to Favorites </button>
+              </div>
+              
+              {currentUser ? (<div className="h-3/12 text-slate-600 w-10/12 flex justify-center mx-auto my-2">
+                <button className="flex text-center rounded fill-slate-600  w-1/2  px-10 py-3 mobile:py-0 mobile:px-2 text-primary justify-center mobile:w-full bg-slate-700 align-middle ">  Add to Cart  </button>
+              </div>) : (<div className="h-3/12 text-slate-600 w-10/12 flex justify-center mx-auto my-2">
+                <Link className="flex text-center rounded fill-slate-600  w-1/2  px-10 py-3 mobile:py-0 mobile:px-2 text-primary justify-center mobile:w-full bg-slate-700 align-middle " to="/Login">  Order Now  </Link>
+              </div>)}
             </div>
 
             <div className="h-1/12 text-slate-600 w-10/12 mx-auto text-center">
