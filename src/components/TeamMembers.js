@@ -12,7 +12,7 @@ function TeamMembers(props) {
         <img src={img} alt=" team members" className=" rounded-full object-fit" />
       </div>
       <div className="flex justify-center text-xl text-slate-800">
-        <h1 classname="  font-medium"> {name}</h1>
+        <h1 className="  font-medium"> {name}</h1>
       </div>
       <div className="flex justify-center text-md text-slate-600">
         <h3 className="  font-normal">{titr} </h3>
@@ -25,10 +25,10 @@ function TeamMembers(props) {
             <img src={img} alt=" team members" className=" rounded-full object-fit" />
           </div>
           <div className="flex justify-center text-xl text-slate-800">
-            <h1 classname="  font-medium"> {name}</h1>
+            <h1 className="  font-medium"> {name}</h1>
           </div>
           <div className="flex justify-center text-md text-slate-600">
-            <h3 classname="  font-normal">{titr} </h3>
+            <h3 className="  font-normal">{titr} </h3>
           </div>
         </li>
       );

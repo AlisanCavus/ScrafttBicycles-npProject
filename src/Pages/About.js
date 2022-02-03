@@ -3,6 +3,7 @@ import TeamMembers from '../components/TeamMembers';
 
 function About() {
 
+  // eslint-disable-next-line no-unused-vars
   const [ team , setTeam ] = useState([
     {id:0, name:'Lara Croft', titr: 'Founder', img:'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'},
     {id:1, name:'Sonya Blade', titr: 'Co-Founder', img:'https://images.pexels.com/photos/1239288/pexels-photo-1239288.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'},

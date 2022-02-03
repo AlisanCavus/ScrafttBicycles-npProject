@@ -1,6 +1,8 @@
 import React, { createContext,  useContext, useState, useEffect} from 'react';
-import { auth } from '../firebase'
+import { auth, db } from '../firebase'
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged} from 'firebase/auth'
+
+import {  doc, setDoc } from "firebase/firestore";
 
 
 
@@ -40,12 +42,35 @@ export default function AuthContextProvider({children}) {
         const unsubscribe = onAuthStateChanged(auth, user => {
             setCurrentUser(user)
             setLoading(false)
+            if (currentUser !== null) {
+                handleUser(user)
+            }
+            
+            
+            
+            
+            
         })
         return () => {
            unsubscribe()
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
+       const handleUser = async () => {
+        await setDoc(doc(db, "users", `${currentUser?.uid}`), {
+            email: `${currentUser?.email}`,
+            adress: [{line1: ''}, {line2: ''}, {postalCode: null}, {city: ''}, {country: ""}],
+            phoneNumber: null,
+            displayName: '',
+            orderedBikes: [{}],
+            favoriteBikes: [{}],
+
+          });
+       } 
+     
+    
+    
     const value = {
         currentUser,
         register,
