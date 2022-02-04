@@ -34,8 +34,8 @@ function About() {
         <div className="min-h-screen flex flex-col">
           
           <div className='flex flex-row justify-center h-4/12 '>
-            <div className=' w-5/12 h-full text-center mx-auto py-24 mobile:py-14 '>
-              <p className='text-slate-700'> We are bunch of engineers and mechanics with passionate since 2010. We believe one thing that hardworking will eventually gives you what you want. In scraftt, we have an amazing team and so proud to introduce to you.</p>
+            <div className=' w-5/12 h-full text-center mx-auto py-24 mobile:py-14'>
+              <p className='text-slate-700'> We are bunch of engineers and mechanics with passionate since 2010. We believe one thing that hardworking will eventually gives you what you want.  In <span className="animate-pulse text-main font-extrabold ">&nbsp;Scraftt</span>, we have an amazing team and so proud to introduce to you.</p>
             </div>
             <div className=' w-0.5 fill-slate-700 text-slate-700 min-h-full bg-slate-700  '>
               
