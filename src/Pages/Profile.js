@@ -77,7 +77,7 @@ function Profile() {
       <div className="min-h-screen bg-primary  ">
         <div className="flex flex-row min-h-screen m-0  ">
           <div className="flex flex-row justify-center  w-6/12 m-0 mobile:w-screen ">
-            <div className=" h-screen min-h-full flex justify-center w-screen bg-black mx-0 py-0 relative mobile:h-1/2 ">
+            <div className=" h-screen min-h-full flex justify-center w-screen mx-0 py-0 relative mobile:h-1/2 ">
               <video
                 autoPlay={true}
                 loop={true}
@@ -90,11 +90,11 @@ function Profile() {
             </div>
             <div className="flex justify-center w-1/2 m-auto absolute py-36 ">
               <h1 className="text-4xl h-full w-11/12 flex flex-col text-center justify-center font-normal text-secondary mobile:text-xl text-shadow-md ">
-                Hello {!user.displayName ? user.email : user.displayName}
+                Hello, {!user.displayName ? user.email : user.displayName}
               </h1>
             </div>
           </div>
-          
+
         </div>
       </div>
     );
