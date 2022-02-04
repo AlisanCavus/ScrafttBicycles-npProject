@@ -7,14 +7,14 @@ import { useNavigate } from "react-router-dom";
 
 
 function UpdateProfile({ close, setClose, handleCloseModal }) {
-//   const emailRef = useRef();
-//   const passwordRef = useRef();
-//   const cPasswordRef = useRef();
-//   const [termsConds, setTermsConds] = useState(false);
-//   const { register } = useAuth();
-//   const navigate = useNavigate();
-//   const [loading, setLoading] = useState(false);
-//   const [error, setError] = useState("");
+  const displayNameRef = useRef();
+  const phoneNumberRef = useRef();
+  const cPasswordRef = useRef();
+  const [termsConds, setTermsConds] = useState(false);
+  const { register } = useAuth();
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
 //   const mounted = useRef(false);
 
@@ -68,7 +68,7 @@ function UpdateProfile({ close, setClose, handleCloseModal }) {
           </span>
         </div>
         <div className="justify-center text-center mb-4">
-          <span className=" text-slate-700 text-xl ">Signup for your dream bike!</span>
+          <span className=" text-slate-700 text-xl "> Update your Profile </span>
         </div>
         <div className="flex justify-center flex-col mx-auto w-full mobile:w-full">
           <form
@@ -76,43 +76,46 @@ function UpdateProfile({ close, setClose, handleCloseModal }) {
             className="flex justify-center flex-col mx-auto w-full  mobile:w-11/12 mobile:mx-auto "
           >
             <div className="my-2 mx-auto flex flex-col mobile:w-11/12">
-              <label htmlFor="email" className=" mobile:w-11/12 text-slate-500 mobile:mx-auto">
-                Enter your e-mail:
+              <label htmlFor="text" className=" mobile:w-11/12 text-slate-500 mobile:mx-auto">
+                Enter your Full Name:
               </label>
               <input
                 className=" w-96 h-10 px-5 rounded  my-2 mobile:w-11/12 mobile:mx-auto focus:shadow-md shadow-md focus:shadow-slate-600 focus:scale-105 focus:outline-none"
-                type="email"
-                name="email"
-                placeholder="john@example.com"
+                type="text"
+                name="text"
+                placeholder="John Doe"
                 required
-                // ref={emailRef}
+                ref={displayNameRef}
               />
             </div>
             <div className="my-2 mx-auto flex flex-col mobile:w-11/12 mobile:mx-auto">
-              <label htmlFor="password" className=" mobile:w-11/12 text-slate-500 mobile:mx-auto">
-                Enter a password:
+              <label htmlFor="phoneNumber" className=" mobile:w-11/12 text-slate-500 mobile:mx-auto">
+                Enter Your Phone Number:
               </label>
               <input
-                type="password"
+                type="tel"
                 className=" w-96 h-10 my-2 px-5 rounded  mobile:w-11/12 mobile:mx-auto focus:shadow-md shadow-md focus:shadow-slate-600 focus:scale-105 focus:outline-none"
-                placeholder="Minimum 8 Characters"
+                placeholder="+32471000000"
                 required
-                name="password"
+                pattern="^\+32(?#8DIGIT)(?:1[0-69]|[23][2-8]|4[236-9]|5\d|6[01345789]|7[01689]|8[0-79]|9[012])\d{6}$"
+                name="phoneNumber"
                 minLength="8"
-                // ref={passwordRef}
+                ref={phoneNumberRef}
               />
             </div>
             <div className="my-2 mx-auto flex flex-col mobile:w-11/12 mobile:mx-auto">
-              <label htmlFor="cPassword" className=" mobile:w-11/12 text-slate-500 mobile:mx-auto">
-                Confirm your password:
+              <label htmlFor="adress" className=" mobile:w-11/12 text-slate-500 mobile:mx-auto">
+                Enter your Address:
               </label>
-              <input
-                type="password"
-                className=" w-96 h-10 rounded my-2 px-5  mobile:w-11/12 mobile:mx-auto focus:shadow-md shadow-md focus:shadow-slate-600 focus:scale-105 focus:outline-none"
-                placeholder="Repeat your password"
+              <textarea
+                rows="2"
+                type="address"
+                className=" w-96 h-10 rounded my-2 px-5  mobile:w-11/12 mobile:mx-auto focus:shadow-md shadow-md focus:shadow-slate-600 focus:scale-105 focus:outline-none "
+                placeholder="Enter your address for delivery"
                 required
-                minLength="8"
-                name="cPassword"
+                
+                minLength="10"
+                name="adress"
                 // ref={cPasswordRef}
               />
             </div>

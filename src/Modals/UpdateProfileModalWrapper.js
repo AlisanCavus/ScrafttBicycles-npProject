@@ -1,6 +1,6 @@
 import React from 'react';
 import reactDom from 'react-dom';
-import UpdateProfile from '../Pages/SignUp';
+import UpdateProfile from '../Pages/UpdateProfile';
 import { useSpring, animated } from 'react-spring';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
