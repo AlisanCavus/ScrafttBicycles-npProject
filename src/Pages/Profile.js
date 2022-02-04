@@ -86,21 +86,21 @@ function Profile() {
             <div className="w-11/12 mx-auto flex flex-col justify-center"> 
               <div className="flex justify-start ">
                 <h1 className=" text-2xl text-slate-700 mobile:text-lg w-4/12 "> Full Name: </h1>
-                {!user.displayName ? (<p className="text-center animate-pulse  align-baseline my-auto text-xl text-slate-700 mx-5 italic font-light text-opacity-70"> Please update your profile </p>) : (<p className="text-center align-baseline my-auto text-xl text-slate-700 mx-5"> {user.displayName} </p>)}
+                {!user.displayName ? (<Link to="/UpdateProfile" className="text-center animate-pulse  align-baseline my-auto text-xl text-slate-700 mx-5 italic font-light text-opacity-70"> Please update your profile </Link>) : (<p className="text-center align-baseline my-auto text-xl text-slate-700 mx-5"> {user.displayName} </p>)}
               </div>
             </div>
 
             <div className="w-11/12 mx-auto flex flex-col justify-center"> 
               <div className="flex justify-start">
                 <h1 className=" text-2xl text-slate-700 mobile:text-lg w-4/12"> Phone Number: </h1>
-                {!user.phoneNumber ? (<p className="text-center animate-pulse  align-baseline my-auto text-xl text-slate-700 mx-5 italic font-light text-opacity-70"> Please update your profile </p>) : (<p className="text-center align-baseline my-auto text-xl text-slate-700 mx-5"> {user.phoneNumber} </p>)}
+                {!user.phoneNumber ? (<Link to="/UpdateProfile" className="text-center animate-pulse  align-baseline my-auto text-xl text-slate-700 mx-5 italic font-light text-opacity-70"> Please update your profile </Link>) : (<p className="text-center align-baseline my-auto text-xl text-slate-700 mx-5"> {user.phoneNumber} </p>)}
               </div>
             </div>
 
             <div className="w-11/12 mx-auto flex flex-col justify-center"> 
               <div className="flex justify-start ">
                 <h1 className=" text-2xl text-slate-700 mobile:text-lg w-4/12"> Address: </h1>
-                {!user.adress ? (<p className="text-center  animate-pulse align-baseline my-auto text-xl text-slate-700 mx-5 italic font-light text-opacity-70"> Please update your profile </p>) : (<p className="text-center align-baseline my-auto text-xl text-slate-700 mx-5"> {user.adress} </p>)}
+                {!user.adress ? (<Link to="/UpdateProfile" className="text-center  animate-pulse align-baseline my-auto text-xl text-slate-700 mx-5 italic font-light text-opacity-70"> Please update your profile </Link>) : (<p className="text-center align-baseline my-auto text-xl text-slate-700 mx-5"> {user.adress} </p>)}
               </div>
             </div>
 
