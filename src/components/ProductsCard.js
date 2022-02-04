@@ -133,12 +133,12 @@ function ProductsCard(props) {
               </div>
               
               <div onClik={handleFavoriteBike} className="h-3/12 text-slate-600 w-10/12 flex justify-center mx-auto  my-2  ">
-                <button  className="flex text-center justify-center rounded fill-slate-600 py-3 w-1/2  px-10 mobile:py-0 mobile:px-2 text-primary mobile:w-full bg-slate-700 align-middle"> Add to Favorites </button>
+                <button  className="flex text-center justify-center rounded fill-slate-600 py-2 w-1/2  px-10 mobile:py-0 mobile:px-2 text-primary mobile:w-full bg-slate-700 align-middle"> Add to Favorites </button>
               </div>
               {currentUser ? (<div className="h-3/12 text-slate-600 w-10/12 flex justify-center mx-auto my-2">
-                <button className="flex text-center rounded fill-slate-600  w-1/2  px-10 py-3 mobile:py-0 mobile:px-2 text-primary justify-center mobile:w-full bg-slate-700 align-middle ">  Add to Cart  </button>
+                <button className="flex text-center rounded fill-slate-600  w-1/2  px-10 py-2 mobile:py-0 mobile:px-2 text-primary justify-center mobile:w-full bg-slate-700 align-middle ">  Add to Cart  </button>
               </div>) : (<div className="h-3/12 text-slate-600 w-10/12 flex justify-center mx-auto my-2">
-                <Link className="flex text-center rounded fill-slate-600  w-1/2  px-10 py-3 mobile:py-0 mobile:px-2 text-primary justify-center mobile:w-full bg-slate-700 align-middle " to="/Login">  Order Now </Link>
+                <Link className="flex text-center rounded fill-slate-600  w-1/2  px-10 py-2 mobile:py-0 mobile:px-2 text-primary justify-center mobile:w-full bg-slate-700 align-middle " to="/Login">  Order Now </Link>
               </div>)}
               
             </div>
@@ -192,13 +192,13 @@ function ProductsCard(props) {
                 Price: {price}€
               </div>
               <div className="h-3/12 text-slate-600 w-10/12 flex justify-center mx-auto  my-2  ">
-                <button className="flex text-center justify-center rounded fill-slate-600 py-3 w-1/2  px-10 mobile:py-0 mobile:px-2 text-primary mobile:w-full bg-slate-700 align-middle"> Add to Favorites </button>
+                <button className="flex text-center justify-center rounded fill-slate-600 py-2 w-1/2  px-10 mobile:py-0 mobile:px-2 text-primary mobile:w-full bg-slate-700 align-middle"> Add to Favorites </button>
               </div>
               
               {currentUser ? (<div className="h-3/12 text-slate-600 w-10/12 flex justify-center mx-auto my-2">
-                <button className="flex text-center rounded fill-slate-600  w-1/2  px-10 py-3 mobile:py-0 mobile:px-2 text-primary justify-center mobile:w-full bg-slate-700 align-middle ">  Add to Cart  </button>
+                <button className="flex text-center rounded fill-slate-600  w-1/2  px-10 py-2 mobile:py-0 mobile:px-2 text-primary justify-center mobile:w-full bg-slate-700 align-middle ">  Add to Cart  </button>
               </div>) : (<div className="h-3/12 text-slate-600 w-10/12 flex justify-center mx-auto my-2">
-                <Link className="flex text-center rounded fill-slate-600  w-1/2  px-10 py-3 mobile:py-0 mobile:px-2 text-primary justify-center mobile:w-full bg-slate-700 align-middle " to="/Login">  Order Now  </Link>
+                <Link className="flex text-center rounded fill-slate-600  w-1/2  px-10 py-2 mobile:py-0 mobile:px-2 text-primary justify-center mobile:w-full bg-slate-700 align-middle " to="/Login">  Order Now  </Link>
               </div>)}
             </div>
 
