@@ -1,4 +1,4 @@
-import React, { useRef} from "react";
+import React, { useRef } from "react";
 import FirstJumb from "../components/HomeComps/FirstJumb";
 import HomeProd from "../components/HomeComps/HomeProd";
 import Prod1 from "../components/HomeComps/Prod1";

@@ -166,7 +166,7 @@ function ProductsCard(props) {
           flex flex-row mobile:flex-col"
         >
           <div className="w-6/12 flex flex-col justify-around mobile:w-full ">
-            <div className=" flex font-semibold w-1/4 h-3/12 justify-center mx-auto text-center">
+            <div className=" flex font-semibold w-1/4 h-3/12 justify-center mx-auto  text-center">
               <div className=" text-slate-600 mx-auto mt-10 text-center text-3xl self-center font-semibold mobile:text-lg">
                 {brand}&nbsp;
               </div>
@@ -205,7 +205,7 @@ function ProductsCard(props) {
             <div className="h-1/12 text-slate-600 w-10/12 mx-auto text-center">
               <button
                 onClick={() => scroll.scrollToTop()}
-                className="bg-inherit flex flex-col text-center z-50 items-end align-end hover:animate-bounce  justify-end mt-auto mb-5 mx-5 opacity-30 h-10 fill-slate-500 w-10 "
+                className="bg-inherit flex flex-col text-center z-50 items-end align-end hover:animate-bounce justify-end mt-auto mb-5 mx-5 opacity-30 h-10 fill-slate-500 w-10 "
               >
                 <IoIosArrowUp className="border-black  w-full h-full fill-slate-500" />
               </button>
