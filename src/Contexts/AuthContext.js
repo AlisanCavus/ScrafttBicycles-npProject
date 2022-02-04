@@ -64,12 +64,12 @@ export default function AuthContextProvider({children}) {
            
         await setDoc(doc(db, "users", `${currentUser?.uid}`), {
             email: `${currentUser?.email}`,
-            adress: [{line1: ''}, {line2: ''}, {postalCode: null}, {city: ''}, {country: ""}],
+            adress: "",
             phoneNumber: null,
-            displayName: '',
-            orderedBikes: [{}],
-            favoriteBikes: [{}],
-
+            displayName: "",
+            orderedBikes: [],
+            favoriteBikes: [],
+            createdAt: new Date()
           });
        } 
      

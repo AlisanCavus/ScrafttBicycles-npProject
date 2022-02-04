@@ -142,15 +142,15 @@ function ProductsCard(props) {
               </div>)}
               
             </div>
-
-            <div className="h-1/12 text-slate-600 w-10/12 mx-auto text-center flex justify-end">
+            {index === 0 ? (<></>) : (<div className="h-1/12 text-slate-600 w-10/12 mx-auto text-center flex justify-end">
               <button
                 onClick={() => scroll.scrollToTop()}
-                className="bg-inherit flex flex-col text-center z-50 items-end align-end hover:animate-bounce  justify-end mt-auto mb-5 mx-5 opacity-30 h-10 fill-slate-500 w-10 "
+                className="bg-inherit flex flex-col text-center z-50 items-end align-end hover:animate-bounce  justify-end mt-auto mb-5 mx-5 opacity-30 h-10 fill-slate-500 w-10 mobile:justify-center mobile:items-center mobile:align-center mobile:flex-col mobile:mx-auto "
               >
                 <IoIosArrowUp className="border-black  w-full h-full fill-slate-500" />
               </button>
-            </div>
+            </div>)}
+            
           </div>
          
         </li>
@@ -205,7 +205,7 @@ function ProductsCard(props) {
             <div className="h-1/12 text-slate-600 w-10/12 mx-auto text-center">
               <button
                 onClick={() => scroll.scrollToTop()}
-                className="bg-inherit flex flex-col text-center z-50 items-end align-end hover:animate-bounce justify-end mt-auto mb-5 mx-5 opacity-30 h-10 fill-slate-500 w-10 "
+                className="bg-inherit flex flex-col text-center z-50 items-end align-end hover:animate-bounce justify-end mt-auto mb-5 mx-5 opacity-30 h-10 fill-slate-500 w-10 mobile:justify-center mobile:items-center mobile:align-center mobile:flex-col mobile:mx-auto"
               >
                 <IoIosArrowUp className="border-black  w-full h-full fill-slate-500" />
               </button>

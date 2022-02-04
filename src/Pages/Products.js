@@ -90,28 +90,6 @@ function Products() {
 
 
 
-//   return (
-//   <div className=" min-h-screen bg-primary " ref={scrollRef} >
-//     <ul>
-//       {bikes.map((id, index) => 
-//         <ProductsCard
-//         index={index}
-//         key={id.id}
-//         amount={id.amount}
-//         id={id.id}
-//         brand={id.brand}
-//         descrip={id.descrip}
-//         headtitle={id.headtitle}
-//         img0={id.img0}
-//         img1={id.img1}
-//         img2={id.img2}
-//         model={id.model}
-//         price={id.price}
-//         />
-//       )}
-//     </ul>
-//   </div>
-// );
 }
 
 export default Products;

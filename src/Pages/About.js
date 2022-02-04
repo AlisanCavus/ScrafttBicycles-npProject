@@ -58,10 +58,7 @@ function About() {
           
         </div>
 
-        <div className="min-h-screen">
-
-        </div>
-
+       
       </div>
     </div>
   );
