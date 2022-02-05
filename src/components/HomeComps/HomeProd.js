@@ -78,7 +78,7 @@ function HomeProd() {
     // </div>
 
     <div className="flex min-h-screen mobile:grid mobile:grid-rows-2"  >
-      <div className="w-9/12 flex object-fill bg-tamir bg-cover mobile:w-full mobile:h-full "></div>
+      <div className="w-[71%] flex object-fill bg-tamir bg-cover mobile:w-full mobile:h-full "></div>
 
       
       <div style={sty} className="mobile:w-1/3 mobile:mx-auto mobile:-translate-y-20 mobile:justify-center mobile:text-center mobile:items-center" >

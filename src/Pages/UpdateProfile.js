@@ -105,9 +105,9 @@ function UpdateProfile({ close, setClose, handleCloseModal }) {
             </div>
             <div className="my-2 mx-auto flex flex-col mobile:w-11/12 mobile:mx-auto">
               <label htmlFor="adress" className=" mobile:w-11/12 text-slate-500 mobile:mx-auto">
-                Enter your Address:
+                Address Line 1:
               </label>
-              <textarea
+              <input
                 rows="2"
                 type="address"
                 className=" w-96 h-10 rounded my-2 px-5  mobile:w-11/12 mobile:mx-auto focus:shadow-md shadow-md focus:shadow-slate-600 focus:scale-105 focus:outline-none "
@@ -119,7 +119,42 @@ function UpdateProfile({ close, setClose, handleCloseModal }) {
                 // ref={cPasswordRef}
               />
             </div>
-            <div className="my-3 mx-auto flex flex-row mobile:w-11/12 mobile:mx-auto ">
+            <div className="my-2 mx-auto flex flex-col mobile:w-11/12 mobile:mx-auto">
+              <label htmlFor="adress" className=" mobile:w-11/12 text-slate-500 mobile:mx-auto">
+                Address Line 2:
+              </label>
+              <input
+                rows="2"
+                type="address"
+                className=" w-96 h-10 rounded my-2 px-5  mobile:w-11/12 mobile:mx-auto focus:shadow-md shadow-md focus:shadow-slate-600 focus:scale-105 focus:outline-none "
+                placeholder="Enter your address for delivery"
+                required
+                
+                minLength="10"
+                name="adress"
+                // ref={cPasswordRef}
+              />
+              
+            </div>
+          
+            <div className="my-2 mx-auto flex flex-col mobile:w-11/12 mobile:mx-auto">
+              <label htmlFor="adress" className=" mobile:w-11/12 text-slate-500 mobile:mx-auto">
+                City / Country:
+              </label>
+              <input
+                rows="2"
+                type="address"
+                className=" w-96 h-10 rounded my-2 px-5  mobile:w-11/12 mobile:mx-auto focus:shadow-md shadow-md focus:shadow-slate-600 focus:scale-105 focus:outline-none "
+                placeholder="Enter your address for delivery"
+                required
+                
+                minLength="10"
+                name="adress"
+                // ref={cPasswordRef}
+              />
+              
+            </div>
+            {/* <div className="my-3 mx-auto flex flex-row mobile:w-11/12 mobile:mx-auto ">
               <input
                 // onChange={terms}
                 // checked={termsConds}
@@ -140,7 +175,7 @@ function UpdateProfile({ close, setClose, handleCloseModal }) {
                   Agree with Our Terms & Conditions
                 </a>
               </label>
-            </div>
+            </div> */}
 
             {/* <div
               disabled={loading}
@@ -154,6 +189,18 @@ function UpdateProfile({ close, setClose, handleCloseModal }) {
                 </button>
               </div>
             </div> */}
+            <div
+              disabled={loading}
+              className="  flex flex-col align-middle mx-auto rounded w-96 bg-secondary  border-secondary shadow-md justify-center cursor-pointer hover:animate-pulse text-gray-700 my-12 mobile:w-2/3"
+            >
+              <div className="h-10  flex flex-row text-center align-middle justify-center">
+
+                <button disabled={loading} type="submit">
+                  
+                  Update Your Profile
+                </button>
+              </div>
+            </div>
           </form>
           <div className="h-8 w-full mx-auto text-center">
             {/* {error && (
@@ -161,7 +208,7 @@ function UpdateProfile({ close, setClose, handleCloseModal }) {
             )} */}
           </div>
          
-          <div className=" w-96 mb-2 flex flex-row mx-auto text-sm mobile:w-screen mobile:justify-center mobile:text-center">
+          {/* <div className=" w-96 mb-2 flex flex-row mx-auto text-sm mobile:w-screen mobile:justify-center mobile:text-center">
             <div className="w-full my-auto">
               <span className=" text-slate-500">Do you already have an account? &nbsp; </span>
               
@@ -174,7 +221,7 @@ function UpdateProfile({ close, setClose, handleCloseModal }) {
             
             
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

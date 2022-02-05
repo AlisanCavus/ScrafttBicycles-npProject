@@ -13,7 +13,7 @@ function SignUp({ close, setClose, handleCloseModal }) {
   const [termsConds, setTermsConds] = useState(false);
   const { register } = useAuth();
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
   const mounted = useRef(false);
