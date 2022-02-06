@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   IoIosArrowUp,
   IoIosArrowBack,
@@ -49,7 +49,7 @@ function ProductsCard(props) {
     );
   };
 
-  const [favorite, setFavorite] = useState([]);
+ 
 
   var settings = {
     infinite: true,
