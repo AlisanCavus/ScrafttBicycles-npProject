@@ -70,13 +70,13 @@ function Navbar() {
           <animated.div style={anim}>
             <Menu
               as="div"
-              className="flex flex-column relative mobile:content-center mobile:mx-auto mobile:p-0"
+              className="flex flex-column relative mobile:content-center mobile:mx-auto mobile:p-0 "
             >
               <Menu.Button className="place-content-center flex my-auto hover group flex-row -scale-x-100 ">
                 <AiOutlineLine className=" text-gray-700 mt-6  -right-[1rem]   group-hover:animate-bounce group-active:animate-bounce "></AiOutlineLine>
                 <AiOutlineLine className=" text-gray-700 mt-2 -right-[2rem] visible  group-hover:animate-bounce group-active:animate-bounce   "></AiOutlineLine>
                 <AiOutlineLine className=" text-gray-700  -mt-2 -right-[3rem] visible  group-hover:animate-bounce group-active:animate-bounce  "></AiOutlineLine>
-                <MdDirectionsBike className="w-10 h-10 text-gray-700 " />
+                <MdDirectionsBike className="w-10 h-10 text-gray-700 group-hover:animate-bounce group-active:animate-pulse" />
               </Menu.Button>
 
               <Menu.Items

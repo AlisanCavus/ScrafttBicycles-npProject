@@ -35,7 +35,7 @@ function Login({ closeModal, handleCloseModal }) {
       setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value)
         .then((response) => console.log(response.user.email))
-        .catch((error) => setError(error.message));
+        .catch((error) => setError(error.message.slice(10)));
     } catch (err) {
       console.log(err)
     }
