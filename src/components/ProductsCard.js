@@ -29,7 +29,6 @@ function ProductsCard(props) {
     img2,
     model,
     price,
-    handleFavoriteBike
   } = props;
 
   
@@ -132,7 +131,7 @@ function ProductsCard(props) {
                 Price: {price}€
               </div>
               
-              <div onClik={handleFavoriteBike} className="h-3/12 text-slate-600 w-10/12 flex justify-center mx-auto  my-2  ">
+              <div className="h-3/12 text-slate-600 w-10/12 flex justify-center mx-auto  my-2  ">
                 <button  className="flex text-center justify-center rounded fill-slate-600 py-2 w-1/2  px-10 mobile:py-0 mobile:px-2 text-primary mobile:w-full bg-slate-700 align-middle"> Add to Favorites </button>
               </div>
               {currentUser ? (<div className="h-3/12 text-slate-600 w-10/12 flex justify-center mx-auto my-2">

@@ -55,10 +55,7 @@ function Products() {
    // eslint-disable-next-line react-hooks/exhaustive-deps
    },[]);
 
-  const addFavoriteBike = (bikes) => {
-    const newFavoriteBikesList = [...favBike, bikes ]
-    setFavBike(newFavoriteBikesList)
-  }
+ 
  
 
   
@@ -80,7 +77,7 @@ function Products() {
           img2={id.img2}
           model={id.model}
           price={id.price}
-          handleFavoriteBike={addFavoriteBike}
+          
           />
         )}
       </ul>) : ( <LoadingScreen />)}

@@ -5,11 +5,19 @@ import { doc, getDoc } from "firebase/firestore";
 import LoadingScreen from "../components/LoadingScreen";
 import Profvid from "../Assets/profvid.mp4";
 import { Link } from "react-router-dom";
+import { animated, useSpring } from 'react-spring';
 
 function Profile() {
   const { currentUser } = useAuth();
   const [user, setUser] = useState();
   const [loading, setLoading] = useState(true);
+
+
+  const anim = useSpring({
+    from: { opacity: 0, transform: 'translateX(100%)' },
+    to: { opacity: 1, transform: 'translateX(0%)' },
+    delay: 300,
+  });
 
   
 
@@ -61,11 +69,11 @@ function Profile() {
                 <source src={Profvid}></source>
               </video>
             </div>
-            <div className="flex justify-center w-1/2 m-auto absolute py-36 ">
+            <animated.div style={anim} className="flex justify-center w-1/2 m-auto absolute py-36 ">
               <h1 className="text-4xl h-full w-11/12 flex flex-col text-center justify-center font-normal text-secondary mobile:text-xl text-shadow-md ">
                 Hello, {!user.displayName ? user.email : user.displayName}
               </h1>
-            </div>
+            </animated.div>
           </div>
 
           <div className="grid grid-rows-6 w-full my-20 mobile:min-h-[80vh] ">
