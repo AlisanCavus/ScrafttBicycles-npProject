@@ -70,7 +70,7 @@ export default function AuthContextProvider({children}) {
             orderedBikes: [],
             favoriteBikes: [],
             createdAt: new Date()
-          });
+          }, {merge:true});
        } 
      
     
