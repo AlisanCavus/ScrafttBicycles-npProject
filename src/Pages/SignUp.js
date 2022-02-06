@@ -41,11 +41,12 @@ function SignUp({ close, setClose, handleCloseModal }) {
       setError('');
       setLoading(true);
       await register(emailRef.current.value, passwordRef.current.value)
-        .then((response) => console.log(response.user.email))
-        .catch((error) => console.log(error.message));
-      navigate('/Login');
+        .then((response) => console.log('Signed Up as', response.user.email))
+        .catch((error) => setError(error.message.slice(10)));
+        navigate('/Profile');
     } catch {
       setError('Failed to create an account');
+      
     }
     setLoading(false);
   }

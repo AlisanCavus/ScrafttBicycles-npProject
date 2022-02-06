@@ -6,6 +6,7 @@ import LoadingScreen from "../components/LoadingScreen";
 import Profvid from "../Assets/profvid.mp4";
 import { Link } from "react-router-dom";
 import { animated, useSpring } from 'react-spring';
+import { FiEdit } from 'react-icons/fi'
 
 function Profile() {
   const { currentUser } = useAuth();
@@ -49,7 +50,7 @@ function Profile() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  console.log(user);
+ 
 
   if (loading || !user === undefined) {
     return <LoadingScreen />;
@@ -79,7 +80,7 @@ function Profile() {
           <div className="grid grid-rows-6 w-full my-20 mobile:min-h-[80vh] ">
             <div className="w-11/12 mx-auto flex flex-col justify-center"> 
               <div className="border-b-2 border-slate-700 ">
-                <h1 className="text-center text-2xl text-slate-700 my-auto mobile:text-lg"> Your Profile </h1>
+                <h1 className="text-center text-2xl text-slate-700 my-auto mobile:text-lg"> Your Profile {user.displayName && user.phoneNumber && user.adress ? (<Link className=" inline-block align-sub mx-auto w-5 text-center cursor-pointer" to="/UpdateProfile"> <FiEdit/> </Link>) : (<></>)} </h1>
                 
               </div>
             </div>
