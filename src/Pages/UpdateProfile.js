@@ -9,22 +9,20 @@ import { useNavigate } from "react-router-dom";
 function UpdateProfile({ close, setClose, handleCloseModal }) {
   const displayNameRef = useRef();
   const phoneNumberRef = useRef();
-  const cPasswordRef = useRef();
-  const [termsConds, setTermsConds] = useState(false);
-  const { register } = useAuth();
+  const adressRef = useRef();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-//   const mounted = useRef(false);
+  const mounted = useRef(false);
 
-//   useEffect(() => {
-//     mounted.current = true;
+  useEffect(() => {
+    mounted.current = true;
 
-//     return () => {
-//       mounted.current = false;
-//     };
-//   }, []);
+    return () => {
+      mounted.current = false;
+    };
+  }, []);
 
 //   const terms = (e) => {
 //     setTermsConds(e.target.checked);
@@ -97,7 +95,6 @@ function UpdateProfile({ close, setClose, handleCloseModal }) {
                 className=" w-96 h-10 my-2 px-5 rounded  mobile:w-11/12 mobile:mx-auto focus:shadow-md shadow-md focus:shadow-slate-600 focus:scale-105 focus:outline-none"
                 placeholder="+32471000000"
                 required
-                pattern="^\+32(?#8DIGIT)(?:1[0-69]|[23][2-8]|4[236-9]|5\d|6[01345789]|7[01689]|8[0-79]|9[012])\d{6}$"
                 name="phoneNumber"
                 minLength="8"
                 ref={phoneNumberRef}
@@ -105,55 +102,21 @@ function UpdateProfile({ close, setClose, handleCloseModal }) {
             </div>
             <div className="my-2 mx-auto flex flex-col mobile:w-11/12 mobile:mx-auto">
               <label htmlFor="adress" className=" mobile:w-11/12 text-slate-500 mobile:mx-auto">
-                Address Line 1:
+                Enter Your Full Address:
               </label>
-              <input
+              <textarea
                 rows="2"
                 type="address"
-                className=" w-96 h-10 rounded my-2 px-5  mobile:w-11/12 mobile:mx-auto focus:shadow-md shadow-md focus:shadow-slate-600 focus:scale-105 focus:outline-none "
+                className=" w-96 h-20 rounded my-2 px-5  mobile:w-11/12 mobile:mx-auto focus:shadow-md shadow-md focus:shadow-slate-600 focus:scale-105 focus:outline-none "
                 placeholder="Enter your address for delivery"
                 required
-                
+                ref={adressRef}
                 minLength="10"
                 name="adress"
                 // ref={cPasswordRef}
               />
             </div>
-            <div className="my-2 mx-auto flex flex-col mobile:w-11/12 mobile:mx-auto">
-              <label htmlFor="adress" className=" mobile:w-11/12 text-slate-500 mobile:mx-auto">
-                Address Line 2:
-              </label>
-              <input
-                rows="2"
-                type="address"
-                className=" w-96 h-10 rounded my-2 px-5  mobile:w-11/12 mobile:mx-auto focus:shadow-md shadow-md focus:shadow-slate-600 focus:scale-105 focus:outline-none "
-                placeholder="Enter your address for delivery"
-                required
-                
-                minLength="10"
-                name="adress"
-                // ref={cPasswordRef}
-              />
-              
-            </div>
-          
-            <div className="my-2 mx-auto flex flex-col mobile:w-11/12 mobile:mx-auto">
-              <label htmlFor="adress" className=" mobile:w-11/12 text-slate-500 mobile:mx-auto">
-                City / Country:
-              </label>
-              <input
-                rows="2"
-                type="address"
-                className=" w-96 h-10 rounded my-2 px-5  mobile:w-11/12 mobile:mx-auto focus:shadow-md shadow-md focus:shadow-slate-600 focus:scale-105 focus:outline-none "
-                placeholder="Enter your address for delivery"
-                required
-                
-                minLength="10"
-                name="adress"
-                // ref={cPasswordRef}
-              />
-              
-            </div>
+            
             {/* <div className="my-3 mx-auto flex flex-row mobile:w-11/12 mobile:mx-auto ">
               <input
                 // onChange={terms}
@@ -189,18 +152,53 @@ function UpdateProfile({ close, setClose, handleCloseModal }) {
                 </button>
               </div>
             </div> */}
-            <div
-              disabled={loading}
-              className="  flex flex-col align-middle mx-auto rounded w-96 bg-secondary  border-secondary shadow-md justify-center cursor-pointer hover:animate-pulse text-gray-700 my-12 mobile:w-2/3"
-            >
-              <div className="h-10  flex flex-row text-center align-middle justify-center">
-
-                <button disabled={loading} type="submit">
-                  
-                  Update Your Profile
-                </button>
+            {loading ? (
+              <div
+                disabled={loading}
+                className="  flex flex-col align-middle mx-auto rounded w-96 bg-secondary  border-secondary shadow-md justify-center cursor-not-allowed hover:animate-pulse text-gray-700 my-10 mobile:w-2/3"
+              >
+                <div className="h-10  flex flex-row text-center align-middle justify-center">
+                  <button
+                    type="button"
+                    className="inline-flex items-center px-4 py-2 font-semibold leading-6 text-sm text-white  transition ease-in-out duration-150 cursor-not-allowed"
+                    disabled=""
+                  >
+                    <svg
+                      className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                      ></circle>
+                      <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                      ></path>
+                    </svg>
+                    Processing...
+                  </button>
+                </div>
               </div>
-            </div>
+            ) : (
+              <button
+              type="submit"
+                className="flex flex-row align-middle mx-auto rounded w-96 bg-secondary  border-secondary shadow-md justify-center cursor-pointer hover:animate-pulse text-gray-700 my-10 mobile:w-2/3"
+              >
+                <div className="h-10  flex flex-col text-center align-middle justify-center mx-auto">
+                 
+               Update Your Profile
+                  
+                </div>
+              </button>
+            )}
           </form>
           <div className="h-8 w-full mx-auto text-center">
             {/* {error && (
