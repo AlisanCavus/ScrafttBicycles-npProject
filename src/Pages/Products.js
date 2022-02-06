@@ -67,8 +67,10 @@ function Products() {
           <ProductsCard className='snap-center'
           index={index}
           key={id.id}
+          guarantie={id.guarantie}
           amount={id.amount}
           id={id.id}
+          specs={id.specs}
           brand={id.brand}
           descrip={id.descrip}
           headtitle={id.headtitle}
