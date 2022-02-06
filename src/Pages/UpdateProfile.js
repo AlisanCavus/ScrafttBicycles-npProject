@@ -4,6 +4,9 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { useAuth } from "../Contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { doc, updateDoc } from "firebase/firestore";
+import { db } from "../firebase";
+// import { updateProfile } from "@firebase/auth";
 
 
 function UpdateProfile({ close, setClose, handleCloseModal }) {
@@ -13,6 +16,7 @@ function UpdateProfile({ close, setClose, handleCloseModal }) {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const { currentUser } = useAuth();
 
   const mounted = useRef(false);
 
@@ -24,6 +28,28 @@ function UpdateProfile({ close, setClose, handleCloseModal }) {
     };
   }, []);
 
+
+  const updateProfile = async () => {
+
+    const updateDocRef = doc(db, 'users', `${currentUser?.uid}`);
+
+    await updateDoc(updateDocRef, {
+      displayName: displayNameRef.current.value,
+      adress: adressRef.current.value,
+      phoneNumber: phoneNumberRef.current.value
+    })
+  }
+
+  async function handleSubmit (e)  {
+    e.preventDefault()
+    setLoading(true)
+    updateProfile()
+    navigate('/Profile')
+
+  }
+  
+
+  
 //   const terms = (e) => {
 //     setTermsConds(e.target.checked);
 //   };
@@ -70,7 +96,7 @@ function UpdateProfile({ close, setClose, handleCloseModal }) {
         </div>
         <div className="flex justify-center flex-col mx-auto w-full mobile:w-full">
           <form
-            // onSubmit={handleSubmit}
+            onSubmit={handleSubmit}
             className="flex justify-center flex-col mx-auto w-full  mobile:w-11/12 mobile:mx-auto "
           >
             <div className="my-2 mx-auto flex flex-col mobile:w-11/12">

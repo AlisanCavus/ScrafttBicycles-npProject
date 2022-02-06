@@ -22,9 +22,23 @@ export default function AuthContextProvider({children}) {
 
     
 
-    async function register (email,password) {
-        return createUserWithEmailAndPassword(auth, email, password)
-        // .then( await addDoc(doc(db, 'users' , {userId: currentUser.user.uid , email: currentUser.user.email}))) 
+    // async function register (email,password) {
+    //     return createUserWithEmailAndPassword(auth, email, password)
+    //     // .then( await addDoc(doc(db, 'users' , {userId: currentUser.user.uid , email: currentUser.user.email}))) 
+    // }
+
+    const register = async (email, password) => {
+        const { currentUser } = await createUserWithEmailAndPassword(auth, email, password)
+        await setDoc(doc(db, "users", `${currentUser?.uid}`), {
+            email: `${currentUser?.email}`,
+            adress: "",
+            phoneNumber: null,
+            displayName: "",
+            orderedBikes: [],
+            favoriteBikes: [],
+            createdAt: new Date()
+          }, {merge:true});
+          console.log('Document Added')
     }
 
 
@@ -42,9 +56,9 @@ export default function AuthContextProvider({children}) {
         const unsubscribe = onAuthStateChanged(auth, user => {
             setCurrentUser(user)
             setLoading(false)
-            if(user !== undefined) {
-                handleUser(user)
-            }
+            // if(user !== undefined) {
+            //     handleUser(user)
+            // }
             
                 
         
@@ -60,18 +74,18 @@ export default function AuthContextProvider({children}) {
     
     })
 
-       const handleUser = async () => {
+    //    const handleUser = async () => {
            
-        await setDoc(doc(db, "users", `${currentUser?.uid}`), {
-            email: `${currentUser?.email}`,
-            adress: "",
-            phoneNumber: null,
-            displayName: "",
-            orderedBikes: [],
-            favoriteBikes: [],
-            createdAt: new Date()
-          }, {merge:true});
-       } 
+    //     await setDoc(doc(db, "users", `${currentUser?.uid}`), {
+    //         email: `${currentUser?.email}`,
+    //         adress: "",
+    //         phoneNumber: null,
+    //         displayName: "",
+    //         orderedBikes: [],
+    //         favoriteBikes: [],
+    //         createdAt: new Date()
+    //       }, {merge:true});
+    //    } 
      
     
     
