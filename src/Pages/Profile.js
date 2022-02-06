@@ -43,7 +43,7 @@ function Profile() {
 
   console.log(user);
 
-  if (loading) {
+  if (loading || !user === undefined) {
     return <LoadingScreen />;
   } else {
     return (
