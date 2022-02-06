@@ -7,9 +7,9 @@ function About() {
   const [ team , setTeam ] = useState([
     {id:0, name:'Lara Croft', titr: 'Founder', img:'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'},
     {id:1, name:'Sonya Blade', titr: 'Co-Founder', img:'https://images.pexels.com/photos/1239288/pexels-photo-1239288.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'},
-    {id:2, name:'Gordon Freeman', titr: 'Head Designer', img:'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260'},
+    {id:2, name:'Alisan Cavus', titr: 'Webmaster', img:"https://i.ibb.co/zsLHZjJ/EC9-E5-F05-5-E09-4502-ACF2-32-E034-D295-C5.jpg" },
     {id:3, name:'Max Payne', titr: 'Head Engineer', img:'https://images.pexels.com/photos/2955376/pexels-photo-2955376.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'},
-    {id:4, name:'Alisan Cavus', titr: 'Webmaster', img:"https://i.ibb.co/zsLHZjJ/EC9-E5-F05-5-E09-4502-ACF2-32-E034-D295-C5.jpg" },
+    {id:4, name:'Gordon Freeman', titr: 'Head Designer', img:'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260'},
   ])
   
   return (
