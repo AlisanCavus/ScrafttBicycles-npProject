@@ -140,7 +140,7 @@ function SignUp({ close, setClose, handleCloseModal }) {
                 className="align-middle my-auto mx-1 mobile:w-full mobile:text-center hover:underline underline-offset-4"
               >
                 <a
-                  href="https://thatsthefinger.com/"
+                  href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
                   target="_blank"
                   rel="noreferrer"
                   className=" text-slate-500 visited:text-slate-600 mobile:w-full focus:text-slate-600  no-underline"
