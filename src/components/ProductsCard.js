@@ -7,7 +7,6 @@ import {
 import { Link } from 'react-router-dom';
 import { animateScroll as scroll } from 'react-scroll';
 import Slider from 'react-slick';
-
 import { useAuth } from '../Contexts/AuthContext';
 
 function ProductsCard(props) {
