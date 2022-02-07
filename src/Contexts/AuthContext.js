@@ -35,6 +35,7 @@ export default function AuthContextProvider({children}) {
             displayName: "",
             orderedBikes: [],
             favoriteBikes: [],
+            cartedBikes: [],
             createdAt: new Date()
           }, {merge:true});
           console.log('Document Added')
