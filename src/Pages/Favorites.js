@@ -65,11 +65,11 @@ function Favorites() {
 
   return (
     <div
-      className="h-screen bg-primary"
+      className="min-h-screen bg-primary overflow-hidden"
       id="container">
-      <div className="min-h-screen w-screen flex mobile:flex-row">
+      <div className="min-h-screen w-screen flex mobile:flex-col-reverse">
         
-        <div className="w-1/2 min-h-screen h-screen flex justify-center flex-col ">
+        <div className="w-1/2 min-h-screen h-screen flex justify-center flex-col mobile:w-full">
         <div className=" flex justify-between m-6 border-b-2 border-slate-700">
           <span className=" w-10/12 text-center" >Products</span>
           <span className="w-2/12 text-center">&nbsp; Price </span>
@@ -100,7 +100,7 @@ function Favorites() {
             <LoadingScreen />
           )}
         </div>
-        <div className="w-1/2 mobile:min-w-screen ">
+        <div className="w-1/2 mobile:w-screen  ">
           <div className=" flex mobile:flex-row justify-center max-h-screen m-0 p-0 min-h-screen relative h-screen min-w-screen ">
             <video
               autoPlay={true}
