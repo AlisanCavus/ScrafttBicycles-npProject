@@ -12,12 +12,33 @@ import LoadingScreen from '../components/LoadingScreen';
 function Products() {
   const [bikes, setBikes] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [favBike, setFavBike ] = useState([])
+  const [favBikes, setFavBikes ] = useState([])
 
+  useEffect(() => {
+    const data = localStorage.getItem('FavoriteBikes')
+    if (data) {
+      setFavBikes(JSON.parse(data));
+    }
+
+  },[]);
+
+  useEffect(() => {
+    localStorage.setItem('FavoriteBikes', JSON.stringify(favBikes));
+  });
+
+
+  const addToFav = (id) => {
+    if(favBikes.includes(id)) {
+      alert("You have already added this bike to your Favorites")
+ 
+     } else {
+       setFavBikes([...favBikes, id])
+     }
+  }
  
 
  
-
+ 
 
   
 
@@ -79,6 +100,10 @@ function Products() {
           img2={id.img2}
           model={id.model}
           price={id.price}
+          addToFav={addToFav}
+          favBikes={favBikes}
+          
+          
           
           />
         )}

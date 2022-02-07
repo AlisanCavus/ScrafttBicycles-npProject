@@ -11,6 +11,11 @@ import Slider from 'react-slick';
 import { useAuth } from '../Contexts/AuthContext';
 
 function ProductsCard(props) {
+ 
+  
+  
+
+
   const { currentUser } = useAuth();
   const {
     index,
@@ -26,6 +31,9 @@ function ProductsCard(props) {
     price,
     guarantie,
     specs,
+    addToFav,
+    favBikes,
+   
   } = props;
 
   const NextArrow = ({ onClick }) => {
@@ -49,6 +57,8 @@ function ProductsCard(props) {
     );
   };
 
+
+  
  
 
   var settings = {
@@ -60,7 +70,6 @@ function ProductsCard(props) {
     slidesToScroll: 1,
     arrows: true,
     centerPadding: 0,
-
     className: 'slides',
     dotsClass: 'hello',
     nextArrow: <NextArrow />,
@@ -71,7 +80,7 @@ function ProductsCard(props) {
     return (
       <>
         <li
-          key={id}
+          key={index}
           className="min-h-screen w-full
           flex flex-row mobile:flex-col"
         >
@@ -133,10 +142,12 @@ function ProductsCard(props) {
                 Price: {price}€
               </div>
 
-              <div className="h-3/12 text-slate-600 w-10/12 flex justify-center mx-auto  my-2  ">
+              <div 
+               onClick={() =>addToFav(id)}
+              className="h-3/12 text-slate-600 w-10/12 flex justify-center mx-auto  my-2  ">
                 <button className="flex text-center justify-center rounded fill-slate-600 py-2 w-1/2  px-10 mobile:py-0 mobile:px-2 text-primary mobile:w-full bg-slate-700 align-middle">
                   
-                  Add to Favorites
+                Add to Favorites {favBikes.length === 0 ? (<></>) : (<span className="mx-1"> ({favBikes.length}) </span>)}
                 </button>
               </div>
               {currentUser ? (
@@ -212,9 +223,11 @@ function ProductsCard(props) {
                 Price: {price}€
               </div>
               <div className="h-3/12 text-slate-600 w-10/12 flex justify-center mx-auto  my-2  ">
-                <button className="flex text-center justify-center rounded fill-slate-600 py-2 w-1/2  px-10 mobile:py-0 mobile:px-2 text-primary mobile:w-full bg-slate-700 align-middle">
+                <button 
+                onClick={() =>addToFav(id)}
+                className="flex text-center justify-center rounded fill-slate-600 py-2 w-1/2  px-10 mobile:py-0 mobile:px-2 text-primary mobile:w-full bg-slate-700 align-middle">
                   
-                  Add to Favorites
+                  Add to Favorites {favBikes.length === 0 ? (<></>) : (<span> ({favBikes.length}) </span>)}
                 </button>
               </div>
 
