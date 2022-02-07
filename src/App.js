@@ -15,6 +15,7 @@ import LoginModalWrapper from './Modals/LoginModalWrapper';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import UpdateProfileModalWrapper from './Modals/UpdateProfileModalWrapper';
+import ForgotPassModalWrapper from './Modals/ForgotPassModalWrapper'
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
         
             <Route path="/Login" element={<LoginModalWrapper />} />
             <Route path="/Signup" element={<SignUpModalWrapper />} />
+            <Route path="/ForgotPassword" element={<ForgotPassModalWrapper />} />
 
             <Route path="*" element={<NotFound />} />
           </Route>

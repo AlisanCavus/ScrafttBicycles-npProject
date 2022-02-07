@@ -1,51 +1,46 @@
 import React, { useRef, useState, useEffect} from "react";
 import Logo from "../Assets/Logo.svg";
 import { AiFillCloseCircle } from "react-icons/ai";
-import { useAuth } from "../Contexts/AuthContext";
+import { Link } from "react-router-dom";
+import { useAuth} from "../Contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
-import { doc, updateDoc } from "firebase/firestore";
-import { db } from "../firebase";
 
 
-function UpdateProfile({ close, setClose, handleCloseModal }) {
-  const displayNameRef = useRef();
-  const phoneNumberRef = useRef();
-  const adressRef = useRef();
-  const navigate = useNavigate();
-  const [loading, setLoading] = useState(false);
-  const { currentUser } = useAuth();
 
-  const mounted = useRef(false);
-
-  useEffect(() => {
-    mounted.current = true;
-
-    return () => {
-      mounted.current = false;
-    };
-  }, []);
+function ForgotPassword({ close, setClose, handleCloseModal }) {
+    const mounted = useRef(false);
+    const emailRef = useRef();
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState("");
+    const { forgotPassword } = useAuth();
+    const navigate = useNavigate();
 
 
-  const updateProfile = async () => {
-
-    const updateDocRef = doc(db, 'users', `${currentUser?.uid}`);
-
-    await updateDoc(updateDocRef, {
-      displayName: displayNameRef.current.value,
-      adress: adressRef.current.value,
-      phoneNumber: phoneNumberRef.current.value
-    })
-  }
-
-  async function handleSubmit (e)  {
-    e.preventDefault()
-    setLoading(true)
-    updateProfile()
-    navigate('/Profile')
-
-  }
+    useEffect(() => {
+      mounted.current = true;
   
+      return () => {
+        mounted.current = false;
+      };
+    }, []);
 
+    async function handleSubmit(e) {
+        e.preventDefault();
+    
+        try {
+          setError("");
+          setLoading(true);
+          await forgotPassword(emailRef.current.value)
+            .then((response) => console.log(response.user.email))
+            .catch((error) => setError(error.message.slice(10)));
+        } catch (err) {
+          console.log(err)
+        }
+          alert('Password Reset link is sent to your email')
+        setError("")
+        setLoading(false);
+        navigate('/Login')
+      }
 
   return (
     <div className="  w-3/4 h-min align-middle mx-auto bg-primary mobile:flex mobile:w-full mobile:justify-center rounded ">
@@ -64,57 +59,27 @@ function UpdateProfile({ close, setClose, handleCloseModal }) {
           </span>
         </div>
         <div className="justify-center text-center mb-4">
-          <span className=" text-slate-700 text-xl "> Update your Profile </span>
+          <span className=" text-slate-700 text-xl "> Password Recovery </span>
         </div>
         <div className="flex justify-center flex-col mx-auto w-full mobile:w-full">
           <form
-            onSubmit={handleSubmit}
+          onSubmit={handleSubmit}
             className="flex justify-center flex-col mx-auto w-full  mobile:w-11/12 mobile:mx-auto "
           >
             <div className="my-2 mx-auto flex flex-col mobile:w-11/12">
               <label htmlFor="text" className=" mobile:w-11/12 text-slate-500 mobile:mx-auto">
-                Enter your Full Name:
+                Enter your Email:
               </label>
               <input
                 className=" w-96 h-10 px-5 rounded  my-2 mobile:w-11/12 mobile:mx-auto focus:shadow-md shadow-md focus:shadow-slate-600 focus:scale-105 focus:outline-none"
-                type="text"
+                type="email"
                 name="text"
-                placeholder="John Doe"
+                placeholder="doe@example.com"
                 required
-                ref={displayNameRef}
+                ref={emailRef}
               />
-            </div>
-            <div className="my-2 mx-auto flex flex-col mobile:w-11/12 mobile:mx-auto">
-              <label htmlFor="phoneNumber" className=" mobile:w-11/12 text-slate-500 mobile:mx-auto">
-                Enter Your Phone Number:
-              </label>
-              <input
-                type="tel"
-                className=" w-96 h-10 my-2 px-5 rounded  mobile:w-11/12 mobile:mx-auto focus:shadow-md shadow-md focus:shadow-slate-600 focus:scale-105 focus:outline-none"
-                placeholder="+32471000000"
-                required
-                name="phoneNumber"
-                minLength="8"
-                ref={phoneNumberRef}
-              />
-            </div>
-            <div className="my-2 mx-auto flex flex-col mobile:w-11/12 mobile:mx-auto">
-              <label htmlFor="adress" className=" mobile:w-11/12 text-slate-500 mobile:mx-auto">
-                Enter Your Full Address:
-              </label>
-              <textarea
-                rows="2"
-                type="address"
-                className=" w-96 h-20 rounded my-2 px-5  mobile:w-11/12 mobile:mx-auto focus:shadow-md shadow-md focus:shadow-slate-600 focus:scale-105 focus:outline-none "
-                placeholder="Enter your address for delivery"
-                required
-                ref={adressRef}
-                minLength="10"
-                name="adress"
-                // ref={cPasswordRef}
-              />
-            </div>
             
+            </div>
             {loading ? (
               <div
                 disabled={loading}
@@ -157,19 +122,19 @@ function UpdateProfile({ close, setClose, handleCloseModal }) {
               >
                 <div className="h-10  flex flex-col text-center align-middle justify-center mx-auto">
                  
-               Update Your Profile
+               Recover Your Password
                   
                 </div>
               </button>
             )}
           </form>
           <div className="h-8 w-full mx-auto text-center">
-            {/* {error && (
+            {error && (
               <span className="text-center text-red-600"> {error} </span>
-            )} */}
+            )}
           </div>
          
-          {/* <div className=" w-96 mb-2 flex flex-row mx-auto text-sm mobile:w-screen mobile:justify-center mobile:text-center">
+          <div className=" w-96 mb-2 flex flex-row mx-auto text-sm mobile:w-screen mobile:justify-center mobile:text-center">
             <div className="w-full my-auto">
               <span className=" text-slate-500">Do you already have an account? &nbsp; </span>
               
@@ -182,11 +147,11 @@ function UpdateProfile({ close, setClose, handleCloseModal }) {
             
             
             </div>
-          </div> */}
+          </div>
         </div>
       </div>
     </div>
   );
 }
 
-export default UpdateProfile;
+export default ForgotPassword;

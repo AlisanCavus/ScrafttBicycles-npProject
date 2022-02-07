@@ -160,7 +160,7 @@ function Login({ closeModal, handleCloseModal }) {
           <div className=" w-96 flex flex-row justify-between mobile:w-full mobile:text-center text-sm mx-auto">
             <div className="w-full my-auto mobile:mx-auto">
               <Link
-                to="/Signup"
+                to="/ForgotPassword"
                 className="  text-gray-700 underline-offset-4 no-underline hover:underline hover:animate-pulse mobile:mx-auto" >
                 Forgot your password? 
               </Link>
