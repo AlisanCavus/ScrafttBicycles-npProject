@@ -76,7 +76,7 @@ function ProductsCard(props) {
     prevArrow: <PrevArrow />,
   };
 
-  if (index % 2 === 0) {
+  if (index % 2 === 0 ) {
     return (
       <>
         <li
@@ -141,13 +141,13 @@ function ProductsCard(props) {
               <div className="h-2/12 text-slate-600 w-10/12 mx-auto my-2  mobile:text-sm">
                 Price: {price}€
               </div>
-
+            
               <div 
                onClick={() =>addToFav(id)}
               className="h-3/12 text-slate-600 w-10/12 flex justify-center mx-auto  my-2  ">
                 <button className="flex text-center justify-center rounded fill-slate-600 py-2 w-1/2  px-10 mobile:py-0 mobile:px-2 text-primary mobile:w-full bg-slate-700 align-middle">
                   
-                Add to Favorites {favBikes.length === 0 ? (<></>) : (<span className="mx-1"> ({favBikes.length}) </span>)}
+                Add to Favorites {favBikes.length === 0 ? (<></>) : (<span className="mx-1 "> ({favBikes.length}) </span>)}
                 </button>
               </div>
               {currentUser ? (
@@ -227,7 +227,7 @@ function ProductsCard(props) {
                 onClick={() =>addToFav(id)}
                 className="flex text-center justify-center rounded fill-slate-600 py-2 w-1/2  px-10 mobile:py-0 mobile:px-2 text-primary mobile:w-full bg-slate-700 align-middle">
                   
-                  Add to Favorites {favBikes.length === 0 ? (<></>) : (<span> ({favBikes.length}) </span>)}
+                  Add to Favorites {favBikes.length === 0 ? (<></>) : (<span className="mx-1 "> ({favBikes.length}) </span>)}
                 </button>
               </div>
 
