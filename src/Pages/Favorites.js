@@ -100,7 +100,7 @@ function Favorites() {
             <LoadingScreen />
           )}
         </div>
-        <div className="w-1/2 mobile:w-screen  ">
+        <div className="w-1/2 mobile:w-screen overflow-hidden ">
           <div className=" flex mobile:flex-row justify-center max-h-screen m-0 p-0 min-h-screen relative h-screen min-w-screen ">
             <video
               autoPlay={true}

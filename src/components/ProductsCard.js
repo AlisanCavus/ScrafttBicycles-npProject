@@ -80,12 +80,12 @@ function ProductsCard(props) {
       <>
         <li
           key={index}
-          className="min-h-screen w-full
-          flex flex-row mobile:flex-col"
+          className="min-h-screen w-full 
+          flex flex-row mobile:flex-col mobile:min-h-screen"
         >
           <Slider
             {...settings}
-            className="  h-screen w-6/12 mx-auto mobile:w-full "
+            className=" min-h-screen w-6/12 mx-auto mobile:w-full mobile:min-h-screen "
           >
             <div className="w-full h-screen  mx-auto relative z-0 ">
               <img
@@ -111,7 +111,7 @@ function ProductsCard(props) {
             </div>
           </Slider>
 
-          <div className="w-6/12 flex flex-col justify-around mobile:w-full ">
+          <div className="w-6/12 flex flex-col justify-around mobile:w-screen ">
             <div className=" flex font-semibold w-1/4 h-3/12 justify-center mx-auto text-center ">
               <div className=" text-slate-600 mx-auto mt-10 text-center text-3xl self-center font-semibold mobile:text-lg">
                 {brand}&nbsp;
@@ -192,7 +192,7 @@ function ProductsCard(props) {
           className="min-h-screen w-full
           flex flex-row mobile:flex-col"
         >
-          <div className="w-6/12 flex flex-col justify-around mobile:w-full ">
+          <div className="w-6/12 flex flex-col min-h-screen justify-around mobile:w-full mobile:min-h-screen">
             <div className=" flex font-semibold w-1/4 h-3/12 justify-center mx-auto  text-center">
               <div className=" text-slate-600 mx-auto mt-10 text-center text-3xl self-center font-semibold mobile:text-lg">
                 {brand}&nbsp;
