@@ -57,9 +57,6 @@ function ProductsCard(props) {
   };
 
 
-  
- 
-
   var settings = {
     infinite: true,
     lazyload: true,
@@ -69,8 +66,7 @@ function ProductsCard(props) {
     slidesToScroll: 1,
     arrows: true,
     centerPadding: 0,
-    className: 'slides',
-    dotsClass: 'hello',
+    centerMargin: 0,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
   };
@@ -85,8 +81,7 @@ function ProductsCard(props) {
         >
           <Slider
             {...settings}
-            className=" min-h-screen w-6/12 mx-auto mobile:w-full mobile:min-h-screen "
-          >
+            className=" min-h-screen w-6/12 mx-auto mobile:w-full mobile:min-h-screen ">
             <div className="w-full h-screen  mx-auto relative z-0 ">
               <img
                 id="car"
