@@ -35,9 +35,9 @@ export default function AuthContextProvider({children}) {
             phoneNumber: null,
             displayName: "",
             orderedBikes: [],
-            favoriteBikes: [],
             cartedBikes: [],
-            createdAt: new Date()
+            createdAt: new Date(),
+            ordersPaid: false,
           }, {merge:true});
           console.log('Document Added')
     }

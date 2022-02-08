@@ -1,8 +1,10 @@
 import React, { useState, useEffect} from 'react';
 import { collref } from '../firebase';
-import { getDocs } from 'firebase/firestore';
+import { getDocs, doc, updateDoc, getDoc, arrayUnion } from 'firebase/firestore';
 import ProductsCard from '../components/ProductsCard';
 import LoadingScreen from '../components/LoadingScreen';
+import { db } from '../firebase';
+import { useAuth } from '../Contexts/AuthContext'
 
 
 
@@ -10,9 +12,12 @@ import LoadingScreen from '../components/LoadingScreen';
 
 
 function Products() {
+  const [user, setUser] = useState();
+  const { currentUser } = useAuth() 
   const [bikes, setBikes] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [favBikes, setFavBikes ] = useState([])
+  const [favBikes, setFavBikes ] = useState([]);
+  const [orderedBike, setOrderedBike] = useState([])
 
   useEffect(() => {
     const data = localStorage.getItem('FavoriteBikes')
@@ -37,13 +42,6 @@ function Products() {
      }
   }
  
-
- 
- 
-
-  
-
-  
 
   useEffect(() => {
     const getbikes = () => {
@@ -77,10 +75,66 @@ function Products() {
    // eslint-disable-next-line react-hooks/exhaustive-deps
    },[]);
 
+   useEffect(() => {
+    const getUserInfo = () => {
+      const docRef = doc(db, "users", `${currentUser?.uid}`);
+      getDoc(docRef)
+        .then((doc) => {
+          if (doc.exists) {
+            setUser(doc.data());
+            setLoading(false);
+          }
+        })
+        .catch((err) => {
+          console.log(err.message);
+        });
+    };
+
+    let isApiSubscribed = true;
+    if (isApiSubscribed) {
+      getUserInfo();
+    }
+
+    return () => {
+      // cancel the subscription
+      isApiSubscribed = false;
+    };
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
  
+ console.log(currentUser.uid)
+  
+
+ const addOrderedBikes =  (id) => {
+  setOrderedBike([...orderedBike, id])
+  
+}
+
+  useEffect(() => {
+    const addUserCart = async (orderedBike) => {
+      const userDoc = doc(db, "users", `${currentUser?.uid}`)
+      await updateDoc( userDoc, {
+        orderedBikes: arrayUnion(...orderedBike)
+      })
+    }
+
+    let isApiSubscribed = true;
+    if (isApiSubscribed) {
+      addUserCart();
+    }
+
+    return () => {
+      // cancel the subscription
+      isApiSubscribed = false;
+    };
+
+    
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [orderedBike]);
  
 
-  
 
   return (
     <div className=" min-h-screen bg-primary overflow-hidden" id='container' >
@@ -103,6 +157,7 @@ function Products() {
           price={id.price}
           addToFav={addToFav}
           favBikes={favBikes}
+          addOrderedBikes={addOrderedBikes}
           
           
           

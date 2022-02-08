@@ -56,7 +56,7 @@ function Profile() {
     return <LoadingScreen />;
   } else {
     return (
-      <div className="min-h-screen bg-primary  ">
+      <div className="min-h-screen bg-primary overflow-hidden ">
         <div className="flex flex-row min-h-screen m-0 mobile:flex-col ">
           <div className="flex flex-row justify-center  w-6/12 m-0 mobile:w-full ">
             <div className=" h-screen min-h-full flex justify-center w-screen mx-0 py-0 relative mobile:h-1/2 ">

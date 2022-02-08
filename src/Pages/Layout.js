@@ -6,7 +6,7 @@ import Navbar from '../components/Navbar';
 function Layout() {
   return (
     <>
-      <Navbar />
+      <Navbar classname=" overflow-hidden"/>
       <div>
         <Outlet />
       </div>

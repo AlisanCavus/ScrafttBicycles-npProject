@@ -79,7 +79,7 @@ function Favorites() {
   return (
     <div
       className="min-h-screen bg-primary overflow-hidden">
-      <div className="min-h-screen w-screen flex mobile:flex-col-reverse">
+      <div className="min-h-screen w-screen flex mobile:flex-col-reverse overflow-hidden">
         
         {favoritedBikes.length === 0 ? (
         <div className="w-1/2 min-h-screen h-screen flex justify-center flex-col mobile:w-full">
@@ -125,7 +125,7 @@ function Favorites() {
         </div>)}
         
         <div className="w-1/2 mobile:w-screen overflow-hidden ">
-          <div className=" flex mobile:flex-row justify-center max-h-screen m-0 p-0 min-h-screen relative h-screen min-w-screen ">
+          <div className=" flex mobile:flex-row justify-center max-h-screen m-0 p-0 min-h-screen relative h-screen min-w-screen overflow-hidden">
             <video
               autoPlay={true}
               loop={true}
