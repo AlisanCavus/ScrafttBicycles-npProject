@@ -5,6 +5,7 @@ import LoadingScreen from '../components/LoadingScreen';
 import FavoritesCard from '../components/FavoritesCard';
 import Fav from '../Assets/fav.mp4';
 import { animated, useSpring } from 'react-spring';
+import { Link } from 'react-router-dom'
 
 function Favorites() {
   const [favBikes, setFavBikes] = useState([]);
@@ -19,6 +20,18 @@ function Favorites() {
       setFavBikes(JSON.parse(data));
     }
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem('FavoriteBikes', JSON.stringify(favoritedBikes));
+  });
+  
+    const handleDelete = (id) => {
+      const newFavoritedBikes = [...favoritedBikes];
+      newFavoritedBikes.splice(id, 1);
+      setFavoritedBikes(newFavoritedBikes);
+      localStorage.setItem('FavoriteBikes', JSON.stringify(favoritedBikes));
+    }
+  
 
   useEffect(() => {
     const getbikes = () => {
@@ -65,20 +78,29 @@ function Favorites() {
 
   return (
     <div
-      className="min-h-screen bg-primary overflow-hidden"
-      id="container">
+      className="min-h-screen bg-primary overflow-hidden">
       <div className="min-h-screen w-screen flex mobile:flex-col-reverse">
         
+        {favoritedBikes.length === 0 ? (
         <div className="w-1/2 min-h-screen h-screen flex justify-center flex-col mobile:w-full">
-        <div className=" flex justify-between m-6 border-b-2 border-slate-700">
-          <span className=" w-10/12 text-center" >Products</span>
-          <span className="w-2/12 text-center">&nbsp; Price </span>
+          <div className="flex justify-center">
+            <span className="text-center">You don't have any Favorite.</span>
+          </div>
+         <div className="flex justify-center">
+          <Link to="/Products" className="text-primary text-center rounded w-60 mx-auto p-2 bg-slate-700 hover:animate-pulse">Go to Products</Link>
+         </div>
         </div>
+        
+        ) : (<div className="w-1/2 min-h-screen h-screen flex justify-center flex-col mobile:w-full">
+          <div className=" flex justify-between m-6 border-b-2 border-slate-700">
+            <span className=" w-10/12 text-center" >Products</span>
+            <span className="w-2/12 text-center">&nbsp; Price </span>
+          </div>
           {!loading ? (
             <ul>
               {favoritedBikes.map((id, index) => (
                 <FavoritesCard
-                  className="snap-center w-full min-h-screen h-screen grid grid-flow-row grid-rows-6 justify-evenly bg-black"
+                  className="snap-center w-full min-h-screen h-screen justify-evenly bg-black"
                   index={index}
                   key={id.id}
                   guarantie={id.guarantie}
@@ -93,13 +115,15 @@ function Favorites() {
                   img2={id.img2}
                   model={id.model}
                   price={id.price}
+                  handleDelete={handleDelete}
                 />
               ))}
             </ul>
           ) : (
             <LoadingScreen />
           )}
-        </div>
+        </div>)}
+        
         <div className="w-1/2 mobile:w-screen overflow-hidden ">
           <div className=" flex mobile:flex-row justify-center max-h-screen m-0 p-0 min-h-screen relative h-screen min-w-screen ">
             <video

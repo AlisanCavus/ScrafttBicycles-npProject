@@ -30,7 +30,8 @@ function Products() {
   const addToFav = (id) => {
     if(favBikes.includes(id)) {
       alert("You have already added this bike to your Favorites")
- 
+     } else if (favBikes.length > 5) {
+       alert("You can only add 5 bikes in favorites")
      } else {
        setFavBikes([...favBikes, id])
      }
