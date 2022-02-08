@@ -13,7 +13,7 @@ function YourCart() {
 
   return (
   <div className="min-h-screen w-screen bg-primary flex flex-row">
-    <div className="w-1/2 h-screen flex">
+    <div className="w-1/2 h-screen flex mobile:w-full">
      <video
               autoPlay={true}
               loop={true}

@@ -12,6 +12,7 @@ import { useAuth } from '../Contexts/AuthContext'
 
 
 function Products() {
+  // eslint-disable-next-line no-unused-vars
   const [user, setUser] = useState();
   const { currentUser } = useAuth() 
   const [bikes, setBikes] = useState([]);
@@ -104,7 +105,7 @@ function Products() {
   }, []);
 
  
- console.log(currentUser.uid)
+ 
   
 
  const addOrderedBikes =  (id) => {

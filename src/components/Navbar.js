@@ -57,8 +57,8 @@ function Navbar() {
 
   
   return (
-    <div className="mobile:w-screen overflow-hidden">
-      <div className="h-20 w-full z-10 fixed  top-0 bg-transparent flex flex-row justify-between  ">
+    <div className="mobile:w-full overflow-hidden">
+      <div className="h-20 w-full z-10 fixed  top-0 bg-transparent flex flex-row justify-between mobile:w-screen ">
         <animated.div
           style={anim1}
           className=" h-15 place-content-center px-20 items-center align-middle flex mobile:px-1"
