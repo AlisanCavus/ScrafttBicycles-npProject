@@ -28,7 +28,6 @@ function FavoritesCard(props) {
           <span className=" text-2xl text-center font-medium text-slate-700 mobile:text-lg">
             {model}&nbsp;
           </span>
-          <span className=" text-xl text-center font-medium text-slate-700 mobile:hidden">"{headtitle}"</span>
         </div>
         <div className="flex items-center flex-row justify-end w-2/12">
             <span className=" text-right">{price}€</span>

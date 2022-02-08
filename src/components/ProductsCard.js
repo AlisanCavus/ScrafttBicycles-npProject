@@ -126,9 +126,12 @@ function ProductsCard(props) {
               Specifications: {specs}
             </div>
             <div>
-              <div className="h-2/12 text-slate-600 w-10/12 my-2 mx-auto mobile:text-sm">
+              { (amount <= 10) ? (<div className="h-2/12 text-slate-600 w-10/12 my-2 mx-auto mobile:text-sm">
+                In stock : <span className=" animate-pulse"> Hurry up! Last {amount}</span>
+              </div>) : (<div className="h-2/12 text-slate-600 w-10/12 my-2 mx-auto mobile:text-sm">
                 In stock : Yes ({amount})
-              </div>
+              </div>) }
+              
               <div className="h-2/12 text-slate-600 w-10/12 my-2 mx-auto mobile:text-sm">
                 Guarantee : {guarantie}
               </div>
@@ -207,9 +210,11 @@ function ProductsCard(props) {
               Specifications: {specs}
             </div>
             <div>
-              <div className="h-2/12 text-slate-600 w-10/12 mx-auto mobile:text-sm">
+            { (amount <= 10) ? (<div className="h-2/12 text-slate-600 w-10/12 my-2 mx-auto mobile:text-sm">
+                In stock : <span className=" animate-pulse"> Hurry up! Last {amount}</span>
+              </div>) : (<div className="h-2/12 text-slate-600 w-10/12 my-2 mx-auto mobile:text-sm">
                 In stock : Yes ({amount})
-              </div>
+              </div>) }
               <div className="h-2/12 text-slate-600 w-10/12 my-2 mx-auto mobile:text-sm">
                 Guarantee : {guarantie}
               </div>
