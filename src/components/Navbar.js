@@ -33,10 +33,12 @@ function Navbar() {
         try {
          
          logout()
+         
           
         } catch {
           console.log('error')
         }
+        alert("You Logged out :( , See you on the next advanture!")
     }
  
  
