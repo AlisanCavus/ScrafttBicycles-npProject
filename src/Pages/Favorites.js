@@ -140,7 +140,7 @@ function Favorites() {
             style={anim}
             className="flex top-0 right-0 justify-center w-1/2 m-auto  mx-auto absolute py-36 mobile:w-screen "
           >
-            <h1 className="text-4xl h-full w-11/12 flex flex-col text-center justify-center font-normal text-secondary mobile:text-xl text-shadow-md ">
+            <h1 className="text-4xl h-full w-11/12 flex flex-col text-center justify-center font-normal text-primary mobile:text-xl text-shadow-md ">
               Your Favorites
             </h1>
           </animated.div>
