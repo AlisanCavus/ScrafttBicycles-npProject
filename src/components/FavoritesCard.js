@@ -5,7 +5,6 @@ function FavoritesCard(props) {
   const {
     index,
     brand,
-    headtitle,
     img0,
     model,
     price,
