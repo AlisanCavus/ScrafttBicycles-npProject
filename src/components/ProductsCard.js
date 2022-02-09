@@ -142,7 +142,7 @@ function ProductsCard(props) {
               </div>
             
               <div 
-               onClick={() =>addToFav(id)}
+               onClick={() =>addToFav(id, model, brand, price, img0)}
               className="h-3/12 text-slate-600 w-10/12 flex justify-center mx-auto  my-2  ">
                 <button className="flex text-center justify-center rounded fill-slate-600 py-2 w-1/2  px-10 mobile:py-0 mobile:px-2 text-primary mobile:w-full bg-slate-700 align-middle">
                   
@@ -225,7 +225,7 @@ function ProductsCard(props) {
               </div>
               <div className="h-3/12 text-slate-600 w-10/12 flex justify-center mx-auto  my-2  ">
                 <button 
-                onClick={() =>addToFav(id)}
+                onClick={() =>addToFav(id, model, price, brand, img0)}
                 className="flex text-center justify-center rounded fill-slate-600 py-2 w-1/2  px-10 mobile:py-0 mobile:px-2 text-primary mobile:w-full bg-slate-700 align-middle">
                   
                   Add to Favorites {favBikes.length === 0 ? (<></>) : (<span className="mx-1 "> ({favBikes.length}) </span>)}

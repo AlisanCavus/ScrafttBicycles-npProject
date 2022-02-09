@@ -64,7 +64,7 @@ function Favorites() {
 
   useEffect(() => {
     setLoading(true);
-    setFavoritedBikes(bikes.filter((_, i) => favBikes[i]));
+    setFavoritedBikes(favBikes.filter((_, i) => bikes[i]));
     setLoading(false);
   }, [bikes, favBikes]);
 
@@ -98,23 +98,15 @@ function Favorites() {
           </div>
           {!loading ? (
             <ul>
-              {favoritedBikes.map((id, index) => (
+              {favoritedBikes.map((bike, index) => (
                 <FavoritesCard
                   className="snap-center w-full min-h-screen h-screen justify-evenly bg-black"
-                  index={index}
-                  key={id.id}
-                  guarantie={id.guarantie}
-                  amount={id.amount}
-                  id={id.id}
-                  specs={id.specs}
-                  brand={id.brand}
-                  descrip={id.descrip}
-                  headtitle={id.headtitle}
-                  img0={id.img0}
-                  img1={id.img1}
-                  img2={id.img2}
-                  model={id.model}
-                  price={id.price}
+                  key={bike.id}
+                  id={bike.id}
+                  brand={bike.brand}
+                  img0={bike.img0}
+                  model={bike.model}
+                  price={bike.price}
                   handleDelete={handleDelete}
                 />
               ))}
