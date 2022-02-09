@@ -89,21 +89,21 @@ function ProductsCard(props) {
                 id="car"
                 src={img0}
                 alt=" bike images"
-                className="w-full object-cover h-screen mx-auto relative"
+                className="w-full object-cover mobile:object-fill h-screen mx-auto relative"
               />
             </div>
-            <div className="w-full h-screen carousel-item mx-auto relative z-0">
+            <div className="w-full h-screen carousel-item  mx-auto relative z-0">
               <img
                 src={img1}
                 alt="bike images 11"
-                className="w-full  object-cover h-screen mx-auto relative"
+                className="w-full  object-cover h-screen mobile:object-fill mx-auto relative"
               />
             </div>
             <div className="w-full h-screen carousel-item mx-auto relative z-0">
               <img
                 src={img2}
                 alt="bike images 223"
-                className="w-full  object-cover h-screen mx-auto relative"
+                className="w-full  object-cover h-screen mobile:object-fill mx-auto relative"
               />
             </div>
           </Slider>
@@ -271,21 +271,21 @@ function ProductsCard(props) {
                 id="car"
                 src={img0}
                 alt=" bike images s s "
-                className="w-full object-cover h-screen mx-auto"
+                className="w-full object-cover h-screen mobile:object-fill mx-auto"
               />
             </div>
             <div className="w-full h-screen carousel-item mx-auto">
               <img
                 src={img1}
                 alt=" bike imagskcks"
-                className="w-full object-cover h-screen mx-auto"
+                className="w-full object-cover h-screen mobile:object-fill mx-auto"
               />
             </div>
             <div className="w-full h-screen carousel-item mx-auto">
               <img
                 src={img2}
                 alt=" bikelara gel"
-                className="w-full object-cover h-screen mx-auto"
+                className="w-full object-cover h-screen mobile:object-fill mx-auto"
               />
             </div>
           </Slider>
