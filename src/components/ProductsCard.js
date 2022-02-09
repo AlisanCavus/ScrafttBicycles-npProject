@@ -108,8 +108,8 @@ function ProductsCard(props) {
             </div>
           </Slider>
 
-          <div className="w-6/12 flex flex-col justify-around mobile:w-screen ">
-            <div className=" flex font-semibold w-1/4 h-3/12 justify-center mx-auto text-center ">
+          <div className="w-6/12 flex flex-col justify-around mobile:w-screen mobile:h-screen mobile:border-t-2 mobile">
+            <div className=" flex font-semibold w-1/4 h-3/12 justify-center mx-auto text-center mobile:h-10/12 mobile:my-auto ">
               <div className=" text-slate-600 mx-auto mt-10 text-center text-3xl self-center font-semibold mobile:text-lg">
                 {brand}&nbsp;
               </div>
