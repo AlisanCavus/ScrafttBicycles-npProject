@@ -1,7 +1,6 @@
 import React, { useState, useLayoutEffect } from 'react';
 import './HomeProd.css'
-import { IoIosArrowUp } from 'react-icons/io';
-import { animateScroll as scroll} from 'react-scroll'
+
 
 function HomeProd() {
   const [scrolll, setScrolll] = useState({
