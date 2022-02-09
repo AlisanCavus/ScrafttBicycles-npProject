@@ -78,10 +78,12 @@ function HomeProd() {
     // </div>
 
     <div className="flex min-h-screen mobile:grid mobile:grid-rows-2"  >
-      <div className="w-[71%] flex object-fill bg-tamir bg-cover mobile:w-full mobile:h-full "></div>
+      <div className="w-[60%] flex object-fill bg-tamir bg-cover mobile:w-full mobile:h-full ">
+        
+      </div>
 
       
-      <div style={sty} className="mobile:w-1/3 mobile:mx-auto mobile:-translate-y-20 mobile:justify-center mobile:text-center mobile:items-center" >
+      <div style={sty} className="mobile:w-3/12 w-3/12 mobile:mx-auto mobile:-translate-y-20 mobile:justify-center mobile:text-center mobile:items-center" >
       
         <div className="w-full h-1/3  bg-transparent flex justify-center my-auto  items-center mobile:justify-center mobile:mx-auto mobile:h-1/2 ">
           <span className="text-center font-semibold absolute font-sans text-slate-600 text-7xl h-20 mobile:h-1/3 mobile:text-5xl mobile:text-black">
@@ -101,7 +103,7 @@ function HomeProd() {
     
       </div>
 
-      <div className="w-1/3 align-middle flex justify-items-center items-center relative mobile:hidden ">
+      <div className="w-3/12 align-middle flex justify-items-center items-center relative mobile:hidden ">
         <div className="w-full absolute mobile:w-full">
           <p style={righ} className="mobile:indent-8 mobile:text-xl mobile:w-1/2 break-words w-2/4 tracking-widest mx-auto mobile:mx-auto text-slate-700">
             We made it. Just for you. Our bicycles are all hand crafted. We know
@@ -111,12 +113,9 @@ function HomeProd() {
             sure you can find the one that suits you the best . 
           </p>
         </div>
-        
       </div>
 
-      <button onClick={() => scroll.scrollToTop()} className="bg-inherit mobile:h-1/12 flex flex-col text-center z-50 items-end align-end hover:animate-bounce mobile:mx-auto   justify-end mt-auto mb-5 mx-5 opacity-30 h-10 fill-slate-500 w-10 ">
-          <IoIosArrowUp className="border-black  w-full h-full fill-slate-500" />
-        </button>
+      
     </div>
   );
 }

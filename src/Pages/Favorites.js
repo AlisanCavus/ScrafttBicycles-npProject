@@ -78,7 +78,7 @@ function Favorites() {
 
   return (
     <div
-      className="min-h-screen bg-primary  mobile:w-fit">
+      className="min-h-screen bg-primary overflow-hidden  mobile:w-fit">
       <div className="min-h-screen w-screen flex mobile:flex-col-reverse ">
         
         {favoritedBikes.length === 0 ? (
