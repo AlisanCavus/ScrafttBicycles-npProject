@@ -55,6 +55,7 @@ function Prod1() {
           loop={true}
           preload="auto"
           muted={true}
+          controls={false}
         >
           <source src={Vid}></source>
         </video>

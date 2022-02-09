@@ -123,6 +123,7 @@ function Favorites() {
               loop={true}
               preload="auto"
               muted={true}
+              controls={false}
               className=" object-cover w-screen"
             >
               <source src={Fav}></source>
