@@ -32,7 +32,7 @@ console.log(props)
             <span className=" text-right">{price}€</span>
         </div>
         <div className=" flex justify-center items-center w-1/12 ">
-        <MdOutlineDeleteSweep className="w-5 h-5 hover:animate-bounce" onClick={() => handleDelete(index)}/>
+        <MdOutlineDeleteSweep className="w-5 h-5 hover:animate-bounce cursor-pointer" onClick={() => handleDelete(index)}/>
         </div>
         
       </div>
