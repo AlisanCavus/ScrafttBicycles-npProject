@@ -101,7 +101,7 @@ function Favorites() {
               {favoritedBikes.map((bike, index) => (
                 <FavoritesCard
                   className="snap-center w-full min-h-screen h-screen justify-evenly bg-black"
-                  key={bike.id}
+                  key={index}
                   id={bike.id}
                   brand={bike.brand}
                   img0={bike.img0}

@@ -11,7 +11,7 @@ function FavoritesCard(props) {
     handleDelete
   } = props;
 
-
+console.log(props)
 
 
   return (
