@@ -32,7 +32,13 @@ function YourCart() {
             </h1>
           </animated.div>
     </div>
-    <div className="w-1/2 h-screen flex"> your cart</div>
+    <div className="w-1/2 min-h-screen flex justify-center">
+      <div className='w-11/12 mx-auto h-10/12 my-auto'>
+          <ul className='w-full h-full flex justify-center '>
+            
+          </ul>
+      </div>
+    </div>
   </div>
   )}
 
