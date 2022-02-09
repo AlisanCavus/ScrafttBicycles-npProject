@@ -34,8 +34,7 @@ export default function AuthContextProvider({children}) {
             adress: "",
             phoneNumber: null,
             displayName: "",
-            orderedBikes: [],
-            cartedBikes: [],
+            orderedBike: {},
             createdAt: new Date(),
             ordersPaid: false,
           }, {merge:true});

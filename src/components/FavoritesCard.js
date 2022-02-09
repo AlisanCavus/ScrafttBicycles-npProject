@@ -3,6 +3,7 @@ import { MdOutlineDeleteSweep } from 'react-icons/md'
 
 function FavoritesCard(props) {
   const {
+    id,
     index,
     brand,
     img0,
@@ -11,12 +12,12 @@ function FavoritesCard(props) {
     handleDelete
   } = props;
 
-console.log(props)
+
 
 
   return (
     <li
-      key={index}
+      key={id}
       className="min-w-screen min-h-1/12 flex flex-col justify-center bg-scroll ">
       <div className="h-1/9 flex">
         <img className=" w-24 h-20 object-contain mobile:w-10 mobile:h-8" alt="bikes" src={img0}  />

@@ -34,9 +34,9 @@ function Products() {
 
 
   const addToFav = (id, model, price, brand, img0) => {
-    if(favBikes.includes(id)) {
+    if(favBikes.includes(id,model,price, brand,img0)) {
       alert("You have already added this bike to your Favorites")
-     } else if (favBikes.length > 5) {
+     } else if (favBikes.length > 4) {
        alert("You can only add 5 bikes in favorites")
      } else {
        setFavBikes([...favBikes, {id:id, model:model, price:price, brand:brand, img0:img0,}])
@@ -108,32 +108,36 @@ function Products() {
  
   
 
- const addOrderedBikes =  (id) => {
-  setOrderedBike([...orderedBike, id])
+ const addOrderedBikes =  (id,brand,model,price) => {
+  setOrderedBike([...orderedBike, {id,model,brand,price}])
+  localStorage.setItem('orderedBikes', JSON.stringify(orderedBike));
   
 }
 
-  useEffect(() => {
-    const addUserCart = async (orderedBike) => {
-      const userDoc = doc(db, "users", `${currentUser?.uid}`)
-      await updateDoc( userDoc, {
-        orderedBikes: arrayUnion(...orderedBike)
-      })
-    }
+// console.log(orderedBike)
+// const objbikes = Object.assign({},orderedBike)
+// console.log(objbikes)
 
-    let isApiSubscribed = true;
-    if (isApiSubscribed) {
-      addUserCart();
-    }
 
-    return () => {
-      // cancel the subscription
-      isApiSubscribed = false;
-    };
+// const addUserCart = async () => {
+      
+//   const userDoc = doc(db, "users", `${currentUser?.uid}`)
+//   await updateDoc( userDoc, {
+//     orderedBike: objbikes
+//   })
+// }
+
+// useEffect(() => {
+//   addUserCart()
+  
+// });
+  
+
+   
 
     
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [orderedBike]);
+  
+
  
 
 

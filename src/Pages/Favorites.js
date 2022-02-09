@@ -68,7 +68,7 @@ function Favorites() {
     setLoading(false);
   }, [bikes, favBikes]);
 
-  console.log(favoritedBikes);
+  
 
   const anim = useSpring({
     from: { opacity: 0, transform: 'translateX(100%)' },
