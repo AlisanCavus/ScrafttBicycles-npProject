@@ -11,7 +11,6 @@ function Favorites() {
   const [favBikes, setFavBikes] = useState([]);
   const [bikes, setBikes] = useState([]);
   const [loading, setLoading] = useState(true);
-
   const [favoritedBikes, setFavoritedBikes] = useState([]);
 
   useEffect(() => {
