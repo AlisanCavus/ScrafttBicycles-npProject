@@ -62,12 +62,12 @@ function CheckOut() {
     return <LoadingScreen />;
   } else {
   return (
-    <div className="bg-primary w-screen min-h-screen flex flex-row mobile:flex-col">
+    <div className="bg-primary w-screen min-h-screen flex flex-row mobile:flex-col mobile:max-h-screen mobile:h-screen">
      <div className=" w-1/2 flex flex-col min-h-screen my-auto justify-center mobile:w-full mobile:h-screen ">
        <div className=" grid grid-rows-4  ">
          
             <div className="w-11/12 mx-auto flex flex-col justify-center "> 
-              <div className="flex justify-around my-10">
+              <div className="flex justify-around my-10 mobile:my-3">
                 <h1 className="text-2xl text-right text-slate-700 mobile:text-lg w-4/12 "> Email Adress:  </h1>
                 <p className="text-center w-8/12 align-baseline my-auto text-xl text-slate-700 mx-5"> {user.email} </p>
               </div>
@@ -94,8 +94,8 @@ function CheckOut() {
               </div>
             </div>
 
-            <div className=" flex flex-row">
-            <div className="h-3/12 text-primary w-6/12 flex justify-center mx-auto  my-2 cursor-pointer mobile:w-full ">
+            <div className=" flex flex-row mobile:flex-col">
+            <div className="h-3/12  text-primary w-6/12 flex justify-center mx-auto  my-2 cursor-pointer mobile:w-full ">
                 <Link to="/UpdateProfile" className="flex text-center justify-center rounded fill-slate-600 py-2 w-3/4 mobile:w-1/2 px-10 mobile:py-0 mobile:px-2 text-primary  bg-slate-700 align-middle"> Update Your Profile </Link>
               </div>
 
@@ -112,7 +112,7 @@ function CheckOut() {
        <ul>
          {cartedBikes.map((bike, index) => (
            <li key={index} className="w-full flex justify-center">
-             <div className="flex justify-evenly w-1/2">
+             <div className="flex justify-evenly w-1/2 mobile:w-full">
                <span className="text-xl font-medium text-slate-600">{bike.brand} {bike.model}</span>
                <span className="text-xl font-medium text-slate-600">{bike.price} €</span>
              </div>
