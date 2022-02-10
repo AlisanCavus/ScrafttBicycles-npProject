@@ -4,6 +4,8 @@ import LoadingScreen from "../components/LoadingScreen";
 import { db } from "../firebase";
 import { doc, getDoc } from "firebase/firestore";
 import { Link } from 'react-router-dom'
+import PaypalButton from '../components/PaypalButton';
+
 
 function CheckOut() {
   const [ user, setUser ] = useState()
@@ -11,6 +13,7 @@ function CheckOut() {
   const { currentUser } = useAuth();
   const [ cartedBikes, setCartedBikes] = useState([])
   const [sum , setSum ] = useState()
+  
 
   useEffect(() => {
     const getUserInfo = () => {
@@ -53,15 +56,15 @@ function CheckOut() {
   }, []);
 
 
-  console.log(cartedBikes)
+  
 
   if (loading || !user === undefined) {
     return <LoadingScreen />;
   } else {
   return (
     <div className="bg-primary w-screen min-h-screen flex flex-row mobile:flex-col">
-     <div className=" w-1/2 flex flex-col min-h-10/12 my-auto justify-center text-center border border-slate-700 mobile:w-full mobile:h-screen">
-       <div className=" grid grid-rows-4">
+     <div className=" w-1/2 flex flex-col min-h-screen my-auto justify-center mobile:w-full mobile:h-screen ">
+       <div className=" grid grid-rows-4  ">
             <div className="w-11/12 mx-auto flex flex-col justify-center "> 
               <div className="flex justify-around my-10">
                 <h1 className="text-2xl text-right text-slate-700 mobile:text-lg w-4/12 "> Email Adress:  </h1>
@@ -90,15 +93,21 @@ function CheckOut() {
               </div>
             </div>
 
-
-            <div className="h-3/12 text-slate-600 w-6/12 flex justify-center mx-auto  my-2 cursor-pointer mobile:w-full ">
+            <div className=" flex flex-row">
+            <div className="h-3/12 text-primary w-6/12 flex justify-center mx-auto  my-2 cursor-pointer mobile:w-full ">
                 <Link to="/UpdateProfile" className="flex text-center justify-center rounded fill-slate-600 py-2 w-3/4 mobile:w-1/2 px-10 mobile:py-0 mobile:px-2 text-primary  bg-slate-700 align-middle"> Update Your Profile </Link>
+              </div>
+
+              <div className="h-3/12 text-slate-600 w-6/12 flex justify-center mx-auto  my-2 cursor-pointer mobile:w-full ">
+                <Link to="/YourCart" className="flex text-center justify-center rounded fill-slate-600 py-2 w-3/4 mobile:w-1/2 px-10 mobile:py-0 mobile:px-2 text-primary  bg-slate-700 align-middle"> Back to Your Cart </Link>
+              </div>
+
               </div>
 
        </div>
        
      </div>
-     <div className=" w-1/2 flex flex-col h-10/12 my-auto justify-center mobile:h-screen">
+     <div className=" w-1/2 min-h-screen flex flex-col h-10/12 my-auto justify-center mobile:h-screen bg-checkout">
        <ul>
          {cartedBikes.map((bike, index) => (
            <li key={index} className="w-full flex justify-center">
@@ -110,12 +119,24 @@ function CheckOut() {
          ))}
        </ul>
        <div className="w-full flex justify-center">
-         <span>
-           {sum} €
+         <span className="my-5">
+           Total Amount to pay : {sum} €
          </span>
        </div>
        <div className="w-full flex justify-center">
-          payment methods
+
+            <div className="flex justify-center">
+              { !user.adress || !user.phoneNumber || !user.displayName ? (<span>Please Update Your Profile and make sure all given information is correct.</span>) : (
+              <PaypalButton
+              cartedBikes={cartedBikes}
+              sum={sum}
+              ></PaypalButton>
+              )}
+            </div>
+            
+
+
+
        </div>
      </div>
     </div>

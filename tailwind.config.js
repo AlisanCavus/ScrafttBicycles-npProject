@@ -44,6 +44,7 @@ module.exports = {
         'garage' : "url('https://images.pexels.com/photos/6156531/pexels-photo-6156531.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')",
         'update' : "url('https://images.pexels.com/photos/5061053/pexels-photo-5061053.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')",
         'forgot' : "url('https://images.pexels.com/photos/210095/pexels-photo-210095.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')",
+        'checkout': "url('https://images.pexels.com/photos/10203439/pexels-photo-10203439.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')",
       },
       keyframes: {
         wiggle: {
