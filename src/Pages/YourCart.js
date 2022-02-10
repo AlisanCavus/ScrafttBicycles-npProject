@@ -91,7 +91,7 @@ function YourCart() {
 
   //sum
   const totalCart  = () =>  {
-    const sum = addedCartBikes.map(item => item.price).reduce((prev, curr) => prev + curr, 0)
+    const sum = cartedBikes.map(item => item.price).reduce((prev, curr) => prev + curr, 0)
     setCartSum(sum)
     console.log(cartSum)
   }
