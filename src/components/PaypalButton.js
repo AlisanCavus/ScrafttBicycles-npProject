@@ -8,6 +8,8 @@ function PaypalButton( props ) {
 
   const paypal = useRef()
 
+  
+
   useEffect(() => {
 
     window.paypal.Buttons({
@@ -17,7 +19,7 @@ function PaypalButton( props ) {
             purchase_units: [
               ...cartedBikes
             ],
-            currency_code: "EUR",
+            currency_code:"EUR",
             value: sum,
           })
         },
@@ -30,8 +32,8 @@ function PaypalButton( props ) {
         }
     }).render(paypal.current)
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[])
+
+  },[cartedBikes,sum])
   return (
     <div ref={paypal} className="my-5" > </div>
   )

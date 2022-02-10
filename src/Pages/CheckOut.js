@@ -65,6 +65,7 @@ function CheckOut() {
     <div className="bg-primary w-screen min-h-screen flex flex-row mobile:flex-col">
      <div className=" w-1/2 flex flex-col min-h-screen my-auto justify-center mobile:w-full mobile:h-screen ">
        <div className=" grid grid-rows-4  ">
+         
             <div className="w-11/12 mx-auto flex flex-col justify-center "> 
               <div className="flex justify-around my-10">
                 <h1 className="text-2xl text-right text-slate-700 mobile:text-lg w-4/12 "> Email Adress:  </h1>
@@ -75,21 +76,21 @@ function CheckOut() {
             <div className="w-11/12 mx-auto flex flex-col justify-center"> 
               <div className="flex justify-around ">
                 <h1 className=" text-2xl text-right text-slate-700 mobile:text-lg w-4/12 "> Full Name: </h1>
-                {!user.displayName ? (<Link to="/UpdateProfile" className="text-center animate-pulse  align-baseline my-auto text-xl text-slate-700 mx-5 italic font-light text-opacity-70"> Please update your profile </Link>) : (<p className="text-center align-baseline w-8/12 my-auto text-xl text-slate-700 mx-5"> {user.displayName} </p>)}
+                {!user.displayName ? (<Link to="/UpdateProfile" className="text-center animate-pulse w-8/12 align-baseline my-auto text-xl text-slate-700 mx-5 italic font-light text-opacity-70"> Please update your profile </Link>) : (<p className="text-center align-baseline w-8/12 my-auto text-xl text-slate-700 mx-5"> {user.displayName} </p>)}
               </div>
             </div>
 
             <div className="w-11/12 mx-auto flex flex-col justify-center"> 
               <div className="flex justify-around">
                 <h1 className=" text-2xl text-right text-slate-700 mobile:text-lg w-4/12"> Phone Number: </h1>
-                {!user.phoneNumber ? (<Link to="/UpdateProfile" className="text-center animate-pulse  align-baseline my-auto text-xl text-slate-700 mx-5 italic font-light text-opacity-70"> Please update your profile </Link>) : (<p className="text-center align-baseline my-auto w-8/12 text-xl text-slate-700 mx-5"> {user.phoneNumber} </p>)}
+                {!user.phoneNumber ? (<Link to="/UpdateProfile" className="text-center animate-pulse w-8/12   align-baseline my-auto text-xl text-slate-700 mx-5 italic font-light text-opacity-70"> Please update your profile </Link>) : (<p className="text-center align-baseline my-auto w-8/12 text-xl text-slate-700 mx-5"> {user.phoneNumber} </p>)}
               </div>
             </div>
 
             <div className="w-11/12 mx-auto flex flex-col justify-center"> 
               <div className="flex justify-around ">
                 <h1 className=" text-2xl text-right text-slate-700 mobile:text-lg w-4/12"> Address: </h1>
-                {!user.adress ? (<Link to="/UpdateProfile" className="text-center  animate-pulse align-baseline my-auto text-xl text-slate-700 mx-5 italic font-light text-opacity-70"> Please update your profile </Link>) : (<p className="text-center align-baseline my-auto w-8/12 text-xl text-slate-700 mx-5"> {user.adress} </p>)}
+                {!user.adress ? (<Link to="/UpdateProfile" className="text-center  animate-pulse w-8/12  align-baseline my-auto text-xl text-slate-700 mx-5 italic font-light text-opacity-70"> Please update your profile </Link>) : (<p className="text-center align-baseline my-auto w-8/12 text-xl text-slate-700 mx-5"> {user.adress} </p>)}
               </div>
             </div>
 
@@ -107,7 +108,7 @@ function CheckOut() {
        </div>
        
      </div>
-     <div className=" w-1/2 min-h-screen flex flex-col h-10/12 my-auto justify-center mobile:h-screen bg-checkout">
+     <div className=" w-1/2 min-h-screen flex flex-col h-10/12 my-auto justify-center mobile:h-screen bg-checkout object-fill bg-cover mobile:w-full">
        <ul>
          {cartedBikes.map((bike, index) => (
            <li key={index} className="w-full flex justify-center">
@@ -126,7 +127,7 @@ function CheckOut() {
        <div className="w-full flex justify-center">
 
             <div className="flex justify-center">
-              { !user.adress || !user.phoneNumber || !user.displayName ? (<span>Please Update Your Profile and make sure all given information is correct.</span>) : (
+              { !user.adress || !user.phoneNumber || !user.displayName ? (<span className="text-xl text-primary text-shadow-md">Please update your profile and make sure all given information is correct.</span>) : (
               <PaypalButton
               cartedBikes={cartedBikes}
               sum={sum}
