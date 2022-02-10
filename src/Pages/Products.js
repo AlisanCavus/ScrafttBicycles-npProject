@@ -122,7 +122,7 @@ function Products() {
     if(cartBikes.includes(id,model,price, brand,img0)) {
       alert("You have already added this bike to your Cart")
      } else if (cartBikes.length > 4) {
-       alert("You can only add 5 bikes in Cart")
+       alert("You can only add 5 bikes in Your Cart")
      } else {
        setCartBikes([...cartBikes, {id:id, model:model, price:price, brand:brand, img0:img0,}])
      }

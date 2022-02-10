@@ -4,12 +4,15 @@ import { animated, useSpring } from 'react-spring';
 import { Link } from 'react-router-dom'
 import YourCartCard from '../components/YourCartCard';
 import  LoadingScreen  from '../components/LoadingScreen'
+import { collref } from '../firebase';
+import { getDocs } from '@firebase/firestore';
 
 
 function YourCart() {
-  const [loading, setLoading ] = useState(false)
-  const [cartedBikes, setCartedBikes] = useState([])
-  const [ addedCartBike, setAddedCartBike ] = useState([])
+  const [ loading, setLoading ] = useState(false)
+  const [ cartedBikes, setCartedBikes] = useState([])
+  const [ bikes, setBikes ] = useState([])
+  const [ addedCartBikes, setAddedCartBikes ] = useState([])
 
 
   useEffect(() => {
@@ -19,14 +22,64 @@ function YourCart() {
     }
   }, []);
 
-  // useEffect(() => {
-  //   localStorage.setItem('CartBikes', JSON.stringify(addedCartBike));
-  // });
+  useEffect(() => {
+    localStorage.setItem('CartBikes', JSON.stringify(addedCartBikes));
+  });
+
+  const handleDelete = (id) => {
+    // const newFavoritedBikes = [...favoritedBikes];
+    // const index = newFavoritedBikes.indexOf(id);
+    
+    //   newFavoritedBikes.splice(index, 1);
+    //   setFavoritedBikes(newFavoritedBikes);
+     
+  
+ 
+   
+   const newList = cartedBikes.filter((bike)=> bike.id !== id)
+  console.log(newList)
+  setCartedBikes(newList)
+  console.log(cartedBikes)
+  localStorage.setItem('CartBikes', JSON.stringify(cartedBikes));
+    
+  }
 
 
+  useEffect(() => {
+    setLoading(true);
+    setAddedCartBikes(cartedBikes.filter((_, i) => bikes[i]));
+    setLoading(false);
+  }, [bikes, cartedBikes]);
 
 
+  useEffect(() => {
+    const getbikes = () => {
+      getDocs(collref)
+        .then((snapshot) => {
+          let bicycles = [];
+          snapshot.docs.forEach((doc) => {
+            bicycles.push({ ...doc.data(), id: doc.id });
+          });
+          setBikes(bicycles);
+          setLoading(false);
+        })
+        .catch((err) => {
+          console.log(err.message);
+        });
+    };
 
+    let isApiSubscribed = true;
+    if (isApiSubscribed) {
+      getbikes();
+    }
+
+    return () => {
+      // cancel the subscription
+      isApiSubscribed = false;
+    };
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const anim = useSpring({
     from: { opacity: 0, transform: 'translateX(-100%)' },
@@ -60,7 +113,7 @@ function YourCart() {
       {cartedBikes.length === 0 ? (
         <div className="w-1/2 min-h-screen h-screen flex justify-center flex-col mobile:w-full mx-auto">
           <div className="flex justify-center mx-auto">
-            <span className="text-center">You don't have any Product in your Cart.</span>
+            <span className="text-center">You don't have any bike in your Cart.</span>
           </div>
          <div className="flex justify-center">
           <Link to="/Products" className="text-primary text-center rounded w-60 mx-auto p-2 bg-slate-700 hover:animate-pulse">Go to Products</Link>
@@ -83,7 +136,7 @@ function YourCart() {
                   img0={bike.img0}
                   model={bike.model}
                   price={bike.price}
-                  // handleDelete={handleDelete}
+                  handleDelete={handleDelete}
                 />
               ))}
             </ul>
