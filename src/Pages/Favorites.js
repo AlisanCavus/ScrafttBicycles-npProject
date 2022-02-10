@@ -25,12 +25,27 @@ function Favorites() {
     localStorage.setItem('FavoriteBikes', JSON.stringify(favoritedBikes));
   });
   
+
+ 
     const handleDelete = (id) => {
-      const newFavoritedBikes = [...favoritedBikes];
-      newFavoritedBikes.splice(id, 1);
-      setFavoritedBikes(newFavoritedBikes);
-      localStorage.setItem('FavoriteBikes', JSON.stringify(favoritedBikes));
+      // const newFavoritedBikes = [...favoritedBikes];
+      // const index = newFavoritedBikes.indexOf(id);
+      
+      //   newFavoritedBikes.splice(index, 1);
+      //   setFavoritedBikes(newFavoritedBikes);
+       
+    
+   
+     
+     const newList = favBikes.filter((bike)=> bike.id !== id)
+    console.log(newList)
+    setFavBikes(newList)
+    console.log(favBikes)
+    localStorage.setItem('FavoriteBikes', JSON.stringify(favBikes));
+      
     }
+
+
   
 
   useEffect(() => {

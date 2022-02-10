@@ -4,7 +4,6 @@ import { MdOutlineDeleteSweep } from 'react-icons/md'
 function FavoritesCard(props) {
   const {
     id,
-    index,
     brand,
     img0,
     model,
@@ -33,7 +32,7 @@ function FavoritesCard(props) {
             <span className=" text-right">{price}€</span>
         </div>
         <div className=" flex justify-center items-center w-1/12 ">
-        <MdOutlineDeleteSweep className="w-5 h-5 hover:animate-bounce cursor-pointer" onClick={() => handleDelete(index)}/>
+        <MdOutlineDeleteSweep className="w-5 h-5 hover:animate-bounce cursor-pointer" onClick={() => handleDelete(id)}/>
         </div>
         
       </div>
