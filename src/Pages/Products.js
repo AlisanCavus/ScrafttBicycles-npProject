@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from 'react';
 import { collref } from '../firebase';
-import { getDocs, doc, updateDoc, getDoc, arrayUnion } from 'firebase/firestore';
+import { getDocs, doc, getDoc,} from 'firebase/firestore';
 import ProductsCard from '../components/ProductsCard';
 import LoadingScreen from '../components/LoadingScreen';
 import { db } from '../firebase';
@@ -18,7 +18,7 @@ function Products() {
   const [bikes, setBikes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [favBikes, setFavBikes ] = useState([]);
-  const [orderedBike, setOrderedBike] = useState([])
+  const [cartBikes, setCartBikes] = useState([])
 
   useEffect(() => {
     const data = localStorage.getItem('FavoriteBikes')
@@ -104,15 +104,35 @@ function Products() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
- 
- 
-  
+ // CART
+  useEffect(() => {
+    const data = localStorage.getItem('CartBikes')
+    if (data) {
+      setCartBikes(JSON.parse(data));
+    }
 
- const addOrderedBikes =  (id,brand,model,price) => {
-  setOrderedBike([...orderedBike, {id,model,brand,price}])
-  localStorage.setItem('orderedBikes', JSON.stringify(orderedBike));
+  },[]);
+
+  useEffect(() => {
+    localStorage.setItem('CartBikes', JSON.stringify(cartBikes));
+  });
+
+
+  const addToCart = (id, model, price, brand, img0) => {
+    if(cartBikes.includes(id,model,price, brand,img0)) {
+      alert("You have already added this bike to your Cart")
+     } else if (cartBikes.length > 4) {
+       alert("You can only add 5 bikes in Cart")
+     } else {
+       setCartBikes([...cartBikes, {id:id, model:model, price:price, brand:brand, img0:img0,}])
+     }
+  }
+
+//  const addOrderedBikes =  (id,brand,model,price) => {
+//   setOrderedBike([...orderedBike, {id,model,brand,price}])
+//   localStorage.setItem('orderedBikes', JSON.stringify(orderedBike));
   
-}
+// }
 
 // console.log(orderedBike)
 // const objbikes = Object.assign({},orderedBike)
@@ -162,7 +182,9 @@ function Products() {
           price={id.price}
           addToFav={addToFav}
           favBikes={favBikes}
-          addOrderedBikes={addOrderedBikes}
+          addToCart={addToCart}
+          cartBikes={cartBikes}
+          
           
           
           
