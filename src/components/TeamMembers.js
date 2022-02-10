@@ -7,8 +7,8 @@ function TeamMembers(props) {
 
 
   if (index % 2 === 1) {return (
-    <li key={id} className="h-full flex flex-col w-40">
-      <div className="flex justify-center mobile:flex-col">
+    <li key={id} className="h-full flex flex-col w-40 mobile:justify-center mobile:grid">
+      <div className="flex justify-center mobile:flex-col mobile:mx-auto">
         <img src={img} alt=" team members" className=" rounded-full object-fit" />
       </div>
       <div className="flex justify-center text-xl text-slate-800">
@@ -20,11 +20,11 @@ function TeamMembers(props) {
     </li>
   );} else {
     return (
-        <li key={id} className="h-full flex flex-col w-40">
+        <li key={id} className="h-full flex flex-col w-40 mobile:grid mobile:justify-center">
           <div className="flex justify-center mobile:flex-col h-60">
             <img src={img} alt=" team members" className=" rounded-full object-fit" />
           </div>
-          <div className="flex justify-center text-xl text-slate-800">
+          <div className="flex justify-center text-xl text-slate-800 mobile:mx-auto">
             <h1 className="  font-medium"> {name}</h1>
           </div>
           <div className="flex justify-center text-md text-slate-600">

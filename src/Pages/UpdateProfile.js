@@ -12,7 +12,7 @@ function UpdateProfile({ close, setClose, handleCloseModal }) {
   const phoneNumberRef = useRef();
   const adressRef = useRef();
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const { currentUser } = useAuth();
 
   const mounted = useRef(false);

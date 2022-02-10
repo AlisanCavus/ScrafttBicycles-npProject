@@ -49,9 +49,9 @@ function About() {
             <h1 className='text-slate-700 font-sans font-medium text-4xl items-start'> Meet with the <span className='text-4xl items-end'>"Team"</span>  </h1>
           </div>
 
-          <ul className='flex flex-row w-full h-full mx-auto justify-evenly'>
+          <ul className='flex flex-row w-full h-full mx-auto justify-evenly mobile:flex-col mobile:grid mobile:text-center'>
             {team.map((item, index) => 
-              <TeamMembers key={item.id} index={index} id={item.id} name={item.name} titr={item.titr} img={item.img}/>
+              <TeamMembers key={item.id} index={index} id={item.id} name={item.name} titr={item.titr} img={item.img} />
             )}
           </ul>
            
