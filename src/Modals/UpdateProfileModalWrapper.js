@@ -17,7 +17,7 @@ function UpdateProfileModalWrapper() {
   const navigate = useNavigate();
   const handleCloseModal = () => {
     setClose(true);
-    navigate('/Profile');
+    navigate(-1);
   };
 
   return reactDom.createPortal(
