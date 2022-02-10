@@ -13,6 +13,7 @@ function YourCart() {
   const [ cartedBikes, setCartedBikes] = useState([])
   const [ bikes, setBikes ] = useState([])
   const [ addedCartBikes, setAddedCartBikes ] = useState([])
+  const [ cartSum, setCartSum ] = useState()
 
 
   useEffect(() => {
@@ -20,10 +21,12 @@ function YourCart() {
     if (data) {
       setCartedBikes(JSON.parse(data));
     }
+    localStorage.getItem('Sum')
   }, []);
 
   useEffect(() => {
     localStorage.setItem('CartBikes', JSON.stringify(addedCartBikes));
+    localStorage.setItem('Sum', JSON.stringify(cartSum))
   });
 
   const handleDelete = (id) => {
@@ -41,6 +44,7 @@ function YourCart() {
   setCartedBikes(newList)
   console.log(cartedBikes)
   localStorage.setItem('CartBikes', JSON.stringify(cartedBikes));
+   localStorage.setItem('Sum', JSON.stringify(cartSum))
     
   }
 
@@ -48,8 +52,11 @@ function YourCart() {
   useEffect(() => {
     setLoading(true);
     setAddedCartBikes(cartedBikes.filter((_, i) => bikes[i]));
+    totalCart()
     setLoading(false);
-  }, [bikes, cartedBikes]);
+    localStorage.setItem('Sum', JSON.stringify(cartSum))
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [bikes, cartedBikes, cartSum]);
 
 
   useEffect(() => {
@@ -80,6 +87,15 @@ function YourCart() {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+
+  //sum
+  const totalCart  = () =>  {
+    const sum = addedCartBikes.map(item => item.price).reduce((prev, curr) => prev + curr, 0)
+    setCartSum(sum)
+    console.log(cartSum)
+  }
+
 
   const anim = useSpring({
     from: { opacity: 0, transform: 'translateX(-100%)' },
@@ -126,6 +142,7 @@ function YourCart() {
             <span className="w-2/12 text-center">&nbsp; Price </span>
           </div>
           {!loading ? (
+            <>
             <ul className="mx-auto w-full">
               {cartedBikes.map((bike, index) => (
                 <YourCartCard
@@ -140,6 +157,14 @@ function YourCart() {
                 />
               ))}
             </ul>
+
+            <div className="w-full flex justify-end border-t-2 border-slate-700 my-3">
+              <div className="mx-5 pr-10 py-5">
+                <span className="mx-5">Total Amount :</span>
+                <span>{cartSum}€</span>
+                </div>
+            </div>
+            </>
           ) : (
             <LoadingScreen />
           )}
