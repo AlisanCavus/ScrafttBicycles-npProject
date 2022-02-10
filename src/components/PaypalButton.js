@@ -3,6 +3,7 @@ import React, {useEffect, useRef, useState} from 'react'
 function PaypalButton( props ) {
 
     const { cartedBikes, sum } = props
+    // eslint-disable-next-line no-unused-vars
     const [checkout, setCheckout] = useState(false)
 
   const paypal = useRef()
