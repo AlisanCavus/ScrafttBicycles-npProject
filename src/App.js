@@ -16,6 +16,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import UpdateProfileModalWrapper from './Modals/UpdateProfileModalWrapper';
 import ForgotPassModalWrapper from './Modals/ForgotPassModalWrapper'
+import CheckOut from './Pages/CheckOut';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
               <Route index element={<Home />} />
               <Route path="/YourCart" element={<YourCart />} />
               <Route path="/Profile" element={<Profile />} />
+              <Route path="/CheckOut" element={<CheckOut />} />
               <Route path="/Logout" element={<Logout />} />
               <Route path="/UpdateProfile" element={<UpdateProfileModalWrapper />} />
             </Route>

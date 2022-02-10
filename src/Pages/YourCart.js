@@ -6,14 +6,50 @@ import YourCartCard from '../components/YourCartCard';
 import  LoadingScreen  from '../components/LoadingScreen'
 import { collref } from '../firebase';
 import { getDocs } from '@firebase/firestore';
+import { useAuth } from "../Contexts/AuthContext";
+import { db } from "../firebase";
+import { doc, getDoc } from "firebase/firestore";
+
 
 
 function YourCart() {
+  const { currentUser } = useAuth();
+  const [user, setUser] = useState();
   const [ loading, setLoading ] = useState(false)
   const [ cartedBikes, setCartedBikes] = useState([])
   const [ bikes, setBikes ] = useState([])
   const [ addedCartBikes, setAddedCartBikes ] = useState([])
   const [ cartSum, setCartSum ] = useState()
+ 
+
+  useEffect(() => {
+    const getUserInfo = () => {
+      const docRef = doc(db, "users", `${currentUser?.uid}`);
+      getDoc(docRef)
+        .then((doc) => {
+          if (doc.exists) {
+            setUser(doc.data());
+            setLoading(false);
+          }
+        })
+        .catch((err) => {
+          console.log(err.message);
+        });
+    };
+
+    let isApiSubscribed = true;
+    if (isApiSubscribed) {
+      getUserInfo();
+    }
+
+    return () => {
+      // cancel the subscription
+      isApiSubscribed = false;
+    };
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
 
 
   useEffect(() => {
@@ -103,14 +139,25 @@ function YourCart() {
     delay: 600,
   });
 
+
+console.log(user)
+
+  
+
+if (loading || !user === undefined) {
+  return <LoadingScreen />;
+} else {
+
   return (
-  <div className="min-h-screen w-screen bg-primary flex flex-row">
+    
+  <div className="min-h-screen w-screen bg-primary flex flex-row mobile:flex-col">
     <div className="w-1/2 h-screen flex mobile:w-full">
      <video
               autoPlay={true}
               loop={true}
               preload="auto"
               muted={true}
+              controls={false}
               className=" object-cover w-screen"
             >
               <source src={cart}></source>
@@ -124,7 +171,7 @@ function YourCart() {
             </h1>
           </animated.div>
     </div>
-    <div className="w-1/2 min-h-screen flex justify-center">
+    <div className="w-1/2 min-h-screen flex justify-center mobile:w-full">
       <div className='w-11/12 mx-auto h-10/12 my-auto'>
       {cartedBikes.length === 0 ? (
         <div className="w-1/2 min-h-screen h-screen flex justify-center flex-col mobile:w-full mx-auto">
@@ -143,10 +190,10 @@ function YourCart() {
           </div>
           {!loading ? (
             <>
-            <ul className="mx-auto w-full">
+            <ul className="mx-auto w-full mobile:w-full">
               {cartedBikes.map((bike, index) => (
                 <YourCartCard
-                  className="snap-center w-full min-h-screen h-screen justify-evenly bg-black"
+                  className="snap-center w-full min-h-screen h-screen justify-evenly bg-black mobile:w-full"
                   key={index}
                   id={bike.id}
                   brand={bike.brand}
@@ -158,11 +205,14 @@ function YourCart() {
               ))}
             </ul>
 
-            <div className="w-full flex justify-end border-t-2 border-slate-700 my-3">
-              <div className="mx-5 pr-10 py-5">
+            <div className="w-full flex justify-end border-t-2 border-slate-700 my-3 mobile:justify-center">
+              <div className="mx-5 pr-10 py-5 mobile:pr-0">
                 <span className="mx-5">Total Amount :</span>
                 <span>{cartSum}€</span>
                 </div>
+            </div>
+            <div className="h-3/12 text-slate-600 w-6/12 flex justify-center mx-auto  my-2 cursor-pointer mobile:w-full ">
+                <Link to="/CheckOut" className="flex text-center justify-center rounded fill-slate-600 py-2 w-3/4  px-10 mobile:py-0 mobile:px-2 text-primary mobile:w-1/2 bg-slate-700 align-middle"> CheckOut </Link>
             </div>
             </>
           ) : (
@@ -172,6 +222,6 @@ function YourCart() {
       </div>
     </div>
   </div>
-  )}
+  )}}
 
 export default YourCart;

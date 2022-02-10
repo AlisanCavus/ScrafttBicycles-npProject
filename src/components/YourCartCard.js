@@ -17,7 +17,7 @@ function YourCartCard(props) {
   return (
     <li
       key={id}
-      className="min-w-screen min-h-1/12 flex flex-col justify-center bg-scroll ">
+      className="min-w-screen min-h-1/12 flex flex-col justify-center bg-scroll mobile:w-full">
       <div className="h-1/9 flex">
         <img className=" w-24 h-20 object-contain mobile:w-10 mobile:h-8" alt="bikes" src={img0}  />
         <div className="flex justify-center items-center w-9/12 ">
