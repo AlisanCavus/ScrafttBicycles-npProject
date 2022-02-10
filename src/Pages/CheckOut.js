@@ -59,8 +59,8 @@ function CheckOut() {
     return <LoadingScreen />;
   } else {
   return (
-    <div className="bg-primary w-screen min-h-screen flex flex-row">
-     <div className=" w-1/2 flex flex-col min-h-10/12 my-auto justify-center text-center border border-slate-700">
+    <div className="bg-primary w-screen min-h-screen flex flex-row mobile:flex-col">
+     <div className=" w-1/2 flex flex-col min-h-10/12 my-auto justify-center text-center border border-slate-700 mobile:w-full mobile:h-screen">
        <div className=" grid grid-rows-4">
             <div className="w-11/12 mx-auto flex flex-col justify-center "> 
               <div className="flex justify-around my-10">
@@ -98,7 +98,7 @@ function CheckOut() {
        </div>
        
      </div>
-     <div className=" w-1/2 flex flex-col h-10/12 my-auto justify-center">
+     <div className=" w-1/2 flex flex-col h-10/12 my-auto justify-center mobile:h-screen">
        <ul>
          {cartedBikes.map((bike, index) => (
            <li key={index} className="w-full flex justify-center">
