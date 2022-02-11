@@ -70,6 +70,7 @@ function ProductsCard(props) {
     arrows: true,
     centerPadding: 0,
     centerMargin: 0,
+    minHeight: '100vh',
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
   };

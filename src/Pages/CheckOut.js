@@ -121,13 +121,14 @@ function CheckOut() {
        </ul>
        <div className="w-full flex justify-center">
          <span className="my-5">
+           
            Total Amount to pay : {sum} €
          </span>
        </div>
        <div className="w-full flex justify-center">
 
             <div className="flex justify-center">
-              { !user.adress || !user.phoneNumber || !user.displayName ? (<span className="text-xl text-primary text-shadow-md">Please update your profile and make sure all given information is correct.</span>) : (
+              { !user.adress || !user.phoneNumber || !user.displayName  || !sum? (<span className="text-xl text-primary text-shadow-md">Please update your profile and make sure all given information is correct.</span>) : (
               <PaypalButton
               cartedBikes={cartedBikes}
               sum={sum}
