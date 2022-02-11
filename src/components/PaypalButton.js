@@ -26,7 +26,6 @@ const numbsum = parseInt(sum)
               price: bike.price
               
             }))],
-            currency_code: "EUR",
             value: numbsum,
           })
         },
@@ -40,6 +39,7 @@ const numbsum = parseInt(sum)
     }).render(paypal.current)
 
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[cartedBikes,sum])
   return (
     <div ref={paypal} className="my-5" > </div>
