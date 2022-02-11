@@ -50,6 +50,7 @@ function Prod1() {
       </div>
       <div className=" h-screen min-h-full flex justify-start mx-auto w-1/2 bg-black  mobile:w-full mobile:h-1/2 ">
         <video
+          playsInline={true}
           style={vidstyle}
           autoPlay={true}
           loop={true}

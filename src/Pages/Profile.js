@@ -65,6 +65,7 @@ function Profile() {
                 loop={true}
                 preload="auto"
                 muted={true}
+                playsInline={true}
                 controls={false}
                 className=" object-cover w-screen"
               >

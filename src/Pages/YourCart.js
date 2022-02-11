@@ -157,6 +157,7 @@ if (loading || !user === undefined) {
               loop={true}
               preload="auto"
               muted={true}
+              playsInline={true}
               controls={false}
               className=" object-cover w-screen"
             >

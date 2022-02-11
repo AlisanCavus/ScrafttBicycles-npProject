@@ -135,6 +135,7 @@ function Favorites() {
             <video
               autoPlay={true}
               loop={true}
+              playsInline={true}
               preload="auto"
               muted={true}
               controls={false}
