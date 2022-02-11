@@ -10,17 +10,24 @@ function PaypalButton( props ) {
 
   
 
+
+console.log(cartedBikes)
+
+const numbsum = parseInt(sum)
   useEffect(() => {
 
     window.paypal.Buttons({
         createOrder: (data, actions, err) => {
           return actions.order.create({
             intent: "CAPTURE",
-            purchase_units: [
-              ...cartedBikes
-            ],
-            currency_code:"EUR",
-            value: sum,
+            purchase_units: [cartedBikes.map((bike) => ({
+              id:bike.id, 
+              model: bike.model,
+              price: bike.price
+              
+            }))],
+            currency_code: "EUR",
+            value: numbsum,
           })
         },
         onApprove: async (data, actions) => {
