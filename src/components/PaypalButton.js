@@ -1,6 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react'
 import { db } from "../firebase";
-import { doc, getDoc, setDoc } from "firebase/firestore";
+import { doc, getDoc, collection, setDoc} from "firebase/firestore";
 import { useAuth } from "../Contexts/AuthContext";
 import { useNavigate } from 'react-router-dom';
 
@@ -49,8 +49,11 @@ function PaypalButton( props ) {
 
 console.log(cartedBikes)
 
-const payedItems = async () => {
-    await setDoc(doc(db, "orders", `${currentUser.uid}`), {
+
+const payedItems = async (user) => {
+  console.log(user)
+  const docref = doc(collection(db, 'orders' ,`${currentUser.uid}`));
+    await setDoc(docref, {
     email: user.email,
     adress: user.adress,
     phoneNumber: user.phoneNumber,
@@ -90,9 +93,10 @@ const deleteCart = async () => {
             console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
             var transaction = orderData.purchase_units[0].payments.captures[0];
             
-            alert('Transaction '+ transaction.status + ': ' + transaction.id + '\n\nSee console for all available details');
+            
             deleteCart()
             payedItems()
+            alert('Transaction '+ transaction.status + ': ' + transaction.id + '\n\nSee console for all available details');
             navigate('/Profile')
           })}
     }).render(paypal.current)
