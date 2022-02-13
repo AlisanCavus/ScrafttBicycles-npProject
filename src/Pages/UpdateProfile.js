@@ -48,7 +48,7 @@ function UpdateProfile({ close, setClose, handleCloseModal }) {
 
 
   return (
-    <div className="  w-3/4 h-min align-middle mx-auto bg-primary mobile:flex mobile:w-full mobile:justify-center rounded ">
+    <div className="   mx-auto w-3/4 h-min my-auto mobile:flex mobile:justify-center bg-primary rounded mobile:w-full">
       <div className="flex bg-primary w-full flex-col align-middle justify-center rounded mobile:w-screen">
         <div className=" -m-4 mobile:-m-6 mobile:mx-auto">
           <button
@@ -66,7 +66,7 @@ function UpdateProfile({ close, setClose, handleCloseModal }) {
         <div className="justify-center text-center mb-4">
           <span className=" text-slate-700 text-xl "> Update your Profile </span>
         </div>
-        <div className="flex justify-center flex-col mx-auto w-full mobile:w-full">
+        <div className="flex justify-center flex-col mx-auto w-full mobile:w-screen">
           <form
             onSubmit={handleSubmit}
             className="flex justify-center flex-col mx-auto w-full  mobile:w-11/12 mobile:mx-auto "

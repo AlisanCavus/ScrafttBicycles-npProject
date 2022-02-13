@@ -27,7 +27,7 @@ function UpdateProfileModalWrapper() {
         className=" top-0 left-0 bg-cover bg-update opacity-60
      fixed z-[1] w-screen h-screen overflow-hidden flex align-middle justify-center "
       ></div>
-      <animated.div className="mx-auto  w-1/2 h-3/4 z-[999] absolute  " style={animSingUp}>
+      <animated.div className="mx-auto  w-1/2 h-3/4 z-[999] absolute " style={animSingUp}>
         <UpdateProfile
           close={close}
           setClose={setClose}

@@ -33,7 +33,7 @@ function SignUp({ close, setClose, handleCloseModal }) {
     e.preventDefault();
 
     if (passwordRef.current.value !== cPasswordRef.current.value) {
-      return setError('Passwords do not matched!');
+      return setError('Passwords are not matched!');
     } else if (termsConds !== true) {
       return setError('You need to accept our Terms and Conditions!');
     }
