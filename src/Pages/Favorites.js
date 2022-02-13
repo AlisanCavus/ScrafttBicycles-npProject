@@ -27,14 +27,7 @@ function Favorites() {
 
  
     const handleDelete = (id) => {
-      // const newFavoritedBikes = [...favoritedBikes];
-      // const index = newFavoritedBikes.indexOf(id);
-      
-      //   newFavoritedBikes.splice(index, 1);
-      //   setFavoritedBikes(newFavoritedBikes);
-       
-    
-   
+
      
      const newList = favBikes.filter((bike)=> bike.id !== id)
     console.log(newList)

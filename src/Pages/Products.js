@@ -128,37 +128,6 @@ function Products() {
      }
   }
 
-//  const addOrderedBikes =  (id,brand,model,price) => {
-//   setOrderedBike([...orderedBike, {id,model,brand,price}])
-//   localStorage.setItem('orderedBikes', JSON.stringify(orderedBike));
-  
-// }
-
-// console.log(orderedBike)
-// const objbikes = Object.assign({},orderedBike)
-// console.log(objbikes)
-
-
-// const addUserCart = async () => {
-      
-//   const userDoc = doc(db, "users", `${currentUser?.uid}`)
-//   await updateDoc( userDoc, {
-//     orderedBike: objbikes
-//   })
-// }
-
-// useEffect(() => {
-//   addUserCart()
-  
-// });
-  
-
-   
-
-    
-  
-
- 
 
 
   return (

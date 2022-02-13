@@ -47,7 +47,7 @@ function PaypalButton( props ) {
   
 
 
-console.log(cartedBikes)
+
 
 
 const payedItems = async (user) => {

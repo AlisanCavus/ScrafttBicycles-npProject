@@ -29,7 +29,7 @@ function HomeProd() {
     scr = 1;
   }
 
-  // console.log(scr);
+
 
   const sty = {
     transform: `scale(${scr1 * 0.8}) perspective(${scr1 * 1000}px)`,
@@ -49,32 +49,7 @@ function HomeProd() {
   };
 
   return (
-    // <div className=" bg-primary max-h-screen w-full relative mobile:border-0 mobile:width:3/4">
-    //   <div className="flex flex-row mobile:flex-col ">
-
-    //       <div className="flex flex-col justify-center h-96 w-1/3 mobile:w-11/12 absolute top-1/3">
-
-    //       </div>
-
-    //     <div className="w-80 h-80 flex mt-[25%] ml-[30%] ">
-    //       <div className="flex justify-items-end  ">
-    // <div className=" align-middle flex justify-items-center items-center ">
-    //   <div>
-    //     <p className="indent-20 font-medium">
-    //       We made it. Just for you. Our bicycles are all hand crafted.
-    //       We know you want to be unique even when you are commuting.{' '}
-    //       <span className="text-slate-700 font-bold">Scraftt</span>{' '}
-    //       gives you all in one. Do it in style. Check our desings
-    //       inside. We are 100% sure you can find one. One more little
-    //       secret for you: We are proudly Belgian so, our bikes are
-    //       100% <strong> 🇧🇪 </strong> too.
-    //     </p>
-    //   </div>
-    // </div>
-    //       </div>
-    //     </div>
-    //   </div>
-    // </div>
+  
 
     <div className="flex min-h-screen mobile:grid mobile:grid-rows-2"  >
       <div className="w-[60%] flex object-fill bg-tamir bg-cover mobile:w-full mobile:h-full ">

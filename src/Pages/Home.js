@@ -11,31 +11,7 @@ function Home() {
 
   const scrollRef = useRef(null);
     useScrollSnap({ ref: scrollRef, duration: 150});
-  // const container = useRef()
 
-
-  // const bindScrollSnap = () => {
-  //   const element = container.current
-  //   createScrollSnap(element, {
-  //     snapDestinationY: '100vh',
-  //   })
-  // }
-
-  // useLayoutEffect(() => {
-  //   bindScrollSnap()
-  // }, []);
-  
-  
-  // const element = document.getElementById('container')
-
-  // const { bind, unbind } = createScrollSnap(element, {
-  //   snapDestinationX: '0',
-  //   snapDestinationY: '100vh',
-  //   timeout: 100,
-  //   duration: 300,
-  //   threshold: 0.2,
-  //   snapStop: false,
-  // }, () => console.log('element snapped'))
   
   return (
     <div className=" min-h-screen bg-primary overflow-x-hidden" ref={scrollRef}  >
