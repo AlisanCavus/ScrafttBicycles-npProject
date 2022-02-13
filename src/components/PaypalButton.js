@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 function PaypalButton( props ) {
   const navigate = useNavigate()
   const { currentUser } = useAuth();
+ // eslint-disable-next-line no-unused-vars
  const [user, setUser] = useState();
  // eslint-disable-next-line no-unused-vars
  const [loading, setLoading] = useState(true);
