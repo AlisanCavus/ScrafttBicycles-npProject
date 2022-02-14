@@ -45,7 +45,6 @@ Netlify
 ![Examples](./readmepics/exam3.png)
 ![Examples](./readmepics/exam4.png)
 ![Examples](./readmepics/exam5.png)
-![Examples](./readmepics/exam6.png)
 ![Examples](./readmepics/exam7.png)
 ![Examples](./readmepics/exam8.png)
 ![Examples](./readmepics/exam9.png)
