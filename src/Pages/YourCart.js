@@ -197,15 +197,18 @@ function YourCart() {
                         <span>{cartSum}€</span>
                       </div>
                     </div>
-                    <div className="h-3/12 text-slate-600 w-6/12 flex justify-center mx-auto  my-2 cursor-pointer mobile:w-full ">
+                    <div className="h-3/12 text-slate-600 w-10/12 flex justify-center mx-auto my-2 animate-pulse ">
                       <Link
                         to="/CheckOut"
-                        className="flex text-center justify-center rounded fill-slate-600 py-2 w-3/4  px-10 mobile:py-0 mobile:px-2 text-primary mobile:w-1/2 bg-slate-700 align-middle"
+                        className="flex text-center rounded fill-slate-600  w-1/2  px-10 py-2 mobile:py-0 mobile:px-2 text-primary justify-center mobile:w-full bg-slate-700 align-middle "
                       >
                         
                         CheckOut
                       </Link>
                     </div>
+                    <div className="h-3/12 text-slate-600 w-10/12 flex justify-center mx-auto ">
+            <Link to="/Products" className="flex text-center rounded fill-slate-600  w-1/2  px-10 py-2 mobile:py-0 mobile:px-2 text-primary justify-center mobile:w-full bg-slate-700 align-middle">Go to Products</Link>
+           </div>
                   </>
                 ) : (
                   <LoadingScreen />

@@ -17,20 +17,21 @@ function Products() {
   const { currentUser } = useAuth() 
   const [bikes, setBikes] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [favBikes, setFavBikes ] = useState([]);
-  const [cartBikes, setCartBikes] = useState([])
+  const [favBikes, setFavBikes ] = useState( localStorage.getItem("FavoriteBikes") ? JSON.parse(localStorage.getItem("FavoriteBikes")) : []
+  );
+  const [cartBikes, setCartBikes] = useState(localStorage.getItem("CartBikes") ? JSON.parse(localStorage.getItem("CartBikes")) : [])
 
-  useEffect(() => {
-    const data = localStorage.getItem('FavoriteBikes')
-    if (data) {
-      setFavBikes(JSON.parse(data));
-    }
+  // useEffect(() => {
+  //   const data = localStorage.getItem('FavoriteBikes')
+  //   if (data) {
+  //     setFavBikes(JSON.parse(data));
+  //   }
 
-  },[]);
+  // },[]);
 
   useEffect(() => {
     localStorage.setItem('FavoriteBikes', JSON.stringify(favBikes));
-  });
+  },[favBikes]);
 
 
   const addToFav = (id, model, price, brand, img0) => {
@@ -105,17 +106,17 @@ function Products() {
   }, []);
 
  // CART
-  useEffect(() => {
-    const data = localStorage.getItem('CartBikes')
-    if (data) {
-      setCartBikes(JSON.parse(data));
-    }
+  // useEffect(() => {
+  //   const data = localStorage.getItem('CartBikes')
+  //   if (data) {
+  //     setCartBikes(JSON.parse(data));
+  //   }
 
-  },[]);
+  // },[]);
 
   useEffect(() => {
     localStorage.setItem('CartBikes', JSON.stringify(cartBikes));
-  });
+  },[cartBikes]);
 
 
   const addToCart = (id, model, price, brand, img0) => {
