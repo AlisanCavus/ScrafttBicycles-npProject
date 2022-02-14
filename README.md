@@ -16,7 +16,7 @@ Password Recovery with email.
 
 --------
 #### Mock8p9
-![SCraftt M10ckup Pages](./mock.png)
+![SCraftt M10ckup Pages](./readmepics/mock.png)
 
 ---------
 #### Tech 
