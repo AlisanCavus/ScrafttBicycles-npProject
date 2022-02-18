@@ -30,9 +30,9 @@ function Favorites() {
 
      
      const newList = favBikes.filter((bike)=> bike.id !== id)
-    console.log(newList)
+   
     setFavBikes(newList)
-    console.log(favBikes)
+    
     localStorage.setItem('FavoriteBikes', JSON.stringify(favBikes));
       
     }

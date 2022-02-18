@@ -122,7 +122,7 @@ function YourCart() {
     delay: 600,
   });
 
-  console.log(user);
+  
 
   if (loading || !user === undefined) {
     return <LoadingScreen />;

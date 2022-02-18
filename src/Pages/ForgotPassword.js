@@ -3,17 +3,17 @@ import Logo from "../Assets/Logo.svg";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { useAuth} from "../Contexts/AuthContext";
-import { useNavigate } from "react-router-dom";
 
 
 
-function ForgotPassword({ close, setClose, handleCloseModal }) {
+
+function ForgotPassword({ close, setClose, handleCloseModal,succesfull }) {
     const mounted = useRef(false);
     const emailRef = useRef();
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
     const { forgotPassword } = useAuth();
-    const navigate = useNavigate();
+  
 
 
     useEffect(() => {
@@ -36,15 +36,16 @@ function ForgotPassword({ close, setClose, handleCloseModal }) {
         } catch (err) {
           console.log(err)
         }
-          alert('Password Reset link is sent to your email')
+          
         setError("")
         setLoading(false);
-        navigate('/Login')
+        succesfull()
+        // navigate('/Login')
       }
 
   return (
     <div className="  w-3/4 h-min align-middle mx-auto bg-primary mobile:flex mobile:w-full mobile:justify-center rounded ">
-      <div className="flex bg-primary w-full flex-col align-middle justify-center rounded mobile:w-screen">
+      <div className="flex bg-primary w-full flex-col align-middle justify-center rounded mobile:w-screen ">
         <div className=" -m-4 mobile:-m-6 mobile:mx-auto">
           <button
             className="mr-auto float-right border-1 z-50 rounded border-slate-500 cursor-pointer  bg-inherit  hover:animate-spin"
