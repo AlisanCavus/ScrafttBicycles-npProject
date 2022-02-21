@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import TeamMembers from '../components/TeamMembers';
-import { MapContainer, TileLayer, Marker, Popup} from 'react-leaflet'
-import  belgium from '../be.json'
-
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import belgium from '../be.json';
 
 function About() {
-  const [ activeBranch, setActiveBranch ] = useState(null)
+  // eslint-disable-next-line no-unused-vars
+  const [activeBranch, setActiveBranch] = useState(null);
   // eslint-disable-next-line no-unused-vars
   const [team, setTeam] = useState([
     {
@@ -28,17 +28,19 @@ function About() {
     },
     {
       id: 3,
-      name: 'Max Payne',
+      name: 'Mary Jane',
       titr: 'Head Engineer',
-      img: 'https://images.pexels.com/photos/2955376/pexels-photo-2955376.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+      img: 'https://images.pexels.com/photos/227294/pexels-photo-227294.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 4,
       name: 'Gordon Freeman',
       titr: 'Head Designer',
-      img: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
+      img: 'https://images.pexels.com/photos/3222422/pexels-photo-3222422.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
   ]);
+
+;
 
   return (
     <div className=" min-h-screen bg-primary overflow-hidden">
@@ -76,9 +78,9 @@ function About() {
               <p className="text-slate-700">
                 In
                 <span className="animate-pulse text-main font-extrabold ">
-                  &nbsp;Scraftt
+                  &nbsp;Scraftt&nbsp;
                 </span>
-                We believe team-work is the key for success. Our team step ahead
+                 We believe team-work is the key for success. Our team step ahead
                 on everyday to give you well-designed, perfectly crafted bikes
                 to ride. Not only making bikes but also maintaining them is our
                 priority. When you buy one of our bikes, You are not just
@@ -89,7 +91,8 @@ function About() {
 
           <div className="h-4/12 flex justify-center py-5 border-t-2 w-1/3 border-opacity-70 mx-auto border-slate-700 mobile:w-full">
             <h1 className="text-slate-700 font-sans font-medium text-4xl items-start mobile:text-xl">
-              Meet with the <span className="text-4xl mobile:text-2xl items-end">"Team"</span>
+              Meet with the 
+              <span className="text-4xl mobile:text-2xl items-end"> "Team"</span>
             </h1>
           </div>
 
@@ -106,36 +109,42 @@ function About() {
             ))}
           </ul>
 
-            <div className="flex justify-center my-5 ">
-              <span className="text-4xl my-5 py-5 w-1/2 text-center font-semibold text-slate-700 border-t-2 border-slate-700 mobile:text-xl mobile:w-10/12">"  We are so close to you! "</span>
-            </div>
-          <div  className="w-full h-96 flex justify-center z-50 my-auto">
-          <MapContainer id="map" center={[50.845515822047375, 4.357520085731559]} zoom={7} className=" w-full h-96">
-            <TileLayer
-            className="bg-primary"
-              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
-            
-              {belgium.map(locs => (
-              <Marker key={locs.population_proper} position={[locs.lat, locs.lng]} 
-              onClick={() => {
-                setActiveBranch(locs)
-              }}
+          <div className="flex justify-center my-5 ">
+            <span className="text-4xl my-5 py-5 w-1/2 text-center font-semibold text-slate-700 border-t-2 border-slate-700 mobile:text-xl mobile:w-10/12">
+              " We are so close to you! "
+            </span>
+          </div>
+          <div className="w-full h-[50vh] flex justify-center z-50 my-auto">
+            <MapContainer
+              id="map"
+              center={[50.845515822047375, 4.357520085731559]}
+              zoom={7}
+              className=" w-full h-96"
+            >
+              <TileLayer
+                className="bg-primary"
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                url="https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png"
               />
-              ))}
-            {activeBranch && <Popup onClose={setActiveBranch(null)} position={[activeBranch.lat, activeBranch.lng]}>
-                <div className="w-10 h-10 z-50">
-                  <h2>
-                    Our {activeBranch.city} Branch
-                  </h2>
-                </div>
-            </Popup>}
-          </MapContainer>
-        </div>
-        </div>
 
-        
+              {belgium.map((locs) => (
+                <Marker
+                  key={locs.population_proper}
+                  position={[locs.lat, locs.lng]}
+                  onClick={() => {
+                    setActiveBranch(locs);
+                  }}>
+                  <Popup position={[locs.lat, locs.lng]}>
+                  <div className="w-64 h-24 z-50 flex flex-col justify-center bg-primary">
+                      <h2 className="h-12 text-center "><span className="font-medium text-lg text-slate-700 animate-pulse">Scraftt </span>{" " + locs.city + " Branch "}</h2>
+                      <h4 className="h-12 text-center m-auto">{locs.population_proper + " " + locs.city + " / " + locs.admin_name + " / " + locs.country}</h4>
+                  </div>  
+                  </Popup>
+                </Marker>
+              ))}
+            </MapContainer>
+          </div>
+        </div>
       </div>
     </div>
   );
