@@ -1,19 +1,32 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {
-  IoIosArrowUp,
   IoIosArrowBack,
   IoIosArrowForward,
 } from 'react-icons/io';
 import { Link } from 'react-router-dom';
-import { animateScroll as scroll } from 'react-scroll';
 import Slider from 'react-slick';
 import { useAuth } from '../Contexts/AuthContext';
 
 function ProductsCard(props) {
  
-  
-  
+  const [dimensions, setDimensions] = useState({ width: window.innerWidth})
 
+  useEffect(() => {
+    function HandleResize() {
+      setDimensions({
+        width: window.innerWidth
+      })
+    }
+    window.addEventListener('resize', HandleResize)
+    console.log(dimensions)
+
+    return _ => {
+      window.removeEventListener('resize', HandleResize)
+    }
+    
+  })
+  
+ 
 
   const { currentUser } = useAuth();
   const {
@@ -75,7 +88,7 @@ function ProductsCard(props) {
     prevArrow: <PrevArrow />,
   };
 
-  if (index % 2 === 0 ) {
+  if (index % 2 === 0 || dimensions.width < 1025 ) {
     return (
       <>
         <li
@@ -85,37 +98,38 @@ function ProductsCard(props) {
         >
           <Slider
             {...settings}
-            className=" min-h-screen w-6/12 mx-auto mobile:w-full mobile:min-h-screen ">
-            <div className="w-full h-screen  mx-auto relative z-0 ">
+            className="  h-screen w-6/12 mx-auto mobile:w-full"
+          >
+            <div className="w-full h-screen carousel-item mx-auto">
               <img
                 id="car"
                 src={img0}
-                alt=" bike images"
-                className="w-full object-cover mobile:object-fill h-screen mx-auto relative"
+                alt=" bike images s s "
+                className="w-full object-cover h-screen mobile:object-cover mx-auto"
               />
             </div>
-            <div className="w-full h-screen carousel-item  mx-auto relative z-0">
+            <div className="w-full h-screen carousel-item mx-auto">
               <img
                 src={img1}
-                alt="bike images 11"
-                className="w-full  object-cover h-screen mobile:object-fill mx-auto relative"
+                alt=" bike imagskcks"
+                className="w-full object-cover h-screen mobile:object-cover mx-auto"
               />
             </div>
-            <div className="w-full h-screen carousel-item mx-auto relative z-0">
+            <div className="w-full h-screen carousel-item mx-auto">
               <img
                 src={img2}
-                alt="bike images 223"
-                className="w-full  object-cover h-screen mobile:object-fill mx-auto relative"
+                alt=" bikelara gel"
+                className="w-full object-cover h-screen mobile:object-cover mx-auto"
               />
             </div>
           </Slider>
 
-          <div className="w-6/12 flex flex-col justify-around mobile:w-screen mobile:h-screen mobile:border-t-2 mobile">
-            <div className=" flex font-semibold w-1/4 h-3/12 justify-center mx-auto text-center mobile:h-10/12 mobile:my-auto ">
-              <div className=" text-slate-600 mx-auto mt-10 text-center text-3xl self-center font-semibold mobile:text-lg">
+          <div className="w-6/12 flex flex-col justify-around mobile:w-screen mobile:h-screen mobile:justify-evenly">
+            <div className=" flex font-semibold w-1/4 h-3/12 justify-center mx-auto text-center mobile:h-8/12 mobile:justify-evenly ">
+              <div className=" text-slate-600 mx-auto mt-10 text-center text-3xl self-center font-semibold mobile:mt-0 mobile:text-lg">
                 {brand}&nbsp;
               </div>
-              <div className=" text-slate-600 mx-auto mt-10 text-center text-3xl self-center font-semibold mobile:text-lg">
+              <div className=" text-slate-600 mx-auto mt-10 text-center text-3xl self-center font-semibold  mobile:mt-0 mobile:text-lg">
                 &nbsp;{model}
               </div>
             </div>
@@ -126,7 +140,7 @@ function ProductsCard(props) {
             <div className="h-2/12 text-slate-600 w-10/12 mx-auto text-center mobile:text-xs">
               {descrip}
             </div>
-            <div className="h-2/12 text-slate-600 w-10/12 mx-auto text-center mobile:text-xs mobile:my-5">
+            <div className="h-2/12 text-slate-600 w-10/12 mx-auto text-center mobile:text-xs">
               Specifications: {specs}
             </div>
             <div>
@@ -170,18 +184,7 @@ function ProductsCard(props) {
                 </div>
               )}
             </div>
-            {index === 0 ? (
-              <></>
-            ) : (
-              <div className="h-1/12 text-slate-600 w-10/12 mx-auto text-center flex justify-end">
-                <button
-                  onClick={() => scroll.scrollToTop()}
-                  className="bg-inherit flex flex-col text-center z-50 items-end align-end hover:animate-bounce  justify-end mt-auto mb-5 mx-5 opacity-30 h-10 fill-slate-500 w-10 mobile:justify-center mobile:items-center mobile:align-center mobile:flex-col mobile:mx-auto "
-                >
-                  <IoIosArrowUp className="border-black  w-full h-full fill-slate-500" />
-                </button>
-              </div>
-            )}
+            
           </div>
         </li>
       </>
@@ -254,14 +257,7 @@ function ProductsCard(props) {
               )}
             </div>
 
-            <div className="h-1/12 text-slate-600 w-10/12 mx-auto text-center">
-              <button
-                onClick={() => scroll.scrollToTop()}
-                className="bg-inherit flex flex-col text-center z-50 items-end align-end hover:animate-bounce justify-end mt-auto mb-5 mx-5 opacity-30 h-10 fill-slate-500 w-10 mobile:justify-center mobile:items-center mobile:align-center mobile:flex-col mobile:mx-auto"
-              >
-                <IoIosArrowUp className="border-black  w-full h-full fill-slate-500" />
-              </button>
-            </div>
+            
           </div>
 
           <Slider

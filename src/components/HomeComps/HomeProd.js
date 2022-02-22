@@ -52,7 +52,7 @@ function HomeProd() {
   
 
     <div className="flex min-h-screen mobile:grid mobile:grid-rows-2"  >
-      <div className="w-[60%] flex object-fill bg-tamir bg-cover mobile:w-full mobile:h-full ">
+      <div className="w-[58.5%] flex object-fill bg-tamir bg-cover mobile:w-full mobile:h-full ">
         
       </div>
 
